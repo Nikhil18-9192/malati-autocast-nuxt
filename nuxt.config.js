@@ -1,4 +1,8 @@
 export default {
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Malati Autocast',
@@ -18,11 +22,6 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap',
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap',
       },
     ],
   },

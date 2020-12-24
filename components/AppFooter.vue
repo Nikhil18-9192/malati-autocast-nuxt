@@ -13,7 +13,9 @@
           <img src="/phone.png" alt="" />
         </div>
         <div class="text">
-          <p>0230 – 2366148 0230 – 2366149 9552917160</p>
+          <p>0230 – 2366148</p>
+          <p>0230 – 2366149</p>
+          <p>9552917160</p>
         </div>
       </div>
       <div class="phone">
@@ -68,40 +70,51 @@ export default {
   width: 100%;
   position: relative;
   display: flex;
+  justify-content: space-between;
   .menu {
-    width: 20%;
+    // width: 20%;
+    max-width: 161px;
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
       li {
         margin-bottom: 20px;
         a {
-          font-weight: 500;
+          font-weight: 600;
           font-size: 16px;
           color: #2f2f2f;
           text-decoration: none;
+          letter-spacing: 0.045em;
         }
       }
     }
   }
   .contact-info {
-    width: 40%;
+    max-width: 322px;
 
     .phone {
       display: flex;
-      align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 60px;
       .icon {
         margin-right: 30px;
         img {
           width: 14px;
         }
       }
+      .text {
+        p {
+          font-weight: 600;
+          color: #2f2f2f;
+          font-size: 16px;
+          letter-spacing: 0.045em;
+        }
+      }
     }
   }
   .contact-form {
     padding: 0 20px;
-    width: 40%;
+    max-width: 488px;
   }
 }
 </style>

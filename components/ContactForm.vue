@@ -32,9 +32,9 @@ export default {}
     border-right: none;
     border-left: none;
     margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 300;
     &::placeholder {
-      font-size: 16px;
-      font-weight: 300;
       color: #2f2f2f;
     }
   }
@@ -46,6 +46,10 @@ export default {}
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
+    transition: 0.2s ease all;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
   .social-icon {
     margin-top: 50px;
