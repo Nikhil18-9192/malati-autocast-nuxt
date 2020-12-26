@@ -86,6 +86,7 @@ export default {
           color: #2f2f2f;
           text-decoration: none;
           letter-spacing: 0.045em;
+          line-height: 29px;
         }
       }
     }
@@ -96,6 +97,7 @@ export default {
     .phone {
       display: flex;
       margin-bottom: 60px;
+      align-items: baseline;
       .icon {
         margin-right: 30px;
         img {
@@ -108,6 +110,7 @@ export default {
           color: #2f2f2f;
           font-size: 16px;
           letter-spacing: 0.045em;
+          line-height: 29px;
         }
       }
     }

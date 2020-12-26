@@ -16,11 +16,7 @@
 
       <div class="img" v-for="(img, i) in services" :key="i">
         <transition name="fade">
-          <img
-            v-show="img.src == selectedImage && hover"
-            :src="img.src"
-            alt=""
-          />
+          <img v-if="img.src == selectedImage && hover" :src="img.src" alt="" />
         </transition>
       </div>
     </div>
@@ -125,6 +121,7 @@ export default {
         text-align: center;
         color: #939393;
         margin-bottom: 40px;
+        line-height: 133%;
         span {
           color: #000;
         }
@@ -136,6 +133,7 @@ export default {
         margin: 0 auto;
         text-align: center;
         color: #939393;
+        line-height: 133%;
       }
     }
     .img {
@@ -145,8 +143,8 @@ export default {
       width: 100%;
       img {
         width: 100%;
-        max-height: 352px;
-        transition: 0.3s ease all;
+        height: 352px;
+        transition: transform 0.3s cubic-bezier(0, 0.85, 0.19, 0.91);
         object-fit: cover;
         object-position: bottom;
       }
@@ -154,11 +152,14 @@ export default {
 
     .slide {
       transform: translateY(-50px);
+      opacity: 0;
     }
 
     .fade-enter-active,
     .fade-leave-active {
-      transform: translateY(100%);
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+      transform: translateY(150%);
     }
   }
 
@@ -218,7 +219,7 @@ export default {
         }
         .hover-txt {
           opacity: 1;
-          top: 0;
+          top: 20px;
         }
         .title {
           &::after {
