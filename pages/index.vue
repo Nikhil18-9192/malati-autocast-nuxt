@@ -13,7 +13,16 @@
           skilled staff.
         </p>
       </div>
-      <img :class="hover ? 'shown' : ''" :src="selectedImage" alt="" />
+
+      <div class="img" v-for="(img, i) in services" :key="i">
+        <transition name="fade">
+          <img
+            v-show="img.src == selectedImage && hover"
+            :src="img.src"
+            alt=""
+          />
+        </transition>
+      </div>
     </div>
 
     <div class="services">
@@ -51,8 +60,7 @@ export default {
         {
           title: 'OUR JOURNEY',
           icon: '/marker.svg',
-          src:
-            'https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80',
+          src: '/slide-img.png',
         },
         {
           title: 'INFRASTRUCTURE',
@@ -130,21 +138,27 @@ export default {
         color: #939393;
       }
     }
-    img {
+    .img {
       position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-height: 352px;
-      top: 100%;
-      transition: 0.4s ease all;
-      object-fit: cover;
-      object-position: bottom;
+      img {
+        width: 100%;
+        max-height: 352px;
+        transition: 0.3s ease all;
+        object-fit: cover;
+        object-position: bottom;
+      }
     }
 
-    .shown {
-      top: 0px;
-    }
     .slide {
       transform: translateY(-50px);
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+      transform: translateY(100%);
     }
   }
 
