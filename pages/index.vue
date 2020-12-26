@@ -14,7 +14,7 @@
         </p>
       </div>
 
-      <div class="img" v-for="(img, i) in services" :key="i">
+      <div class="img" v-for="img in services" :key="img.src">
         <transition name="fade">
           <img v-if="img.src == selectedImage && hover" :src="img.src" alt="" />
         </transition>
@@ -92,8 +92,8 @@ export default {
 #home-page {
   position: relative;
   width: 100%;
-  padding-left: $horizontalPadding;
-  padding-right: $horizontalPadding;
+  // padding-left: $horizontalPadding;
+  // padding-right: $horizontalPadding;
   @include for-desktop-up {
     // min-height: 80vh;
   }
@@ -101,8 +101,8 @@ export default {
     width: 100%;
     position: relative;
     overflow: hidden;
-    margin: 100px 0;
-    min-height: 352px;
+    //  margin: 100px 0;
+    min-height: 452px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,12 +141,13 @@ export default {
       top: 0;
       left: 0;
       width: 100%;
+      height: 100%;
       img {
         width: 100%;
-        height: 352px;
-        transition: transform 0.3s cubic-bezier(0, 0.85, 0.19, 0.91);
+        height: 100%;
+        transition: transform 0.4s cubic-bezier(0, 0.85, 0.19, 0.91);
         object-fit: cover;
-        object-position: bottom;
+        object-position: top;
       }
     }
 
@@ -157,9 +158,11 @@ export default {
 
     .fade-enter-active,
     .fade-leave-active {
+      z-index: 999;
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-      transform: translateY(150%);
+      transform: translateY(100%);
+      z-index: 999;
     }
   }
 
@@ -168,6 +171,7 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    padding: 0 135px;
     .card {
       text-align: center;
       min-width: 220px;
