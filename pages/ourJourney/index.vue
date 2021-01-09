@@ -162,6 +162,7 @@ export default {
         }
       }
     }
+  
     .image {
       width: 40%;
       img {

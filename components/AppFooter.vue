@@ -49,8 +49,8 @@ export default {
   data() {
     return {
       menu: [
-        { name: 'Our Journey', route: '/' },
-        { name: 'Infrastructure', route: '/' },
+        { name: 'Our Journey', route: '/ourJourney' },
+        { name: 'Infrastructure', route: '/infrastructure' },
         { name: 'Clients & Partners', route: '/' },
         { name: 'Compliance', route: '/' },
         { name: 'Career & Team', route: '/' },
