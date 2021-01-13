@@ -6,10 +6,19 @@
     <div class="journey-list">
       <div class="list">
         <div class="road-bar">
-          <transition name="icon-slide">
+          <transition name="line">
             <img
               v-if="offset > -1"
               :style="{ top: `${offset}px` }"
+              class="line"
+              src="dotline.svg"
+              alt=""
+            />
+          </transition>
+          <transition name="icon-slide">
+            <img
+              v-if="offset > -1"
+              :style="{ top: `${offset - 15}px` }"
               class="icon"
               src="active-icon.png"
               alt=""
@@ -20,6 +29,7 @@
         </div>
         <ul>
           <li
+            class="journey-li"
             v-for="(item, i) in journey"
             :key="i"
             :id="`j${i}`"
@@ -33,18 +43,25 @@
               <h5>
                 {{ item.name }}
               </h5>
-              <p
-                :class="hover && itemIndex == i ? 'dispnone' : 'dispblock'"
-                class="list-title"
-              >
-                {{ item.title }}
-              </p>
-              <p
-                :class="hover && itemIndex == i ? 'dispblock' : 'dispnone'"
-                class="desc"
-              >
-                {{ item.desc }}
-              </p>
+              <div class="info">
+                <p
+                  :class="hover && itemIndex == i ? 'dispnone' : 'dispblock'"
+                  class="list-title"
+                >
+                  {{ item.title }}
+                </p>
+                <ul class="desc-ul">
+                  <li
+                    v-for="(list, j) in item.desc"
+                    :key="`l${j}`"
+                    :style="{ transitionDelay: `${0.1 * j}s` }"
+                    :class="hover && i == itemIndex ? 'enter-list' : ' '"
+                    class="desc-li"
+                  >
+                    {{ list }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
         </ul>
@@ -77,16 +94,23 @@ export default {
           year: '1970',
           name: 'Patil Engineering Works, Kolhapur.',
           title: 'Manufacturer of betel nut cutting machines.',
-          desc:
-            'Dedicated machining shop Machines : CNC, Balancing Machines Machining Capacity : 1000 drums/day',
+          desc: [
+            'Dedicated machining shop',
+            ' Machines : CNC, Balancing Machines Machining',
+            'Capacity : 1000 drums/day',
+          ],
           images: ['/1.jfif', '/2.jfif', '/3.jfif', '/4.jfif'],
         },
         {
           year: '1988',
           name: 'S.K.P. Industries, MIDC Shiroli.',
           title: 'Dedicated machining shop',
-          desc:
-            'Dedicated machining shop Machines : CNC, Balancing Machines Machining Capacity : 1000 drums/day',
+          desc: [
+            'Dedicated machining shop',
+            ' Machines : CNC, Balancing Machines Machining',
+            'Capacity : 1000 drums/day',
+          ],
+
           images: [
             '/ourjourney.png',
             '/ourjourney.png',
@@ -98,23 +122,33 @@ export default {
           year: '1995',
           name: 'Malati Founders Pvt. Ltd. , Hatkanangle.',
           title: 'Manufacturer of C.I. graded castings',
-          desc: `Dedicated machining shop Machines : CNC, Balancing Machines Machining Capacity : 1000 drums/day`,
+          desc: [
+            'Dedicated machining shop',
+            ' Machines : CNC, Balancing Machines Machining',
+            'Capacity : 1000 drums/day',
+          ],
           images: ['2.jfif', '1.jfif', '3.jfif', '4.jfif'],
         },
         {
           year: '2000',
           name: 'Malati Enterprises, Hatkanangle. ',
           title: 'Dedicated machining shop',
-          desc:
-            'Dedicated machining shop Machines : CNC, Balancing Machines Machining Capacity : 1000 drums/day',
+          desc: [
+            'Dedicated machining shop',
+            ' Machines : CNC, Balancing Machines Machining',
+            'Capacity : 1000 drums/day',
+          ],
           images: ['4.jfif', '2.jfif', '1.jfif', '3.jfif'],
         },
         {
           year: '2002',
           name: 'Malati Enterprises, Hatkanangle. ',
           title: 'Dedicated machining shop',
-          desc:
-            'Dedicated machining shop Machines : CNC, Balancing Machines Machining Capacity : 1000 drums/day',
+          desc: [
+            'Dedicated machining shop',
+            ' Machines : CNC, Balancing Machines Machining',
+            'Capacity : 1000 drums/day',
+          ],
           images: ['3.jfif', '1.jfif', '4.jfif', '2.jfif'],
         },
       ],
@@ -158,6 +192,7 @@ export default {
 #our-journey {
   position: relative;
   width: 100%;
+  height: 100%;
   .title {
     padding: 0 $horizontalPadding;
     h1 {
@@ -176,29 +211,39 @@ export default {
     overflow: hidden;
     padding: 0 $horizontalPadding;
     @include for-desktop-up {
-      // padding-bottom: 325px;
+      padding-bottom: 325px;
     }
     .list {
       width: 50%;
       display: flex;
+      position: relative;
       .road-bar {
         margin-top: 45px;
-        margin-right: 40px;
+        margin-right: 60px;
         position: relative;
-        .icon {
-          width: 30px;
+        height: 100%;
+
+        .line {
           position: absolute;
-          left: 0;
+          left: -50%;
+          z-index: 99;
+        }
+        .icon {
+          width: 32px;
+          position: absolute;
+          left: 2px;
+          z-index: 101;
         }
         .bar {
-          height: 80%;
+          position: absolute;
+          z-index: 100;
         }
       }
       ul {
         list-style: none;
         margin: 0;
         padding: 0;
-        li {
+        .journey-li {
           display: flex;
           min-height: 150px;
           cursor: default;
@@ -222,19 +267,35 @@ export default {
               font-size: 24px;
               transition: 0.5s ease all;
             }
-            .list-title {
-              font-weight: 500;
-              font-size: 16px;
-              color: #c6c6c6;
-              transition: 0.5s ease all;
-            }
-            .desc {
-              transition: 0.5s ease all;
-              font-weight: 500;
-              font-size: 16px;
-              color: #000;
-              line-height: 30px;
-              max-width: 313px;
+            .info {
+              position: relative;
+              margin-top: 15px;
+              .list-title {
+                position: absolute;
+                top: 0;
+                font-weight: 500;
+                font-size: 16px;
+                color: #c6c6c6;
+                transition: 0.3s ease all;
+              }
+              .desc-ul {
+                transition: 0.5s ease all;
+                overflow: hidden;
+                .desc-li {
+                  font-weight: 500;
+                  font-size: 16px;
+                  color: #000;
+                  line-height: 30px;
+                  transform: translateX(-50%);
+                  opacity: 0;
+                  -webkit-transition: all 1s cubic-bezier(0.16, 0.15, 0.25, 1);
+                  transition: all 0.6s cubic-bezier(0.16, 0.15, 0.25, 1);
+                }
+                .enter-list {
+                  transform: translateX(0%);
+                  opacity: 1;
+                }
+              }
             }
           }
         }
@@ -246,9 +307,10 @@ export default {
       position: relative;
       transition: 0.5s ease all;
       .image {
+        border-radius: 4px;
         position: absolute;
         top: 0;
-        max-width: 500px;
+        width: 100%;
         height: 520px;
         object-fit: cover;
       }
@@ -263,6 +325,7 @@ export default {
   .dispnone {
     opacity: 0;
   }
+
   .slide-enter-active,
   .slide-leave-active {
     transition: 0.5s ease all;
@@ -276,11 +339,22 @@ export default {
   .icon-slide-enter-active,
   .icon-slide-leave-active {
     transition: 0.3s ease all;
-    transform: translate(0%, 0%);
+    transform: scale(1);
   }
   .icon-slide-enter,
   .icon-slide-leave-to {
-    transform: translate(200%, -110%);
+    transform: scale(0);
+    opacity: 0;
+  }
+  .line-enter-active,
+  .line-leave-active {
+    transition: 0.3s ease all;
+    transform: translateX(1);
+    opacity: 1;
+  }
+  .line-enter,
+  .line-leave-to {
+    transform: scaleX(-1);
     opacity: 0;
   }
 }
