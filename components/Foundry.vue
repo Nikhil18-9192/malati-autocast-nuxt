@@ -7,7 +7,7 @@
           <p
             class="button"
             :class="selectedItem == i ? 'active' : ''"
-            @click="getSelected(i)"
+            @click="goToSlide(i)"
           >
             {{ item.title }}
           </p>
@@ -22,8 +22,10 @@
         :autoplay="true"
         :height="500"
         :bias="'center'"
-        :autoplay-timeout="1000"
+        :autoplay-timeout="3000"
         :display="3"
+        @before-slide-change="onBeforeSlideChange"
+        ref="mycarousel"
       >
         <slide
           class="slide"
@@ -31,18 +33,20 @@
           :key="item.title"
           :index="i"
         >
-          <div class="card">
-            <div class="left">
-              <h3>{{ item.title }}</h3>
-              <div class="text" v-for="(point, i) in item.features" :key="i">
-                <p>{{ i + 1 }}.</p>
-                <p class="points">{{ point }}</p>
+          <template slot-scope="{ selectedItem }">
+            <div class="card" :data-index="selectedItem">
+              <div class="left">
+                <h3>{{ item.title }}</h3>
+                <div class="text" v-for="(point, i) in item.features" :key="i">
+                  <p>{{ i + 1 }}.</p>
+                  <p class="points">{{ point }}</p>
+                </div>
+              </div>
+              <div class="right">
+                <img :src="item.img" alt="" />
               </div>
             </div>
-            <div class="right">
-              <img :src="item.img" alt="" />
-            </div>
-          </div>
+          </template>
         </slide>
       </carousel-3d>
       <!-- <div class="card">
@@ -147,6 +151,12 @@ export default {
   methods: {
     getSelected(i) {
       this.selectedItem = i
+    },
+    onBeforeSlideChange(index) {
+      this.selectedItem = index
+    },
+    goToSlide(index) {
+      this.$refs.mycarousel.goSlide(index)
     },
   },
 }
