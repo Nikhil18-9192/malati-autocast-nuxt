@@ -186,6 +186,7 @@ export default {
     .card {
       text-align: center;
       min-width: 220px;
+      cursor: pointer;
       .title {
         margin-bottom: 32px;
         font-size: 18px;

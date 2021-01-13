@@ -95,9 +95,9 @@ export default {
           name: 'Patil Engineering Works, Kolhapur.',
           title: 'Manufacturer of betel nut cutting machines.',
           desc: [
-            'Dedicated machining shop',
-            ' Machines : CNC, Balancing Machines Machining',
-            'Capacity : 1000 drums/day',
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
           ],
           images: ['/1.jfif', '/2.jfif', '/3.jfif', '/4.jfif'],
         },
@@ -106,9 +106,9 @@ export default {
           name: 'S.K.P. Industries, MIDC Shiroli.',
           title: 'Dedicated machining shop',
           desc: [
-            'Dedicated machining shop',
-            ' Machines : CNC, Balancing Machines Machining',
-            'Capacity : 1000 drums/day',
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
           ],
 
           images: [
@@ -123,9 +123,9 @@ export default {
           name: 'Malati Founders Pvt. Ltd. , Hatkanangle.',
           title: 'Manufacturer of C.I. graded castings',
           desc: [
-            'Dedicated machining shop',
-            ' Machines : CNC, Balancing Machines Machining',
-            'Capacity : 1000 drums/day',
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
           ],
           images: ['2.jfif', '1.jfif', '3.jfif', '4.jfif'],
         },
@@ -134,9 +134,9 @@ export default {
           name: 'Malati Enterprises, Hatkanangle. ',
           title: 'Dedicated machining shop',
           desc: [
-            'Dedicated machining shop',
-            ' Machines : CNC, Balancing Machines Machining',
-            'Capacity : 1000 drums/day',
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
           ],
           images: ['4.jfif', '2.jfif', '1.jfif', '3.jfif'],
         },
@@ -145,9 +145,9 @@ export default {
           name: 'Malati Enterprises, Hatkanangle. ',
           title: 'Dedicated machining shop',
           desc: [
-            'Dedicated machining shop',
-            ' Machines : CNC, Balancing Machines Machining',
-            'Capacity : 1000 drums/day',
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
           ],
           images: ['3.jfif', '1.jfif', '4.jfif', '2.jfif'],
         },
@@ -276,20 +276,19 @@ export default {
                 font-weight: 500;
                 font-size: 16px;
                 color: #c6c6c6;
-                transition: 0.3s ease all;
+                transition: 0.6s ease all;
               }
               .desc-ul {
-                transition: 0.5s ease all;
                 overflow: hidden;
                 .desc-li {
                   font-weight: 500;
                   font-size: 16px;
                   color: #000;
-                  line-height: 30px;
+                  line-height: 25px;
                   transform: translateX(-50%);
                   opacity: 0;
                   -webkit-transition: all 1s cubic-bezier(0.16, 0.15, 0.25, 1);
-                  transition: all 0.6s cubic-bezier(0.16, 0.15, 0.25, 1);
+                  transition: all 0.4s cubic-bezier(0.16, 0.15, 0.25, 1);
                 }
                 .enter-list {
                   transform: translateX(0%);
@@ -320,6 +319,7 @@ export default {
     color: #c6c6c6;
   }
   .dispblock {
+    transition: 0.9s ease all;
     opacity: 1;
   }
   .dispnone {
