@@ -13,7 +13,39 @@
           </p>
         </div>
       </div>
-      <div class="card">
+
+      <carousel-3d
+        :count="machinery.length"
+        :perspective="0"
+        :width="1100"
+        :key="machinery.length"
+        :autoplay="true"
+        :height="500"
+        :bias="'center'"
+        :autoplay-timeout="1000"
+        :display="3"
+      >
+        <slide
+          class="slide"
+          v-for="(item, i) in machinery"
+          :key="item.title"
+          :index="i"
+        >
+          <div class="card">
+            <div class="left">
+              <h3>{{ item.title }}</h3>
+              <div class="text" v-for="(point, i) in item.features" :key="i">
+                <p>{{ i + 1 }}.</p>
+                <p class="points">{{ point }}</p>
+              </div>
+            </div>
+            <div class="right">
+              <img :src="item.img" alt="" />
+            </div>
+          </div>
+        </slide>
+      </carousel-3d>
+      <!-- <div class="card">
         <div class="left">
           <h3>{{ machinery[selectedItem].title }}</h3>
           <div
@@ -28,7 +60,7 @@
         <div class="right">
           <img :src="machinery[selectedItem].img" alt="" />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -173,6 +205,9 @@ export default {
       width: 100%;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       border-radius: 4px;
+      height: 500px;
+      overflow: hidden;
+
       .left {
         width: 50vw;
         padding: 40px 100px;
@@ -207,8 +242,24 @@ export default {
       }
       .right {
         img {
-          height: 520px;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
         }
+      }
+    }
+  }
+  .carousel-3d-container {
+    .carousel-3d-slide {
+      background: #ffffff;
+      border: none;
+      .card {
+        opacity: 0.2;
+      }
+    }
+    .current {
+      .card {
+        opacity: 1;
       }
     }
   }

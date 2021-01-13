@@ -231,12 +231,13 @@ export default {
         .icon {
           width: 32px;
           position: absolute;
-          left: 2px;
+          left: -4px;
           z-index: 101;
         }
         .bar {
           position: absolute;
           z-index: 100;
+          width: 24px;
         }
       }
       ul {
