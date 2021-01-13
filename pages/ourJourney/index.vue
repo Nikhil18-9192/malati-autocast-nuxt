@@ -5,6 +5,19 @@
     </div>
     <div class="journey-list">
       <div class="list">
+        <div class="road-bar">
+          <transition name="icon-slide">
+            <img
+              v-if="offset > -1"
+              :style="{ top: `${offset}px` }"
+              class="icon"
+              src="active-icon.png"
+              alt=""
+            />
+          </transition>
+
+          <img class="bar" src="road.png" alt="" />
+        </div>
         <ul>
           <li
             v-for="(item, i) in journey"
@@ -108,7 +121,7 @@ export default {
       itemIndex: -1,
       slideDuration: 2000,
       autoSlider: false,
-      offset: 0,
+      offset: -1,
     }
   },
 
@@ -117,8 +130,6 @@ export default {
   },
   methods: {
     initAutoSlide: function () {
-      this.itemIndex = 0
-
       this.autoSlider = setInterval(() => {
         if (this.itemIndex == -1) return
         this.currentIndex < this.journey[this.itemIndex].images.length - 1
@@ -132,9 +143,10 @@ export default {
       this.itemIndex = index
     },
     removItem() {
+      this.offset = -1
       this.hover = false
       this.itemIndex = -1
-      if (this.autoSlider) {
+      if (!this.autoSlider) {
         clearInterval(this.autoSlider)
       }
     },
@@ -164,10 +176,24 @@ export default {
     overflow: hidden;
     padding: 0 $horizontalPadding;
     @include for-desktop-up {
-      padding-bottom: 325px;
+      // padding-bottom: 325px;
     }
     .list {
       width: 50%;
+      display: flex;
+      .road-bar {
+        margin-top: 45px;
+        margin-right: 40px;
+        position: relative;
+        .icon {
+          width: 30px;
+          position: absolute;
+          left: 0;
+        }
+        .bar {
+          height: 80%;
+        }
+      }
       ul {
         list-style: none;
         margin: 0;
@@ -245,6 +271,16 @@ export default {
   .slide-enter,
   .slide-leave-to {
     transform: translateX(100%);
+    opacity: 0;
+  }
+  .icon-slide-enter-active,
+  .icon-slide-leave-active {
+    transition: 0.3s ease all;
+    transform: translate(0%, 0%);
+  }
+  .icon-slide-enter,
+  .icon-slide-leave-to {
+    transform: translate(200%, -110%);
     opacity: 0;
   }
 }
