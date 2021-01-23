@@ -31,6 +31,7 @@
           hover = true
         "
         @mouseleave="hover = false"
+        @click="router(item.route)"
       >
         <div class="title">
           {{ item.title }}
@@ -57,33 +58,43 @@ export default {
           title: 'OUR JOURNEY',
           icon: '/marker.svg',
           src: '/slide-img.png',
+          route: '/ourjourney',
         },
         {
           title: 'INFRASTRUCTURE',
           icon: '/manufracture.svg',
           src:
             'https://images.unsplash.com/photo-1513295202663-54cd69dd2b43?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1490&q=80',
+          route: '/infrastructure',
         },
         {
           title: 'PRODUCTS',
           icon: '/products.svg',
           src:
             'https://images.unsplash.com/photo-1552783160-27bfdb2625d5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1560&q=80',
+          route: '/products',
         },
         {
           title: 'COMPLAINCE',
           icon: '/complaince.svg',
           src:
             'https://images.unsplash.com/photo-1566221857770-508d35ee6220?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+          route: '/complaince',
         },
         {
           title: 'TEAM & CAREER',
           icon: '/team.svg',
           src:
             'https://images.unsplash.com/photo-1571524522669-99d0c9e7264d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
+          route: '/team',
         },
       ],
     }
+  },
+  methods: {
+    router(route) {
+      this.$router.push(route)
+    },
   },
 }
 </script>
@@ -175,6 +186,7 @@ export default {
     .card {
       text-align: center;
       min-width: 220px;
+      cursor: pointer;
       .title {
         margin-bottom: 32px;
         font-size: 18px;

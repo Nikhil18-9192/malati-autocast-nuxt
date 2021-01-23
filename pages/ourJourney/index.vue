@@ -1,0 +1,362 @@
+<template>
+  <div id="our-journey">
+    <div class="title">
+      <h1>Our Journey</h1>
+    </div>
+    <div class="journey-list">
+      <div class="list">
+        <div class="road-bar">
+          <transition name="line">
+            <img
+              v-if="offset > -1"
+              :style="{ top: `${offset}px` }"
+              class="line"
+              src="dotline.svg"
+              alt=""
+            />
+          </transition>
+          <transition name="icon-slide">
+            <img
+              v-if="offset > -1"
+              :style="{ top: `${offset - 15}px` }"
+              class="icon"
+              src="active-icon.png"
+              alt=""
+            />
+          </transition>
+
+          <img class="bar" src="road.png" alt="" />
+        </div>
+        <ul>
+          <li
+            class="journey-li"
+            v-for="(item, i) in journey"
+            :key="i"
+            :id="`j${i}`"
+            @mouseenter="getItem(i)"
+            :class="hover && itemIndex !== i ? 'hover' : ''"
+            @mouseleave="removItem"
+          >
+            <img src="/location.svg" alt="" />
+            <h4>{{ item.year }}</h4>
+            <div class="text">
+              <h5>
+                {{ item.name }}
+              </h5>
+              <div class="info">
+                <p
+                  :class="hover && itemIndex == i ? 'dispnone' : 'dispblock'"
+                  class="list-title"
+                >
+                  {{ item.title }}
+                </p>
+                <ul class="desc-ul">
+                  <li
+                    v-for="(list, j) in item.desc"
+                    :key="`l${j}`"
+                    :style="{ transitionDelay: `${0.1 * j}s` }"
+                    :class="hover && i == itemIndex ? 'enter-list' : ' '"
+                    class="desc-li"
+                  >
+                    {{ list }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <transition name="slide">
+        <div v-if="itemIndex > -1" class="carousel">
+          <img
+            v-for="(image, i) in journey[itemIndex].images"
+            :key="`i${i}`"
+            class="image"
+            :style="{ top: `${offset}px` }"
+            v-show="i == currentIndex"
+            :src="image"
+            alt=""
+          />
+        </div>
+      </transition>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      currentIndex: 1,
+      hover: false,
+      journey: [
+        {
+          year: '1970',
+          name: 'Patil Engineering Works, Kolhapur.',
+          title: 'Manufacturer of betel nut cutting machines.',
+          desc: [
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
+          ],
+          images: ['/1.jfif', '/2.jfif', '/3.jfif', '/4.jfif'],
+        },
+        {
+          year: '1988',
+          name: 'S.K.P. Industries, MIDC Shiroli.',
+          title: 'Dedicated machining shop',
+          desc: [
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
+          ],
+
+          images: [
+            '/ourjourney.png',
+            '/ourjourney.png',
+            '/ourjourney.png',
+            '/ourjourney.png',
+          ],
+        },
+        {
+          year: '1995',
+          name: 'Malati Founders Pvt. Ltd. , Hatkanangle.',
+          title: 'Manufacturer of C.I. graded castings',
+          desc: [
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
+          ],
+          images: ['2.jfif', '1.jfif', '3.jfif', '4.jfif'],
+        },
+        {
+          year: '2000',
+          name: 'Malati Enterprises, Hatkanangle. ',
+          title: 'Dedicated machining shop',
+          desc: [
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
+          ],
+          images: ['4.jfif', '2.jfif', '1.jfif', '3.jfif'],
+        },
+        {
+          year: '2002',
+          name: 'Malati Enterprises, Hatkanangle. ',
+          title: 'Dedicated machining shop',
+          desc: [
+            '- Dedicated machining shop',
+            '- Machines : CNC, Balancing Machines Machining',
+            '- Capacity : 1000 drums/day',
+          ],
+          images: ['3.jfif', '1.jfif', '4.jfif', '2.jfif'],
+        },
+      ],
+      itemIndex: -1,
+      slideDuration: 2000,
+      autoSlider: false,
+      offset: -1,
+    }
+  },
+
+  mounted() {
+    this.initAutoSlide()
+  },
+  methods: {
+    initAutoSlide: function () {
+      this.autoSlider = setInterval(() => {
+        if (this.itemIndex == -1) return
+        this.currentIndex < this.journey[this.itemIndex].images.length - 1
+          ? this.currentIndex++
+          : (this.currentIndex = 0)
+      }, this.slideDuration)
+    },
+    getItem(index) {
+      this.offset = document.getElementById(`j${index}`).offsetTop
+      this.hover = true
+      this.itemIndex = index
+    },
+    removItem() {
+      this.offset = -1
+      this.hover = false
+      this.itemIndex = -1
+      if (!this.autoSlider) {
+        clearInterval(this.autoSlider)
+      }
+    },
+  },
+}
+</script>
+
+<style lang="scss" scopped>
+#our-journey {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .title {
+    padding: 0 $horizontalPadding;
+    h1 {
+      font-family: 'Lora';
+      font-weight: normal;
+      font-size: 144px;
+      color: #e0e0e0;
+      text-align: right;
+      margin: 90px 0;
+    }
+  }
+  .journey-list {
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 $horizontalPadding;
+    @include for-desktop-up {
+      padding-bottom: 325px;
+    }
+    .list {
+      width: 50%;
+      display: flex;
+      position: relative;
+      .road-bar {
+        margin-top: 45px;
+        margin-right: 60px;
+        position: relative;
+        height: 100%;
+
+        .line {
+          position: absolute;
+          left: -50%;
+          z-index: 99;
+        }
+        .icon {
+          width: 32px;
+          position: absolute;
+          left: -4px;
+          z-index: 101;
+        }
+        .bar {
+          position: absolute;
+          z-index: 100;
+          width: 24px;
+        }
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .journey-li {
+          display: flex;
+          min-height: 150px;
+          cursor: default;
+          margin-bottom: 60px;
+          img {
+            width: 30px;
+            height: 42px;
+          }
+          h4 {
+            font-weight: 500;
+            font-size: 36px;
+            margin: 0 30px 0 20px;
+            min-width: 100px;
+            letter-spacing: 0.095em;
+            transition: 0.5s ease all;
+          }
+          .text {
+            letter-spacing: 0.05em;
+            h5 {
+              font-weight: 500;
+              font-size: 24px;
+              transition: 0.5s ease all;
+            }
+            .info {
+              position: relative;
+              margin-top: 15px;
+              .list-title {
+                position: absolute;
+                top: 0;
+                font-weight: 500;
+                font-size: 16px;
+                color: #c6c6c6;
+                transition: 0.6s ease all;
+              }
+              .desc-ul {
+                overflow: hidden;
+                .desc-li {
+                  font-weight: 500;
+                  font-size: 16px;
+                  color: #000;
+                  line-height: 25px;
+                  transform: translateX(-50%);
+                  opacity: 0;
+                  -webkit-transition: all 1s cubic-bezier(0.16, 0.15, 0.25, 1);
+                  transition: all 0.4s cubic-bezier(0.16, 0.15, 0.25, 1);
+                }
+                .enter-list {
+                  transform: translateX(0%);
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .carousel {
+      width: 50%;
+      position: relative;
+      transition: 0.5s ease all;
+      .image {
+        border-radius: 4px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 520px;
+        object-fit: cover;
+      }
+    }
+  }
+  .hover {
+    color: #c6c6c6;
+  }
+  .dispblock {
+    transition: 0.9s ease all;
+    opacity: 1;
+  }
+  .dispnone {
+    opacity: 0;
+  }
+
+  .slide-enter-active,
+  .slide-leave-active {
+    transition: 0.5s ease all;
+    transform: translateX(0%);
+  }
+  .slide-enter,
+  .slide-leave-to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .icon-slide-enter-active,
+  .icon-slide-leave-active {
+    transition: 0.3s ease all;
+    transform: scale(1);
+  }
+  .icon-slide-enter,
+  .icon-slide-leave-to {
+    transform: scale(0);
+    opacity: 0;
+  }
+  .line-enter-active,
+  .line-leave-active {
+    transition: 0.3s ease all;
+    transform: translateX(1);
+    opacity: 1;
+  }
+  .line-enter,
+  .line-leave-to {
+    transform: scaleX(-1);
+    opacity: 0;
+  }
+}
+</style>
