@@ -6,7 +6,7 @@
     <div class="journey-list">
       <div class="list">
         <div class="road-bar">
-          <transition name="line">
+          <!-- <transition name="line">
             <img
               v-if="offset > -1"
               :style="{ top: `${offset}px` }"
@@ -14,13 +14,13 @@
               src="dotline.svg"
               alt=""
             />
-          </transition>
+          </transition> -->
           <transition name="icon-slide">
             <img
               v-if="offset > -1"
-              :style="{ top: `${offset - 15}px` }"
+              :style="{ top: `${offset - 6}px` }"
               class="icon"
-              src="active-icon.png"
+              src="marker-connector.png"
               alt=""
             />
           </transition>
@@ -160,6 +160,7 @@ export default {
   },
 
   mounted() {
+    this.getItem(0)
     this.initAutoSlide()
   },
   methods: {
@@ -210,18 +211,17 @@ export default {
     width: 100%;
     overflow: hidden;
     padding: 0 $horizontalPadding;
-    @include for-desktop-up {
-      padding-bottom: 325px;
-    }
+
     .list {
       width: 50%;
       display: flex;
       position: relative;
       .road-bar {
-        margin-top: 45px;
-        margin-right: 60px;
+        margin-top: 32px;
+        margin-right: 32px;
         position: relative;
         height: 100%;
+        position: relative;
 
         .line {
           position: absolute;
@@ -229,15 +229,18 @@ export default {
           z-index: 99;
         }
         .icon {
-          width: 32px;
           position: absolute;
           left: -4px;
+          max-height: 32px;
           z-index: 101;
+          max-width: 80px;
+          object-fit: contain;
         }
         .bar {
-          position: absolute;
+          position: relative;
           z-index: 100;
           width: 24px;
+          min-height: 100%;
         }
       }
       ul {
@@ -248,7 +251,11 @@ export default {
           display: flex;
           min-height: 150px;
           cursor: default;
-          margin-bottom: 60px;
+          margin-bottom: 100px;
+
+          &:last-child {
+            padding-bottom: 200px;
+          }
           img {
             width: 30px;
             height: 42px;
