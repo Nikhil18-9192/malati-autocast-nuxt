@@ -60,6 +60,12 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0 $horizontalPadding;
+  @include for-phone-only {
+    padding: 0 30px;
+  }
+  @include for-tablet-only {
+    padding: 0 60px;
+  }
   .title {
     h1 {
       font-family: 'Lora';
@@ -68,6 +74,14 @@ export default {
       color: #e0e0e0;
       text-align: right;
       margin: 90px 0;
+      @include for-phone-only {
+        font-size: 60px;
+        margin-bottom: 20px;
+      }
+      @include for-tablet-only {
+        font-size: 100px;
+        margin-bottom: 30px;
+      }
     }
   }
   .cast-products {
@@ -77,6 +91,10 @@ export default {
       font-size: 48px;
       line-height: 98%;
       padding: 30px 0;
+      @include for-phone-only {
+        font-size: 36px;
+        padding: 15px 0;
+      }
     }
     hr {
       height: 5px;
@@ -85,17 +103,32 @@ export default {
       float: 0;
       margin: 0 0 60px 0;
       border: none;
+      @include for-phone-only {
+        margin: 0;
+      }
+      @include for-tablet-only {
+        margin: 0 0 20px 0;
+      }
     }
     .product-list {
       list-style: none;
       display: grid;
-      grid-template-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto;
       grid-gap: 30px;
       margin: 0 0 150px 0;
       padding: 0;
       @include for-phone-only {
         grid-template-columns: auto;
+        margin: 0 0 50px 0;
       }
+      @include for-tablet-only {
+        grid-template-columns: auto auto;
+        margin: 0 0 50px 0;
+      }
+      @include for-big-desktop-up {
+        grid-template-columns: auto auto auto auto;
+      }
+
       li {
         justify-content: center;
         align-items: center;

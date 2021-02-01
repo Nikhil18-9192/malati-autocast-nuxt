@@ -72,6 +72,12 @@ export default {
   z-index: 1000;
   background: #000;
   overflow: hidden;
+  @include for-phone-only {
+    width: 80%;
+  }
+  @include for-tablet-only {
+    width: 40%;
+  }
   ul {
     margin-top: 25px;
     list-style: none;

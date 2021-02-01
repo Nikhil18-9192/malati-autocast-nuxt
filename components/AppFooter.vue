@@ -72,9 +72,19 @@ export default {
   position: relative;
   display: flex;
   justify-content: space-between;
+  @include for-phone-only {
+    padding: 15px 30px;
+    flex-direction: column;
+    height: 100%;
+  }
+  @include for-tablet-only {
+    padding: 40px 60px;
+  }
   .menu {
-    // width: 20%;
     max-width: 161px;
+    @include for-tablet-only {
+      width: 100%;
+    }
     ul {
       list-style: none;
       padding: 0;
@@ -99,6 +109,9 @@ export default {
       display: flex;
       margin-bottom: 60px;
       align-items: baseline;
+      @include for-phone-only {
+        margin-bottom: 20px;
+      }
       .icon {
         margin-right: 30px;
         img {
@@ -119,6 +132,9 @@ export default {
   .contact-form {
     padding: 0 20px;
     max-width: 488px;
+    @include for-tablet-only {
+      padding: 0 0 0 10px;
+    }
   }
 }
 </style>
