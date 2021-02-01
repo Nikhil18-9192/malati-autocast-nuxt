@@ -84,6 +84,9 @@ export default {
     grid-gap: 15px;
     margin: 0;
     padding: 0;
+    @include for-phone-only {
+      grid-template-columns: auto;
+    }
     li {
       height: 100%;
       max-height: 435px;

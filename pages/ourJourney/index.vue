@@ -6,15 +6,6 @@
     <div class="journey-list">
       <div class="list">
         <div class="road-bar">
-          <!-- <transition name="line">
-            <img
-              v-if="offset > -1"
-              :style="{ top: `${offset}px` }"
-              class="line"
-              src="dotline.svg"
-              alt=""
-            />
-          </transition> -->
           <transition name="icon-slide">
             <img
               v-if="offset > -1"

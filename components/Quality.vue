@@ -109,7 +109,7 @@ export default {
         .text {
           padding: 24px;
           h3 {
-            font-family: Quicksand;
+            font-family: 'Quicksand';
             font-style: normal;
             font-weight: 500;
             font-size: 24px;
@@ -129,7 +129,7 @@ export default {
 
             color: #090909;
             margin-bottom: 16px;
-            
+
             &::before {
               content: ' ';
               display: inline-block;
