@@ -49,6 +49,7 @@ export default {
   data() {
     return {
       menu: [
+        { name: 'Home', route: '/' },
         { name: 'Our Journey', route: '/ourJourney' },
         { name: 'Infrastructure', route: '/infrastructure' },
         { name: 'Clients & Partners', route: '/' },
