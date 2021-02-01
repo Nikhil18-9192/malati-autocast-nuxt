@@ -22,7 +22,7 @@
         :autoplay="true"
         :height="500"
         :bias="'center'"
-        :autoplay-timeout="3000"
+        :autoplay-timeout="5000"
         :display="3"
         @before-slide-change="onBeforeSlideChange"
         ref="mycarousel"
@@ -49,22 +49,6 @@
           </template>
         </slide>
       </carousel-3d>
-      <!-- <div class="card">
-        <div class="left">
-          <h3>{{ machinery[selectedItem].title }}</h3>
-          <div
-            class="text"
-            v-for="(point, i) in machinery[selectedItem].features"
-            :key="i"
-          >
-            <p>{{ i + 1 }}.</p>
-            <p class="points">{{ point }}</p>
-          </div>
-        </div>
-        <div class="right">
-          <img :src="machinery[selectedItem].img" alt="" />
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -166,6 +150,14 @@ export default {
 #foundry {
   position: relative;
   padding: 64px 136px 125px;
+  height: 100%;
+  width: 100%;
+  @include for-phone-only {
+    padding: 30px;
+  }
+  @include for-tablet-only {
+    padding: 60px;
+  }
   h1 {
     font-family: Lora;
     font-style: normal;
@@ -173,7 +165,6 @@ export default {
     font-size: 48px;
     line-height: 98%;
     letter-spacing: 0.05em;
-
     color: #000000;
     margin-bottom: 64px;
   }
@@ -192,6 +183,9 @@ export default {
           margin-bottom: 80px;
           background: #f4f4f4;
           cursor: pointer;
+          @include for-phone-only {
+            margin-bottom: 30px;
+          }
         }
         .active {
           background: $primary;
@@ -217,7 +211,6 @@ export default {
       border-radius: 4px;
       height: 500px;
       overflow: hidden;
-
       .left {
         width: 50vw;
         padding: 40px 100px;

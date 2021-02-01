@@ -187,6 +187,12 @@ export default {
   height: 100%;
   .title {
     padding: 0 $horizontalPadding;
+    @include for-tablet-only {
+      padding: 0 60px;
+    }
+    @include for-phone-only {
+      padding: 0 30px;
+    }
     h1 {
       font-family: 'Lora';
       font-weight: normal;
@@ -194,6 +200,12 @@ export default {
       color: #e0e0e0;
       text-align: right;
       margin: 90px 0;
+      @include for-tablet-only {
+        font-size: 80px;
+      }
+      @include for-phone-only {
+        font-size: 50px;
+      }
     }
   }
   .journey-list {
@@ -202,7 +214,12 @@ export default {
     width: 100%;
     overflow: hidden;
     padding: 0 $horizontalPadding;
-
+    @include for-tablet-only {
+      padding: 0 60px;
+    }
+    @include for-phone-only {
+      padding: 0 30px;
+    }
     .list {
       width: 50%;
       display: flex;
@@ -243,7 +260,9 @@ export default {
           min-height: 150px;
           cursor: default;
           margin-bottom: 100px;
-
+          @include for-tablet-only {
+            flex-direction: column;
+          }
           &:last-child {
             padding-bottom: 200px;
           }
@@ -258,6 +277,9 @@ export default {
             min-width: 100px;
             letter-spacing: 0.095em;
             transition: 0.5s ease all;
+            @include for-tablet-only {
+              margin: 0;
+            }
           }
           .text {
             letter-spacing: 0.05em;

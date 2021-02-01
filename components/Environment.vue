@@ -56,6 +56,9 @@ export default {
 <style lang="scss" scoped>
 #environment {
   padding: 64px 136px;
+  @include for-phone-only {
+    padding: 30px;
+  }
   .container {
     h1 {
       font-family: Lora;
@@ -67,6 +70,10 @@ export default {
       text-transform: uppercase;
       color: #000000;
       margin-bottom: 50px;
+      @include for-phone-only {
+        font-size: 38px;
+        margin-bottom: 30px;
+      }
     }
     .sub-title {
       font-weight: 500;
@@ -75,6 +82,9 @@ export default {
       color: #090909;
       max-width: 718px;
       margin-bottom: 70px;
+      @include for-phone-only {
+        margin-bottom: 50px;
+      }
     }
   }
   .card {
@@ -85,6 +95,9 @@ export default {
     margin: 0;
     padding: 0;
     @include for-phone-only {
+      grid-template-columns: auto;
+    }
+    @include for-tablet-only {
       grid-template-columns: auto;
     }
     li {
@@ -103,16 +116,26 @@ export default {
         height: 100%;
         padding: 55px 30px;
         color: #090909;
+        @include for-phone-only {
+          padding: 10px;
+        }
         h4 {
           font-weight: 500;
           font-size: 24px;
           line-height: 30px;
           padding-bottom: 20px;
+          @include for-phone-only {
+            padding-bottom: 10px;
+          }
         }
         p {
           font-weight: 500;
           font-size: 16px;
           line-height: 30px;
+          @include for-phone-only {
+            font-size: 14px;
+            line-height: 18px;
+          }
         }
       }
     }

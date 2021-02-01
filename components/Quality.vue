@@ -83,6 +83,12 @@ export default {
   position: relative;
   background: #f4f4f4;
   padding: 64px 136px;
+  @include for-phone-only {
+    padding: 30px;
+  }
+  @include for-tablet-only {
+    padding: 60px;
+  }
   .container {
     position: relative;
     h1 {
@@ -92,9 +98,11 @@ export default {
       font-size: 48px;
       line-height: 98%;
       letter-spacing: 0.05em;
-
       color: #000000;
       margin-bottom: 64px;
+      @include for-phone-only {
+        margin-bottom: 30px;
+      }
     }
     .card-container {
       display: flex;
@@ -106,6 +114,9 @@ export default {
         height: 564px;
         background: white;
         margin: 24px;
+        @include for-phone-only {
+          height: 610px;
+        }
         .text {
           padding: 24px;
           h3 {
@@ -148,6 +159,10 @@ export default {
           height: 254px;
           bottom: 0;
           right: 0;
+          object-fit: cover;
+          @include for-phone-only {
+            width: 265px;
+          }
         }
       }
     }

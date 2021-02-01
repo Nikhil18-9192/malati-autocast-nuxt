@@ -21,7 +21,7 @@ export default {
   }
   h1 {
     position: absolute;
-    top:25%;
+    top: 25%;
     right: 10%;
     z-index: 11;
     font-family: Lora;
@@ -30,7 +30,13 @@ export default {
     font-size: 144px;
     line-height: 141px;
     color: #e0e0e0;
-
+    @include for-phone-only {
+      font-size: 48px;
+      top: 8%;
+    }
+    @include for-tablet-only {
+      font-size: 85px;
+    }
   }
 }
 </style>
