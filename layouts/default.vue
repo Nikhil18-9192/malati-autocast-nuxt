@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MenuButton />
+    <MenuBtn />
     <transition name="slide">
       <DesktopMenu v-if="menuState" />
     </transition>

@@ -33,14 +33,14 @@ export default {
         },
         {
           icon: '/group.png',
-          title: `Clients & Partners`,
+          title: `Clients`,
           route: '/clients',
         },
-        {
-          icon: '/group.png',
-          title: `Compliance`,
-          route: '/compliance',
-        },
+        // {
+        //   icon: '/group.png',
+        //   title: `Compliance`,
+        //   route: '/compliance',
+        // },
         {
           icon: '/group.png',
           title: `Career & Team`,
@@ -71,7 +71,7 @@ export default {
   top: 0;
   right: 0;
   z-index: 1000;
-  background: #000;
+  background: #2c2c2c;
   overflow: hidden;
   @include for-phone-only {
     width: 80%;

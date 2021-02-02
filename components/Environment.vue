@@ -104,6 +104,7 @@ export default {
       height: 100%;
       max-height: 435px;
       position: relative;
+      overflow: hidden;
       img {
         object-fit: cover;
         width: 100%;
@@ -115,7 +116,9 @@ export default {
         width: 70%;
         height: 100%;
         padding: 20px;
+        left: 0;
         color: #090909;
+        transition: 0.5s ease all;
         @include for-phone-only {
           padding: 10px;
         }
