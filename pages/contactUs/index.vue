@@ -99,12 +99,19 @@ export default {}
     }
     .group {
       margin-right: 100px;
+      @include for-phone-only {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
       h4 {
         font-weight: normal;
         font-size: 24px;
         line-height: 30px;
         letter-spacing: 0.34em;
         margin-bottom: 25px;
+        @include for-phone-only {
+          margin-bottom: 15px;
+        }
       }
       hr {
         height: 5px;
@@ -122,6 +129,9 @@ export default {}
         line-height: 30px;
         letter-spacing: 0.34em;
         margin-bottom: 25px;
+        @include for-phone-only {
+          margin-bottom: 15px;
+        }
       }
       hr {
         height: 5px;

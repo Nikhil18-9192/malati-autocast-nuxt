@@ -167,6 +167,12 @@ export default {
     letter-spacing: 0.05em;
     color: #000000;
     margin-bottom: 64px;
+    @include for-phone-only {
+      margin-bottom: 30px;
+    }
+    @include for-tablet-only {
+      margin-bottom: 40px;
+    }
   }
   .container {
     display: block;
@@ -184,6 +190,10 @@ export default {
           background: #f4f4f4;
           cursor: pointer;
           @include for-phone-only {
+            margin-bottom: 15px;
+            padding: 6px;
+          }
+          @include for-tablet-only {
             margin-bottom: 30px;
           }
         }

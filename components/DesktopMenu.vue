@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       menuItems: [
+        { icon: '/group.png', title: 'Home', route: '/' },
         { icon: '/group.png', title: 'Our Journey', route: '/ourJourney' },
         {
           icon: '/group.png',

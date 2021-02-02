@@ -18,6 +18,14 @@ export default {
     width: 100%;
     max-height: 500px;
     z-index: 10;
+    @include for-phone-only {
+      min-height: 250px;
+      object-fit: cover;
+    }
+    @include for-tablet-only {
+      min-height: 400px;
+      object-fit: cover;
+    }
   }
   h1 {
     position: absolute;
@@ -32,10 +40,11 @@ export default {
     color: #e0e0e0;
     @include for-phone-only {
       font-size: 48px;
-      top: 8%;
+      top: 25%;
     }
     @include for-tablet-only {
       font-size: 85px;
+      top: 35%;
     }
   }
 }

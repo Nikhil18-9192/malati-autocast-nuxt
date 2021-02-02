@@ -61,6 +61,7 @@ export default {
   .card-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     margin-bottom: 150px;
     @include for-phone-only {
@@ -68,6 +69,9 @@ export default {
     }
     @include for-tablet-only {
       margin-bottom: 80px;
+    }
+    @include for-desktop-up {
+      justify-content: unset;
     }
     .card {
       width: 300px;
@@ -81,6 +85,11 @@ export default {
         width: 200px;
         height: 200px;
         object-fit: contain;
+      }
+      p {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 30px;
       }
     }
   }

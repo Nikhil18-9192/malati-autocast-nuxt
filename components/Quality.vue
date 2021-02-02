@@ -84,7 +84,7 @@ export default {
   background: #f4f4f4;
   padding: 64px 136px;
   @include for-phone-only {
-    padding: 30px;
+    padding: 15px;
   }
   @include for-tablet-only {
     padding: 60px;
@@ -103,11 +103,18 @@ export default {
       @include for-phone-only {
         margin-bottom: 30px;
       }
+      @include for-tablet-only {
+        margin-bottom: 40px;
+      }
     }
     .card-container {
       display: flex;
       flex-wrap: wrap;
       position: relative;
+      justify-content: center;
+      @include for-big-desktop-up {
+        justify-content: unset;
+      }
       .card {
         position: relative;
         width: 345px;
@@ -115,7 +122,11 @@ export default {
         background: white;
         margin: 24px;
         @include for-phone-only {
-          height: 610px;
+          height: 555px;
+          margin: 15px;
+        }
+        @include for-tablet-only {
+          width: 450px;
         }
         .text {
           padding: 24px;
@@ -127,8 +138,10 @@ export default {
             line-height: 30px;
             letter-spacing: 0.16em;
             color: #d6a577;
-
             margin-bottom: 55px;
+            @include for-phone-only {
+              margin-bottom: 25px;
+            }
           }
           p {
             font-family: Quicksand;

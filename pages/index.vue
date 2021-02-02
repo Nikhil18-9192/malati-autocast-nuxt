@@ -112,11 +112,17 @@ export default {
     width: 100%;
     position: relative;
     overflow: hidden;
-    //  margin: 100px 0;
     min-height: 452px;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include for-phone-only {
+      margin-top: 75px;
+      padding: 0 30px;
+    }
+    @include for-tablet-only {
+      padding: 0 60px;
+    }
     .heading {
       position: relative;
       overflow: hidden;
@@ -179,9 +185,17 @@ export default {
   .services {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 30px;
     padding: 0 135px;
+    @include for-phone-only {
+      justify-content: center;
+      padding: 0 35px;
+    }
+    @include for-tablet-only {
+      padding: 0 60px;
+    }
     .card {
       text-align: center;
       min-width: 220px;
@@ -211,6 +225,9 @@ export default {
         position: relative;
         overflow: hidden;
         min-height: 200px;
+        @include for-phone-only {
+          min-height: 135px;
+        }
         img {
           position: absolute;
           top: 30%;
