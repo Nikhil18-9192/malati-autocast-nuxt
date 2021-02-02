@@ -104,7 +104,7 @@ export default {
       margin: 0 0 60px 0;
       border: none;
       @include for-phone-only {
-        margin: 0;
+        margin: 0 0 10px 0;
       }
       @include for-tablet-only {
         margin: 0 0 20px 0;
@@ -113,7 +113,7 @@ export default {
     .product-list {
       list-style: none;
       display: grid;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: auto auto auto auto;
       grid-gap: 30px;
       margin: 0 0 150px 0;
       padding: 0;
@@ -125,17 +125,15 @@ export default {
         grid-template-columns: auto auto;
         margin: 0 0 50px 0;
       }
-      @include for-big-desktop-up {
-        grid-template-columns: auto auto auto auto;
-      }
 
       li {
         justify-content: center;
         align-items: center;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
         img {
-          width: 264px;
+          width: 225px;
         }
         .name {
           background: #ebc5a3;
@@ -149,6 +147,12 @@ export default {
           font-size: 18px;
           line-height: 30px;
           color: #090909;
+        }
+        &:hover {
+          img {
+            transition: 0.3s ease all;
+            transform: translateY(-10px);
+          }
         }
       }
     }

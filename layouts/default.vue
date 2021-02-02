@@ -15,7 +15,11 @@ export default {
       menuState: false,
     }
   },
-  mounted() {},
+  mounted() {
+    window.onload = (event) => {
+      console.log('page is fully loaded')
+    }
+  },
   computed: {
     storeMenuState: function () {
       return this.$store.getters.getMenuState

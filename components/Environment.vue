@@ -115,16 +115,14 @@ export default {
         position: absolute;
         width: 70%;
         height: 100%;
-        padding: 20px;
+        padding: 55px 30px;
         left: 0;
         color: #090909;
         transition: 0.5s ease all;
         @include for-phone-only {
           padding: 10px;
         }
-        @include for-big-desktop-up {
-          padding: 55px 30px;
-        }
+
         h4 {
           font-weight: 500;
           font-size: 24px;
@@ -136,17 +134,13 @@ export default {
         }
         p {
           font-weight: 500;
-          font-size: 14px;
-          line-height: 20px;
+          font-size: 16px;
+          line-height: 30px;
           @include for-phone-only {
             font-size: 14px;
             line-height: 18px;
           }
           @include for-tablet-only {
-            font-size: 16px;
-            line-height: 30px;
-          }
-          @include for-big-desktop-up {
             font-size: 16px;
             line-height: 30px;
           }

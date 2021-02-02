@@ -66,12 +66,14 @@ export default {
     transform: rotate(40deg);
     width: 20px;
     top: 18px;
+    transition: 0.3s ease all;
   }
   .bar2.animate {
     background: #939393;
     transform: rotate(-40deg);
     top: 30px;
     width: 20px;
+    transition: 0.3s ease all;
   }
 }
 </style>

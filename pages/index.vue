@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="services">
+    <div v-if="$device.isDesktopOrTablet" class="services">
       <div
         class="card"
         v-for="(item, i) in services"
@@ -41,6 +41,21 @@
           <p class="hover-txt">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port
           </p>
+        </div>
+      </div>
+    </div>
+    <div v-if="$device.isMobile" class="services-phone">
+      <div
+        class="card-phone"
+        v-for="(item, i) in services"
+        :key="i"
+        @click="router(item.route)"
+      >
+        <img :src="item.icon" alt="" />
+        <div class="container">
+          <h4 class="title">{{ item.title }}</h4>
+          <hr />
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port</p>
         </div>
       </div>
     </div>
@@ -267,6 +282,33 @@ export default {
             left: 0;
           }
         }
+      }
+    }
+  }
+  .services-phone {
+    margin: 30px;
+    .card-phone {
+      display: flex;
+      margin-bottom: 23px;
+      background: #f4f4f4;
+      padding: 20px;
+      img {
+        margin-right: 15px;
+        width: 100%;
+      }
+
+      hr {
+        width: 75px;
+        height: 5px;
+        background: #d6a477;
+        border: none;
+        margin: 10px auto 10px 0;
+      }
+      p {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        color: #939393;
       }
     }
   }

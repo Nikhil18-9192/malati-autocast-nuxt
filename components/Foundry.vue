@@ -221,9 +221,10 @@ export default {
       border-radius: 4px;
       height: 500px;
       overflow: hidden;
+
       .left {
         width: 50vw;
-        padding: 40px 100px;
+        padding: 40px 30px;
         h3 {
           font-family: Quicksand;
           font-style: normal;
@@ -249,7 +250,6 @@ export default {
           }
           .points {
             margin-left: 15px;
-            width: 60%;
           }
         }
       }
@@ -271,6 +271,9 @@ export default {
       }
     }
     .current {
+      box-shadow: 1px 7px 9px 3px rgba(0, 0, 0, 0.58);
+      -webkit-box-shadow: 1px 7px 9px 3px rgba(0, 0, 0, 0.58);
+      -moz-box-shadow: 1px 7px 9px 3px rgba(0, 0, 0, 0.58);
       .card {
         opacity: 1;
       }

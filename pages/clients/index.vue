@@ -61,11 +61,11 @@ export default {
   .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 30px;
     margin-bottom: 150px;
     @include for-phone-only {
       margin-bottom: 50px;
+      justify-content: center;
     }
     @include for-tablet-only {
       margin-bottom: 80px;
@@ -74,13 +74,25 @@ export default {
       justify-content: unset;
     }
     .card {
-      width: 300px;
-      height: 300px;
+      width: 260px;
+      height: 275px;
       background: #f4f4f4;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @include for-phone-only {
+        width: 300px;
+        height: 300px;
+      }
+      @include for-tablet-only {
+        width: 300px;
+        height: 300px;
+      }
+      @include for-big-desktop-up {
+        width: 300px;
+        height: 300px;
+      }
       img {
         width: 200px;
         height: 200px;

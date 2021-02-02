@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss" scopped>
 #desktop-menu {
-  width: 25%;
+  width: 28%;
   height: 100vh;
   position: fixed;
   top: 0;

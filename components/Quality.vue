@@ -112,13 +112,13 @@ export default {
       flex-wrap: wrap;
       position: relative;
       justify-content: center;
-      @include for-big-desktop-up {
+      @include for-desktop-up {
         justify-content: unset;
       }
       .card {
         position: relative;
-        width: 345px;
-        height: 564px;
+        width: 445px;
+        height: 530px;
         background: white;
         margin: 24px;
         @include for-phone-only {
@@ -127,6 +127,9 @@ export default {
         }
         @include for-tablet-only {
           width: 450px;
+        }
+        @include for-big-desktop-up {
+          width: 465px;
         }
         .text {
           padding: 24px;
