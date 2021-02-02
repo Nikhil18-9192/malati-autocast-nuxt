@@ -3,7 +3,7 @@
     <div class="title">
       <h1>Our Journey</h1>
     </div>
-    <div class="journey-list">
+    <div v-if="$device.isDesktopOrTablet" class="journey-list">
       <div class="list">
         <div class="road-bar">
           <transition name="icon-slide">
@@ -70,6 +70,49 @@
           />
         </div>
       </transition>
+    </div>
+    <div v-if="$device.isMobile" class="journey">
+      <div class="road">
+        <img class="bar" src="road.png" alt="" />
+      </div>
+      <div class="info">
+        <ul class="info-ul">
+          <li
+            class="info-li"
+            v-for="(item, i) in journey"
+            :key="i"
+            @click="getItemPhone(i)"
+          >
+            <div class="year">
+              <img src="/location.svg" alt="" />
+              <h4>{{ item.year }}</h4>
+            </div>
+            <div class="text">
+              <h5>
+                {{ item.name }}
+              </h5>
+              <ul class="desc-ul-phone">
+                <li
+                  class="desc-li-phone"
+                  v-for="(list, j) in item.desc"
+                  :key="`l${j}`"
+                >
+                  {{ list }}
+                </li>
+              </ul>
+            </div>
+            <div class="carousel-phone">
+              <img
+                v-for="(image, k) in item.images"
+                :key="`i${k}`"
+                class="image"
+                :src="image"
+                alt=""
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -151,8 +194,10 @@ export default {
   },
 
   mounted() {
-    this.getItem(0)
-    this.initAutoSlide()
+    if (this.$device.isDesktopOrTablet) {
+      this.getItem(0)
+      this.initAutoSlide()
+    }
   },
   methods: {
     initAutoSlide: function () {
@@ -163,6 +208,7 @@ export default {
           : (this.currentIndex = 0)
       }, this.slideDuration)
     },
+
     getItem(index) {
       this.offset = document.getElementById(`j${index}`).offsetTop
       this.hover = true
@@ -333,6 +379,69 @@ export default {
         width: 100%;
         height: 520px;
         object-fit: cover;
+      }
+    }
+  }
+  .journey {
+    padding: 0 30px;
+    display: flex;
+    .road {
+      margin-right: 20px;
+      .bar {
+        position: relative;
+        z-index: 100;
+        width: 24px;
+        min-height: 100%;
+      }
+    }
+    .info {
+      .info-ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        .info-li {
+          margin-bottom: 25px;
+          .year {
+            display: flex;
+            margin-bottom: 15px;
+            img {
+              width: 30px;
+              margin-right: 20px;
+            }
+            h4 {
+              font-weight: 600;
+              font-size: 36px;
+              letter-spacing: 0.095em;
+            }
+          }
+          .text {
+            h5 {
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 30px;
+              letter-spacing: 0.05em;
+            }
+            .desc-ul-phone {
+              list-style: none;
+              padding: 0;
+              margin: 0 0 20px 0;
+              .desc-li-phone {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 30px;
+                letter-spacing: 0.05em;
+                color: #a4a4a4;
+              }
+            }
+          }
+          .carousel-phone {
+            img {
+              width: 255px;
+              height: 265px;
+              object-fit: cover;
+            }
+          }
+        }
       }
     }
   }

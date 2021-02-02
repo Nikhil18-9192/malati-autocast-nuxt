@@ -117,8 +117,8 @@ export default {
       }
       .card {
         position: relative;
-        width: 445px;
-        height: 530px;
+        width: 335px;
+        height: 565px;
         background: white;
         margin: 24px;
         @include for-phone-only {

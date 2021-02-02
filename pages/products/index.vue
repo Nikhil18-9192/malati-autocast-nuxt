@@ -134,6 +134,8 @@ export default {
         cursor: pointer;
         img {
           width: 225px;
+          transform: translateY(0);
+          transition: 0.3s ease all;
         }
         .name {
           background: #ebc5a3;
@@ -150,7 +152,6 @@ export default {
         }
         &:hover {
           img {
-            transition: 0.3s ease all;
             transform: translateY(-10px);
           }
         }
