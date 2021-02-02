@@ -62,4 +62,14 @@ div {
 .slide-leave-active {
   transform: translateX(100%);
 }
+
+.my-page-enter-active,
+.my-page-leave-active {
+  transition: all 0.4s ease;
+}
+.my-page-enter,
+.my-page-leave-active {
+  opacity: 0;
+  transform: translateX(-10px);
+}
 </style>
