@@ -77,12 +77,7 @@
       </div>
       <div class="info">
         <ul class="info-ul">
-          <li
-            class="info-li"
-            v-for="(item, i) in journey"
-            :key="i"
-            @click="getItemPhone(i)"
-          >
+          <li class="info-li" v-for="(item, i) in journey" :key="i">
             <div class="year">
               <img src="/location.svg" alt="" />
               <h4>{{ item.year }}</h4>
@@ -106,9 +101,14 @@
                 v-for="(image, k) in item.images"
                 :key="`i${k}`"
                 class="image"
+                v-show="item.year === currentYear ? k == currentIndex : k == 0"
                 :src="image"
                 alt=""
               />
+            </div>
+            <div class="control-btn">
+              <button @click="next(i)" class="btn">Next</button>
+              <button @click="prev(i)" class="btn">Prev</button>
             </div>
           </li>
         </ul>
@@ -122,6 +122,7 @@ export default {
   data() {
     return {
       currentIndex: 1,
+      currentYear: -1,
       hover: false,
       journey: [
         {
@@ -221,6 +222,19 @@ export default {
       if (!this.autoSlider) {
         clearInterval(this.autoSlider)
       }
+    },
+    next(index) {
+      this.currentYear = this.journey[index].year
+      this.currentIndex < this.journey[index].images.length - 1
+        ? this.currentIndex++
+        : (this.currentIndex = 0)
+    },
+    prev(index) {
+      this.currentYear = this.journey[index].year
+      this.currentIndex > 0 &&
+      this.currentIndex < this.journey[index].images.length - 1
+        ? this.currentIndex--
+        : (this.currentIndex = 0)
     },
   },
 }
@@ -436,9 +450,20 @@ export default {
           }
           .carousel-phone {
             img {
-              width: 255px;
+              width: 100%;
               height: 265px;
               object-fit: cover;
+            }
+          }
+          .control-btn {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 8px;
+            .btn {
+              outline: none;
+              background: $primary;
+              border: none;
+              margin-left: 8px;
             }
           }
         }
