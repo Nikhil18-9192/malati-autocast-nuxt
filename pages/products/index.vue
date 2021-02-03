@@ -36,18 +36,18 @@ export default {
   data() {
     return {
       castProducts: [
-        { src: '/brake-drum.png', name: 'Brake Drum' },
-        { src: '/hydraulic-lift-piston.png', name: 'Hydraulic Lift Piston' },
-        { src: '/flywheel.png', name: 'Flywheel' },
-        { src: '/hydraulic-lift.png', name: 'Hydraulic Lift Piston' },
-        { src: '/spacer.png', name: 'Spacer' },
-        { src: '/hydraulic-control-lift.png', name: 'Hydraulic Control Lift' },
-        { src: '/strainer-housing.png', name: 'Strainer Housing' },
+        { src: '/brake-drum.jpg', name: 'Brake Drum' },
+        { src: '/hydraulic-lift-piston.jpg', name: 'Hydraulic Lift Piston' },
+        { src: '/flywheel.jpg', name: 'Flywheel' },
+        { src: '/hydraulic-lift.jpg', name: 'Hydraulic Lift Piston' },
+        { src: '/spacer.jpg', name: 'Spacer' },
+        { src: '/hydraulic-control-lift.jpg', name: 'Hydraulic Control Lift' },
+        { src: '/strainer-housing.jpg', name: 'Strainer Housing' },
       ],
       ironProducts: [
-        { src: '/iron1.png', name: 'Hydraulic Piston' },
-        { src: '/bearing-housing-cargo.png', name: 'Bearing Housing Cargo' },
-        { src: '/iron2.png', name: 'Hydraulic Piston' },
+        { src: '/iron1.jpg', name: 'Hydraulic Piston' },
+        { src: '/bearing-housing-cargo.jpg', name: 'Bearing Housing Cargo' },
+        { src: '/iron2.jpg', name: 'Hydraulic Piston' },
       ],
     }
   },
