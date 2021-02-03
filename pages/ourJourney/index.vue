@@ -100,9 +100,9 @@
             <div class="carousel-phone">
               <img
                 v-for="(image, k) in item.images"
-                :key="`i${k}`"
+                :key="k"
                 class="image"
-                v-show="item.year === currentYear ? k == currentIndex : k == 0"
+                v-show="item.year == currentYear ? k == currentIndex : k == 0"
                 :src="image"
                 alt=""
               />
@@ -232,10 +232,9 @@ export default {
     },
     prev(index) {
       this.currentYear = this.journey[index].year
-      this.currentIndex > 0 &&
-      this.currentIndex < this.journey[index].images.length - 1
+      this.currentIndex > 0
         ? this.currentIndex--
-        : (this.currentIndex = 0)
+        : (this.currentIndex = this.journey[index].images.length - 1)
     },
   },
 }

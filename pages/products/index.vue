@@ -120,6 +120,7 @@ export default {
       @include for-phone-only {
         grid-template-columns: auto;
         margin: 0 0 50px 0;
+        grid-gap: 75px;
       }
       @include for-tablet-only {
         grid-template-columns: auto auto;

@@ -13,17 +13,17 @@
           </p>
         </div>
       </div>
-      <client-only>
+
+      <div class="carousel-phone">
         <carousel-3d
-          v-if="$device.isDesktop"
           :count="machinery.length"
           :perspective="0"
           :width="1100"
           :key="machinery.length"
           :autoplay="true"
-          :height="500"
+          :height="sliderHeight"
           :bias="'center'"
-          :autoplay-timeout="1000"
+          :autoplay-timeout="10000"
           :display="3"
           @before-slide-change="onBeforeSlideChange"
           ref="mycarousel"
@@ -35,7 +35,10 @@
             :index="i"
           >
             <template slot-scope="{ selectedItem }">
-              <div class="card" :data-index="selectedItem">
+              <div class="card-phone" :data-index="selectedItem">
+                <div class="right">
+                  <img :src="item.img" alt="" />
+                </div>
                 <div class="left">
                   <h3>{{ item.title }}</h3>
                   <div
@@ -47,32 +50,10 @@
                     <p class="points">{{ point }}</p>
                   </div>
                 </div>
-                <div class="right">
-                  <img :src="item.img" alt="" />
-                </div>
               </div>
             </template>
           </slide>
         </carousel-3d>
-      </client-only>
-      <div v-if="$device.isMobileOrTablet" class="carousel-phone">
-        <div
-          class="card-phone"
-          v-for="(item, j) in machinery"
-          :key="j"
-          v-show="j == selectedItem"
-        >
-          <div class="right">
-            <img :src="item.img" alt="" />
-          </div>
-          <div class="left">
-            <h3>{{ item.title }}</h3>
-            <div class="text" v-for="(point, i) in item.features" :key="i">
-              <p>{{ i + 1 }}.</p>
-              <p class="points">{{ point }}</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -155,6 +136,16 @@ export default {
         },
       ],
       selectedItem: 0,
+      sliderHeight: 0,
+    }
+  },
+  mounted() {
+    if (this.$device.isTablet) {
+      this.sliderHeight = 1400
+    } else if (this.$device.isMobile) {
+      this.sliderHeight = 2600
+    } else {
+      this.sliderHeight = 500
     }
   },
   methods: {
@@ -165,11 +156,6 @@ export default {
       this.selectedItem = index
     },
     goToSlide(index) {
-      if (this.$device.isMobileOrTablet) {
-        this.selectedItem = index
-        return
-      }
-
       this.$refs.mycarousel.goSlide(index)
     },
   },
@@ -249,17 +235,16 @@ export default {
         background: $primary;
       }
     }
-    .card {
-      display: flex;
-      width: 100%;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-      height: 500px;
+    .card-phone {
+      border-radius: 5px;
       overflow: hidden;
-
+      @include for-desktop-up {
+        display: flex;
+        flex-direction: row-reverse;
+      }
       .left {
-        width: 50vw;
-        padding: 40px 30px;
+        width: 100%;
+        padding: 20px;
         h3 {
           font-family: Quicksand;
           font-style: normal;
@@ -293,6 +278,10 @@ export default {
           height: 100%;
           width: 100%;
           object-fit: cover;
+          @include for-tablet-only {
+            height: 400px;
+          }
+          object-fit: cover;
         }
       }
     }
@@ -301,66 +290,15 @@ export default {
     .carousel-3d-slide {
       background: #ffffff;
       border: none;
-      .card {
+      .card-phone {
         opacity: 0.2;
       }
     }
     .current {
-      box-shadow: 1px 7px 9px 3px rgba(0, 0, 0, 0.58);
-      -webkit-box-shadow: 1px 7px 9px 3px rgba(0, 0, 0, 0.58);
-      -moz-box-shadow: 1px 7px 9px 3px rgba(0, 0, 0, 0.58);
-      .card {
+      .card-phone {
         opacity: 1;
-      }
-    }
-  }
-  .card-phone {
-    border-radius: 5px;
-    overflow: hidden;
-    margin-top: 30px;
-    box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.73);
-    -webkit-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.73);
-    -moz-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.73);
-    .left {
-      width: 100%;
-      padding: 20px;
-      h3 {
-        font-family: Quicksand;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 30px;
-        letter-spacing: 0.05em;
-        color: $primary;
-        padding-bottom: 26px;
-      }
-      .text {
-        display: flex;
-        p {
-          padding: 2px;
-          font-family: Quicksand;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 14px;
-          line-height: 18px;
-          letter-spacing: 0.05em;
-          color: #090909;
-          padding-bottom: 25px;
-        }
-        .points {
-          margin-left: 15px;
-        }
-      }
-    }
-    .right {
-      img {
+        border: 0.3px solid #a2a2a2;
         height: 100%;
-        width: 100%;
-        object-fit: cover;
-        @include for-tablet-only {
-          height: 400px;
-        }
-        object-fit: cover;
       }
     }
   }

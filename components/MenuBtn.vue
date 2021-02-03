@@ -47,6 +47,9 @@ export default {
   background: transparent;
   cursor: pointer;
   transition: 0.3s ease all;
+  @include for-phone-only {
+    right: 15px;
+  }
   .bar1 {
     position: absolute;
     width: 24px;
