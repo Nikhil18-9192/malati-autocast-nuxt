@@ -47,6 +47,9 @@ export default {}
     font-size: 16px;
     cursor: pointer;
     transition: 0.2s ease all;
+    @include for-phone-only {
+      width: 100%;
+    }
     &:hover {
       transform: scale(1.05);
     }

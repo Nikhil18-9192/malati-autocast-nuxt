@@ -20,7 +20,7 @@
           :perspective="0"
           :width="1100"
           :key="machinery.length"
-          :autoplay="false"
+          :autoplay="true"
           :height="sliderHeight + 16"
           :bias="'center'"
           :autoplay-timeout="10000"
@@ -143,7 +143,7 @@ export default {
     if (this.$device.isTablet) {
       this.sliderHeight = 1400
     } else if (this.$device.isMobile) {
-      this.sliderHeight = 2550
+      this.sliderHeight = 2000
     } else {
       this.sliderHeight = 500
     }
@@ -169,7 +169,7 @@ export default {
   height: 100%;
   width: 100%;
   @include for-phone-only {
-    padding: 15px;
+    padding: 0;
   }
   @include for-tablet-only {
     padding: 60px;
@@ -184,7 +184,8 @@ export default {
     color: #000000;
     margin-bottom: 64px;
     @include for-phone-only {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
+      padding: 0 15px;
     }
     @include for-tablet-only {
       margin-bottom: 40px;
@@ -198,6 +199,10 @@ export default {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      @include for-phone-only {
+        padding: 0 15px;
+        justify-content: flex-start;
+      }
       .items {
         position: relative;
         .button {
@@ -208,7 +213,9 @@ export default {
           background: #f4f4f4;
           cursor: pointer;
           @include for-phone-only {
-            margin-bottom: 15px;
+            margin-bottom: 0;
+            margin-top: 8px;
+            margin-right: 8px;
             padding: 6px;
           }
           @include for-tablet-only {
@@ -298,6 +305,9 @@ export default {
     }
   }
   .carousel-3d-container {
+    @include for-phone-only {
+      margin-top: 0px;
+    }
     .carousel-3d-slide {
       background: #ffffff;
       border: none;

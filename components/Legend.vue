@@ -39,8 +39,9 @@ export default {
     line-height: 141px;
     color: #e0e0e0;
     @include for-phone-only {
-      font-size: 40px;
+      font-size: 50px;
       top: 25%;
+      right: 4%;
     }
     @include for-tablet-only {
       font-size: 85px;

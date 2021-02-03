@@ -75,7 +75,7 @@ export default {
       text-align: right;
       margin: 90px 0;
       @include for-phone-only {
-        font-size: 60px;
+        font-size: 50px;
         margin-bottom: 20px;
       }
       @include for-tablet-only {

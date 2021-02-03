@@ -49,7 +49,7 @@ export default {
       text-align: right;
       margin: 90px 0;
       @include for-phone-only {
-        font-size: 60px;
+        font-size: 50px;
         margin-bottom: 20px;
       }
       @include for-tablet-only {
@@ -62,7 +62,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
     margin-bottom: 150px;
     @include for-phone-only {
       margin-bottom: 50px;
@@ -84,6 +83,7 @@ export default {
       @include for-phone-only {
         width: 300px;
         height: 300px;
+        margin-bottom: 36px;
       }
       @include for-tablet-only {
         width: 300px;
