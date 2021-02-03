@@ -112,6 +112,8 @@ export default {
         object-fit: cover;
         width: 100%;
         height: 100%;
+        transform: scale(1.2);
+        transition: 0.5s ease all;
       }
       .info {
         background: rgba(244, 244, 244, 0.95);
@@ -120,8 +122,10 @@ export default {
         height: 100%;
         padding: 55px 30px;
         left: 0;
+        top: 0;
         color: #090909;
         transition: 0.5s ease all;
+        z-index: 10;
         @include for-phone-only {
           padding: 10px;
         }
@@ -147,6 +151,14 @@ export default {
             font-size: 16px;
             line-height: 30px;
           }
+        }
+      }
+      &:hover {
+        .info {
+          left: -100%;
+        }
+        img {
+          transform: scale(1);
         }
       }
     }
