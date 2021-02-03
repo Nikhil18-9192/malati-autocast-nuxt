@@ -187,13 +187,11 @@ export default {
       opacity: 0;
     }
 
-    .fade-enter-active,
-    .fade-leave-active {
-      z-index: 999;
-    }
+    // .fade-enter-active,
+    // .fade-leave-active {
+    // }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
       transform: translateY(100%);
-      z-index: 999;
     }
   }
 
