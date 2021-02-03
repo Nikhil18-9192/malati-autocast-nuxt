@@ -20,8 +20,8 @@
           :perspective="0"
           :width="1100"
           :key="machinery.length"
-          :autoplay="true"
-          :height="sliderHeight"
+          :autoplay="false"
+          :height="sliderHeight + 16"
           :bias="'center'"
           :autoplay-timeout="10000"
           :display="3"
@@ -274,10 +274,15 @@ export default {
         }
       }
       .right {
+        padding: 4px;
+
         img {
           height: 100%;
           width: 100%;
           object-fit: cover;
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+
           @include for-tablet-only {
             height: 400px;
           }
@@ -295,10 +300,13 @@ export default {
       }
     }
     .current {
+      padding: 16px;
+      box-sizing: border-box;
       .card-phone {
         opacity: 1;
-        border: 0.3px solid #a2a2a2;
         height: 100%;
+        width: 100%;
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.137);
       }
     }
   }
