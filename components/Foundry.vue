@@ -143,7 +143,7 @@ export default {
     if (this.$device.isTablet) {
       this.sliderHeight = 1400
     } else if (this.$device.isMobile) {
-      this.sliderHeight = 2600
+      this.sliderHeight = 2550
     } else {
       this.sliderHeight = 500
     }
@@ -169,7 +169,7 @@ export default {
   height: 100%;
   width: 100%;
   @include for-phone-only {
-    padding: 30px;
+    padding: 15px;
   }
   @include for-tablet-only {
     padding: 60px;
@@ -245,6 +245,9 @@ export default {
       .left {
         width: 100%;
         padding: 20px;
+        @include for-phone-only {
+          padding: 10px;
+        }
         h3 {
           font-family: Quicksand;
           font-style: normal;
@@ -267,6 +270,9 @@ export default {
             letter-spacing: 0.05em;
             color: #090909;
             padding-bottom: 25px;
+            @include for-phone-only {
+              padding-bottom: 10px;
+            }
           }
           .points {
             margin-left: 15px;

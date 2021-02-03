@@ -3,7 +3,7 @@
     <div class="title">
       <h1>Our Journey</h1>
     </div>
-    <div v-if="$device.isDesktopOrTablet" class="journey-list">
+    <div v-if="$device.isDesktop" class="journey-list">
       <div class="list">
         <div class="road-bar">
           <transition name="icon-slide">
@@ -71,7 +71,7 @@
         </div>
       </transition>
     </div>
-    <div v-if="$device.isMobile" class="journey">
+    <div v-if="$device.isMobileOrTablet" class="journey">
       <div class="road">
         <img class="bar" src="road.png" alt="" />
       </div>
@@ -196,7 +196,7 @@ export default {
   },
 
   mounted() {
-    if (this.$device.isDesktopOrTablet) {
+    if (this.$device.isDesktop) {
       this.getItem(0)
       this.initAutoSlide()
     }
@@ -325,7 +325,14 @@ export default {
           }
           &:last-child {
             padding-bottom: 200px;
+            @include for-desktop-up {
+              padding-bottom: 285px;
+            }
+            @include for-big-desktop-up {
+              padding-bottom: 325px;
+            }
           }
+
           img {
             width: 30px;
             height: 42px;

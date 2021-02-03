@@ -74,7 +74,7 @@ export default {
       color: #000000;
       margin-bottom: 50px;
       @include for-phone-only {
-        font-size: 38px;
+        font-size: 34px;
         margin-bottom: 30px;
       }
     }
@@ -108,6 +108,9 @@ export default {
       max-height: 435px;
       position: relative;
       overflow: hidden;
+      @include for-phone-only {
+        min-height: 235px;
+      }
       img {
         object-fit: cover;
         width: 100%;

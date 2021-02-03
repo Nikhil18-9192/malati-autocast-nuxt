@@ -93,7 +93,7 @@ export default {
         margin-left: 16px;
         margin-bottom: 8px;
         .circle {
-          background: #d6a577;
+          background: $primary;
           height: 30px;
           width: 30px;
           border-radius: 50%;
@@ -124,7 +124,7 @@ export default {
           transform: translateX(0);
         }
         a p {
-          color: #d6a577;
+          color: $primary;
         }
       }
     }

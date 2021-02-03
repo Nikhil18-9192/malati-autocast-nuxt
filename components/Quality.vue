@@ -121,6 +121,7 @@ export default {
       }
       @include for-phone-only {
         grid-template-columns: auto;
+        justify-content: center;
       }
 
       .card {
@@ -132,7 +133,7 @@ export default {
           width: 325px;
         }
         @include for-phone-only {
-          width: 345px;
+          width: 320px;
           height: 545px;
         }
         .text {
@@ -144,7 +145,7 @@ export default {
             font-size: 24px;
             line-height: 30px;
             letter-spacing: 0.16em;
-            color: #d6a577;
+            color: $primary;
             margin-bottom: 55px;
             @include for-phone-only {
               margin-bottom: 25px;
