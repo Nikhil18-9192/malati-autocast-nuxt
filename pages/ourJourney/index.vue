@@ -78,6 +78,7 @@
       <div class="info">
         <ul class="info-ul">
           <li class="info-li" v-for="(item, i) in journey" :key="i">
+            <img class="marker" src="/marker.png" alt="" />
             <div class="year">
               <img src="/location.svg" alt="" />
               <h4>{{ item.year }}</h4>
@@ -397,10 +398,11 @@ export default {
     }
   }
   .journey {
+    position: relative;
     padding: 0 30px;
     display: flex;
     .road {
-      margin-right: 20px;
+      margin-right: 30px;
       .bar {
         position: relative;
         z-index: 100;
@@ -415,6 +417,13 @@ export default {
         margin: 0;
         .info-li {
           margin-bottom: 25px;
+          .marker {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            left: 26px;
+            z-index: 999;
+          }
           .year {
             display: flex;
             margin-bottom: 15px;

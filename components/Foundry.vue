@@ -13,42 +13,67 @@
           </p>
         </div>
       </div>
-
-      <carousel-3d
-        :count="machinery.length"
-        :perspective="0"
-        :width="1100"
-        :key="machinery.length"
-        :autoplay="true"
-        :height="500"
-        :bias="'center'"
-        :autoplay-timeout="5000"
-        :display="3"
-        @before-slide-change="onBeforeSlideChange"
-        ref="mycarousel"
-      >
-        <slide
-          class="slide"
-          v-for="(item, i) in machinery"
-          :key="item.title"
-          :index="i"
+      <client-only>
+        <carousel-3d
+          v-if="$device.isDesktop"
+          :count="machinery.length"
+          :perspective="0"
+          :width="1100"
+          :key="machinery.length"
+          :autoplay="true"
+          :height="500"
+          :bias="'center'"
+          :autoplay-timeout="1000"
+          :display="3"
+          @before-slide-change="onBeforeSlideChange"
+          ref="mycarousel"
         >
-          <template slot-scope="{ selectedItem }">
-            <div class="card" :data-index="selectedItem">
-              <div class="left">
-                <h3>{{ item.title }}</h3>
-                <div class="text" v-for="(point, i) in item.features" :key="i">
-                  <p>{{ i + 1 }}.</p>
-                  <p class="points">{{ point }}</p>
+          <slide
+            class="slide"
+            v-for="(item, i) in machinery"
+            :key="item.title"
+            :index="i"
+          >
+            <template slot-scope="{ selectedItem }">
+              <div class="card" :data-index="selectedItem">
+                <div class="left">
+                  <h3>{{ item.title }}</h3>
+                  <div
+                    class="text"
+                    v-for="(point, i) in item.features"
+                    :key="i"
+                  >
+                    <p>{{ i + 1 }}.</p>
+                    <p class="points">{{ point }}</p>
+                  </div>
+                </div>
+                <div class="right">
+                  <img :src="item.img" alt="" />
                 </div>
               </div>
-              <div class="right">
-                <img :src="item.img" alt="" />
-              </div>
+            </template>
+          </slide>
+        </carousel-3d>
+      </client-only>
+      <div v-if="$device.isMobileOrTablet" class="carousel-phone">
+        <div
+          class="card-phone"
+          v-for="(item, j) in machinery"
+          :key="j"
+          v-show="j == selectedItem"
+        >
+          <div class="right">
+            <img :src="item.img" alt="" />
+          </div>
+          <div class="left">
+            <h3>{{ item.title }}</h3>
+            <div class="text" v-for="(point, i) in item.features" :key="i">
+              <p>{{ i + 1 }}.</p>
+              <p class="points">{{ point }}</p>
             </div>
-          </template>
-        </slide>
-      </carousel-3d>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -140,6 +165,11 @@ export default {
       this.selectedItem = index
     },
     goToSlide(index) {
+      if (this.$device.isMobileOrTablet) {
+        this.selectedItem = index
+        return
+      }
+
       this.$refs.mycarousel.goSlide(index)
     },
   },
@@ -175,7 +205,9 @@ export default {
     }
   }
   .container {
-    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
     .menu {
       display: flex;
       justify-content: space-between;
@@ -200,18 +232,21 @@ export default {
         .active {
           background: $primary;
         }
-        .active::after {
-          position: absolute;
-          bottom: -9px;
-          height: 0;
-          width: 0;
-          right: 45%;
-          border: 10px solid transparent;
-          border-bottom-color: $primary;
-          border-right-color: $primary;
-          transform: rotate(45deg);
-          content: '';
-        }
+        // .active::after {
+        //   position: absolute;
+        //   bottom: -9px;
+        //   height: 0;
+        //   width: 0;
+        //   right: 45%;
+        //   border: 10px solid transparent;
+        //   border-bottom-color: $primary;
+        //   border-right-color: $primary;
+        //   transform: rotate(45deg);
+        //   content: '';
+        // }
+      }
+      .active-phone {
+        background: $primary;
       }
     }
     .card {
@@ -276,6 +311,56 @@ export default {
       -moz-box-shadow: 1px 7px 9px 3px rgba(0, 0, 0, 0.58);
       .card {
         opacity: 1;
+      }
+    }
+  }
+  .card-phone {
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 30px;
+    box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.73);
+    -webkit-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.73);
+    .left {
+      width: 100%;
+      padding: 20px;
+      h3 {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.05em;
+        color: $primary;
+        padding-bottom: 26px;
+      }
+      .text {
+        display: flex;
+        p {
+          padding: 2px;
+          font-family: Quicksand;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.05em;
+          color: #090909;
+          padding-bottom: 25px;
+        }
+        .points {
+          margin-left: 15px;
+        }
+      }
+    }
+    .right {
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        @include for-tablet-only {
+          height: 400px;
+        }
+        object-fit: cover;
       }
     }
   }
