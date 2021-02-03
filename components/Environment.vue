@@ -59,6 +59,9 @@ export default {
   @include for-phone-only {
     padding: 30px;
   }
+  @include for-tablet-only {
+    padding: 60px;
+  }
   .container {
     h1 {
       font-family: Lora;

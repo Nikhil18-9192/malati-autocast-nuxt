@@ -2,8 +2,8 @@
   <div id="quality">
     <div class="container">
       <h1>Quality</h1>
-      <div class="card-container">
-        <div v-for="(item, i) in tests" :key="i" class="card">
+      <ul class="card-container">
+        <li v-for="(item, i) in tests" :key="i" class="card">
           <div class="text">
             <h3>{{ item.title }}</h3>
             <p v-for="(point, j) in item.features" :key="j">
@@ -11,8 +11,8 @@
             </p>
           </div>
           <img :src="item.img" alt="" />
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -107,29 +107,33 @@ export default {
         margin-bottom: 40px;
       }
     }
+
     .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      position: relative;
-      justify-content: center;
-      @include for-desktop-up {
-        justify-content: unset;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-column-gap: 10px;
+      grid-row-gap: 20px;
+      @include for-tablet-only {
+        grid-template-columns: auto auto;
       }
+      @include for-phone-only {
+        grid-template-columns: auto;
+      }
+
       .card {
         position: relative;
-        width: 335px;
+        width: 400px;
         height: 565px;
         background: white;
-        margin: 24px;
-        @include for-phone-only {
-          height: 555px;
-          margin: 15px;
-        }
         @include for-tablet-only {
-          width: 450px;
+          width: 325px;
         }
-        @include for-big-desktop-up {
-          width: 465px;
+        @include for-phone-only {
+          width: 345px;
+          height: 545px;
         }
         .text {
           padding: 24px;

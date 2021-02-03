@@ -279,7 +279,7 @@ export default {
           width: 100%;
           object-fit: cover;
           @include for-tablet-only {
-            height: 400px;
+            height: 300px;
           }
           object-fit: cover;
         }
@@ -290,6 +290,7 @@ export default {
     .carousel-3d-slide {
       background: #ffffff;
       border: none;
+      border-radius: 5px;
       .card-phone {
         opacity: 0.2;
       }
@@ -297,7 +298,6 @@ export default {
     .current {
       .card-phone {
         opacity: 1;
-        border: 0.3px solid #a2a2a2;
         height: 100%;
       }
     }

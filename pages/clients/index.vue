@@ -73,6 +73,7 @@ export default {
     }
 
     .card {
+      position: relative;
       width: 260px;
       height: 275px;
       background: #f4f4f4;
@@ -101,6 +102,8 @@ export default {
         font-weight: 500;
         font-size: 18px;
         line-height: 30px;
+        position: absolute;
+        bottom: 60px;
       }
     }
   }

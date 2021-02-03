@@ -103,6 +103,9 @@ export default {}
         margin-right: 0;
         margin-bottom: 40px;
       }
+      @include for-tablet-only {
+        margin-right: 45px;
+      }
       h4 {
         font-weight: normal;
         font-size: 24px;
