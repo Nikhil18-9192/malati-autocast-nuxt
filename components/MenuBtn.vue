@@ -56,6 +56,14 @@ export default {
     height: 2px;
     background: #2c2c2c;
     top: 15px;
+    transition: 0.3s ease all;
+
+    &.animate {
+      background: #939393;
+      transform: rotate(40deg);
+      width: 20px;
+      top: 18px;
+    }
   }
   .bar2 {
     position: absolute;
@@ -63,20 +71,14 @@ export default {
     height: 2px;
     top: 25px;
     background: #2c2c2c;
-  }
-  .bar1.animate {
-    background: #939393;
-    transform: rotate(40deg);
-    width: 20px;
-    top: 18px;
     transition: 0.3s ease all;
-  }
-  .bar2.animate {
-    background: #939393;
-    transform: rotate(-40deg);
-    top: 30px;
-    width: 20px;
-    transition: 0.3s ease all;
+
+    &.animate {
+      background: #939393;
+      transform: rotate(-40deg);
+      top: 30px;
+      width: 20px;
+    }
   }
 }
 </style>
