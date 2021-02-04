@@ -21,18 +21,12 @@
 
       <div class="img" v-for="img in services" :key="img.src">
         <transition name="fade">
-          <img v-if="img.src == selectedImage && hover" :src="img.src" alt="" />
+          <img v-if="hover && img.src == selectedImage" :src="img.src" alt="" />
         </transition>
       </div>
     </div>
 
-    <div
-      v-if="$device.isDesktopOrTablet"
-      class="services"
-      data-aos="fade-up"
-      data-aos-duration="900"
-      data-aos-offset="200"
-    >
+    <div v-if="$device.isDesktopOrTablet" class="services">
       <div
         class="card"
         v-for="(item, i) in services"
@@ -43,6 +37,8 @@
         "
         @mouseleave="hover = false"
         @click="router(item.route)"
+        data-aos="fade-up"
+        :data-aos-delay="i * 200"
       >
         <div class="title">
           {{ item.title }}
@@ -61,6 +57,8 @@
         v-for="(item, i) in services"
         :key="i"
         @click="router(item.route)"
+        data-aos="fade-up"
+        :data-aos-delay="i * 200"
       >
         <img :src="item.icon" alt="" />
         <div class="container">
@@ -74,48 +72,18 @@
 </template>
 
 <script>
+import { services } from '@/utils'
 export default {
   data() {
     return {
       selectedImage: false,
       hover: false,
-      services: [
-        {
-          title: 'OUR JOURNEY',
-          icon: '/marker.svg',
-          src: '/slide-img.png',
-          route: '/ourjourney',
-        },
-        {
-          title: 'INFRASTRUCTURE',
-          icon: '/manufracture.svg',
-          src:
-            'https://images.unsplash.com/photo-1513295202663-54cd69dd2b43?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1490&q=80',
-          route: '/infrastructure',
-        },
-        {
-          title: 'PRODUCTS',
-          icon: '/products.svg',
-          src:
-            'https://images.unsplash.com/photo-1552783160-27bfdb2625d5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1560&q=80',
-          route: '/products',
-        },
-        {
-          title: 'COMPLAINCE',
-          icon: '/complaince.svg',
-          src:
-            'https://images.unsplash.com/photo-1566221857770-508d35ee6220?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-          route: '/complaince',
-        },
-        {
-          title: 'TEAM & CAREER',
-          icon: '/team.svg',
-          src:
-            'https://images.unsplash.com/photo-1571524522669-99d0c9e7264d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
-          route: '/team',
-        },
-      ],
     }
+  },
+  computed: {
+    services() {
+      return services
+    },
   },
   methods: {
     router(route) {
@@ -184,6 +152,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: -1;
       img {
         width: 100%;
         height: 100%;

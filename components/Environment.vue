@@ -8,7 +8,12 @@
       </p>
     </div>
     <ul class="card">
-      <li v-for="(item, i) in cardInfo" :key="i" data-aos="fade-up">
+      <li
+        v-for="(item, i) in cardInfo"
+        :key="i"
+        data-aos="fade-up"
+        :data-aos-delay="i * 200"
+      >
         <div class="info">
           <h4>{{ item.title }}</h4>
           <p>{{ item.desc }}</p>
@@ -22,33 +27,16 @@
 </template>
 
 <script>
+import { cardInfo } from '@/utils'
 export default {
   name: 'envitement',
   data() {
-    return {
-      cardInfo: [
-        {
-          title: 'Dust collector',
-          src: '/env1.png',
-          desc:
-            'Only waste generated is dust. To reduce the impact of waste dust in the surrounding dust collectors are installed in the premises.',
-          L1: 'a. Neo-Airtech:- Sand plant and cooler.',
-          L2: 'b. Technoblast :-shot-blasting machines.',
-        },
-        {
-          title: 'Water',
-          src: '/env2.png',
-          desc:
-            '100% water used for manufacturing process is recycled. The rain water harvesting system adds to reduction of fresh water required.',
-        },
-        {
-          title: 'Electricity',
-          src: '/env3.png',
-          desc:
-            'Initiatives to use natural light has reduced the electric consumption. Well ventilated space helps to free-flowing air.',
-        },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    cardInfo() {
+      return cardInfo
+    },
   },
 }
 </script>

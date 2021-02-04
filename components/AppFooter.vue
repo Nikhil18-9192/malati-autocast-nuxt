@@ -3,7 +3,7 @@
     <div class="menu">
       <ul>
         <li v-for="(item, i) in menu" :key="i">
-          <nuxt-link :to="item.route">{{ item.name }}</nuxt-link>
+          <nuxt-link :to="item.route">{{ item.title }}</nuxt-link>
         </li>
       </ul>
     </div>
@@ -45,20 +45,15 @@
 </template>
 
 <script>
+import { menuItems } from '@/utils'
 export default {
   data() {
-    return {
-      menu: [
-        { name: 'Home', route: '/' },
-        { name: 'Our Journey', route: '/journey' },
-        { name: 'Infrastructure', route: '/infrastructure' },
-        { name: 'Clients', route: '/clients' },
-        // { name: 'Compliance', route: '/' },
-        { name: 'Career & Team', route: '/' },
-        { name: 'Contact Us', route: '/contactus' },
-        { name: 'Products', route: '/products' },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    menu() {
+      return menuItems
+    },
   },
 }
 </script>

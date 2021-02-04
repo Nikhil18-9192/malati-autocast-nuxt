@@ -19,47 +19,17 @@
 </template>
 
 <script>
+import { menuItems } from '@/utils'
 export default {
   name: 'DesktopMenu',
   data() {
-    return {
-      menuItems: [
-        { icon: '/group.png', title: 'Home', route: '/' },
-        { icon: '/group.png', title: 'Our Journey', route: '/journey' },
-        {
-          icon: '/group.png',
-          title: `Infrastructure`,
-          route: '/infrastructure',
-        },
-        {
-          icon: '/group.png',
-          title: `Clients`,
-          route: '/clients',
-        },
-        // {
-        //   icon: '/group.png',
-        //   title: `Compliance`,
-        //   route: '/compliance',
-        // },
-        {
-          icon: '/group.png',
-          title: `Career & Team`,
-          route: '/career',
-        },
-        {
-          icon: '/group.png',
-          title: `Contact Us`,
-          route: '/contactus',
-        },
-        {
-          icon: '/group.png',
-          title: `Products`,
-          route: '/products',
-        },
-      ],
-    }
+    return {}
   },
-  computed: {},
+  computed: {
+    menuItems() {
+      return menuItems
+    },
+  },
 }
 </script>
 

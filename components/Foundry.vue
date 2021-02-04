@@ -1,8 +1,10 @@
 <template>
   <div id="foundry">
-    <h1 data-aos="fade-right">Foundry</h1>
+    <h1 data-aos="fade-right" data-aos-duration="900" data-aos-offset="200">
+      Foundry
+    </h1>
     <div class="container">
-      <div class="menu" data-aos="fade-up">
+      <div class="menu">
         <div v-for="(item, i) in machinery" :key="i" class="items">
           <p
             class="button"
@@ -14,7 +16,12 @@
         </div>
       </div>
 
-      <div class="carousel-phone" data-aos="fade-up">
+      <div
+        class="carousel-phone"
+        data-aos="fade-up"
+        data-aos-duration="900"
+        data-aos-offset="200"
+      >
         <carousel-3d
           :count="machinery.length"
           :perspective="0"
@@ -60,81 +67,10 @@
 </template>
 
 <script>
+import { machinery } from '@/utils'
 export default {
   data() {
     return {
-      machinery: [
-        {
-          title: 'HPML',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Sand Plant',
-          features: [
-            'Fully automated Sinto sand plant with computerized control panel.',
-            'Sand hopper capacity 80 ton.',
-            'Eirich RV-15mixerwith capacity 675 kg per batch.',
-            'MIA unit installation for sand cooling.',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Induction Furnace',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Shot Blasting',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Core Shop',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Others',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-      ],
       selectedItem: 0,
       sliderHeight: 0,
     }
@@ -147,6 +83,11 @@ export default {
     } else {
       this.sliderHeight = 500
     }
+  },
+  computed: {
+    machinery() {
+      return machinery
+    },
   },
   methods: {
     getSelected(i) {

@@ -3,7 +3,13 @@
     <div class="container">
       <h1 data-aos="fade-right">Quality</h1>
       <ul class="card-container">
-        <li v-for="(item, i) in tests" :key="i" class="card" data-aos="fade-up">
+        <li
+          v-for="(item, i) in tests"
+          :key="i"
+          class="card"
+          data-aos="fade-up"
+          :data-aos-delay="i * 200"
+        >
           <div class="text">
             <h3>{{ item.title }}</h3>
             <p v-for="(point, j) in item.features" :key="j">
@@ -18,66 +24,18 @@
 </template>
 
 <script>
+import { tests } from '@/utils'
 export default {
   data() {
-    return {
-      tests: [
-        {
-          title: 'Spectromenter',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/spectrometer.png',
-        },
-        {
-          title: 'Metallurgical Microscope',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/microscopy.png',
-        },
-        {
-          title: 'Optical Pyrometer',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/infrared_thermometers.png',
-        },
-        {
-          title: 'Hardness Tester',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/spectrometer.png',
-        },
-        {
-          title: 'Others',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/spectrometer.png',
-        },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    tests() {
+      return tests
+    },
   },
 }
 </script>
-
 <style lang="scss" scoped>
 #quality {
   position: relative;

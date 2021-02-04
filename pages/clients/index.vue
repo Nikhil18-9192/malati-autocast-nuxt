@@ -9,6 +9,7 @@
         v-for="(item, i) in clients"
         :key="i"
         data-aos="fade-up"
+        :data-aos-delay="i * 200"
       >
         <img :src="item.logo" alt="" />
         <p>{{ item.title }}</p>
@@ -18,17 +19,16 @@
 </template>
 
 <script>
+import { clients } from '@/utils'
 export default {
   name: 'ClientsPage',
   data() {
-    return {
-      clients: [
-        { logo: '/Mahindra.png', title: 'Automotive sector' },
-        { logo: '/escort.png', title: ' ' },
-        { logo: '/Mahindra.png', title: 'Tractor sector' },
-        { logo: '/tmtl.png', title: ' ' },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    clients() {
+      return clients
+    },
   },
 }
 </script>
@@ -86,7 +86,7 @@ export default {
       justify-content: center;
       align-items: center;
       @include for-phone-only {
-        width: 340px;
+        width: 100%;
         height: 300px;
         margin-bottom: 36px;
       }

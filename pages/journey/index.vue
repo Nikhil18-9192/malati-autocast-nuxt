@@ -76,7 +76,13 @@
         </div>
       </transition>
     </div>
-    <div v-if="$device.isMobileOrTablet" class="journey">
+    <div
+      v-if="$device.isMobileOrTablet"
+      class="journey"
+      data-aos="fade-up"
+      data-aos-duration="900"
+      data-aos-offset="200"
+    >
       <div class="road">
         <img class="bar" src="road.png" alt="" />
       </div>
@@ -124,75 +130,14 @@
 </template>
 
 <script>
+import { journey } from '@/utils'
 export default {
   data() {
     return {
       currentIndex: 1,
       currentYear: -1,
       hover: false,
-      journey: [
-        {
-          year: '1970',
-          name: 'Patil Engineering Works, Kolhapur.',
-          title: 'Manufacturer of betel nut cutting machines.',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
-          images: ['/1.jfif', '/2.jfif', '/3.jfif', '/4.jfif'],
-        },
-        {
-          year: '1988',
-          name: 'S.K.P. Industries, MIDC Shiroli.',
-          title: 'Dedicated machining shop',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
 
-          images: [
-            '/ourjourney.png',
-            '/ourjourney.png',
-            '/ourjourney.png',
-            '/ourjourney.png',
-          ],
-        },
-        {
-          year: '1995',
-          name: 'Malati Founders Pvt. Ltd. , Hatkanangle.',
-          title: 'Manufacturer of C.I. graded castings',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
-          images: ['2.jfif', '1.jfif', '3.jfif', '4.jfif'],
-        },
-        {
-          year: '2000',
-          name: 'Malati Enterprises, Hatkanangle. ',
-          title: 'Dedicated machining shop',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
-          images: ['4.jfif', '2.jfif', '1.jfif', '3.jfif'],
-        },
-        {
-          year: '2002',
-          name: 'Malati Enterprises, Hatkanangle. ',
-          title: 'Dedicated machining shop',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
-          images: ['3.jfif', '1.jfif', '4.jfif', '2.jfif'],
-        },
-      ],
       itemIndex: -1,
       slideDuration: 2000,
       autoSlider: false,
@@ -205,6 +150,11 @@ export default {
       this.getItem(0)
       this.initAutoSlide()
     }
+  },
+  computed: {
+    journey() {
+      return journey
+    },
   },
   methods: {
     initAutoSlide: function () {
