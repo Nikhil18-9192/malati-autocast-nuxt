@@ -73,7 +73,7 @@ export default {
   display: flex;
   justify-content: space-between;
   @include for-phone-only {
-    padding: 15px;
+    padding: 30px 15px 15px 15px;
     flex-direction: column;
     height: 100%;
   }

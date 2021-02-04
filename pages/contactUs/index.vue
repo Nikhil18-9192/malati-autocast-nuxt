@@ -114,6 +114,8 @@ export default {}
         margin-bottom: 25px;
         @include for-phone-only {
           margin-bottom: 15px;
+          font-size: 20px;
+          letter-spacing: 0.2em;
         }
       }
       hr {
@@ -134,6 +136,8 @@ export default {}
         margin-bottom: 25px;
         @include for-phone-only {
           margin-bottom: 15px;
+          font-size: 20px;
+          letter-spacing: 0.2em;
         }
       }
       hr {

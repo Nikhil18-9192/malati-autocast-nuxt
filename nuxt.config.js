@@ -36,6 +36,10 @@ export default {
       src: '@/plugins/carousel3d.js',
       ssr: false,
     },
+    {
+      src: '~/plugins/aos.js',
+      ssr: false,
+    },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -1,5 +1,5 @@
 <template>
-  <div id="environment">
+  <div id="environment" data-aos="fade-up">
     <div class="container">
       <h1>Environment</h1>
       <p class="sub-title">
