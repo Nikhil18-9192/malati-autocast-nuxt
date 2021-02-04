@@ -1,10 +1,15 @@
 <template>
   <div id="clients">
     <div class="title">
-      <h1>Clients</h1>
+      <h1 data-aos="fade-left">Clients</h1>
     </div>
     <div class="card-container">
-      <div class="card" v-for="(item, i) in clients" :key="i">
+      <div
+        class="card"
+        v-for="(item, i) in clients"
+        :key="i"
+        data-aos="fade-up"
+      >
         <img :src="item.logo" alt="" />
         <p>{{ item.title }}</p>
       </div>

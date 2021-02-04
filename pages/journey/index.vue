@@ -1,6 +1,11 @@
 <template>
   <div id="our-journey">
-    <div class="title">
+    <div
+      class="title"
+      data-aos="fade-left"
+      data-aos-duration="900"
+      data-aos-offset="200"
+    >
       <h1>Our Journey</h1>
     </div>
     <div v-if="$device.isDesktop" class="journey-list">
@@ -18,7 +23,7 @@
 
           <img class="bar" src="road.png" alt="" />
         </div>
-        <ul>
+        <ul data-aos="fade-up" data-aos-duration="900" data-aos-offset="200">
           <li
             class="journey-li"
             v-for="(item, i) in journey"

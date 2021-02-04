@@ -1,9 +1,9 @@
 <template>
   <div id="quality">
     <div class="container">
-      <h1>Quality</h1>
+      <h1 data-aos="fade-right">Quality</h1>
       <ul class="card-container">
-        <li v-for="(item, i) in tests" :key="i" class="card">
+        <li v-for="(item, i) in tests" :key="i" class="card" data-aos="fade-up">
           <div class="text">
             <h3>{{ item.title }}</h3>
             <p v-for="(point, j) in item.features" :key="j">
@@ -100,6 +100,7 @@ export default {
       letter-spacing: 0.05em;
       color: #000000;
       margin-bottom: 64px;
+      text-transform: uppercase;
       @include for-phone-only {
         margin-bottom: 30px;
       }
@@ -146,7 +147,9 @@ export default {
             line-height: 30px;
             letter-spacing: 0.16em;
             color: $primary;
-            margin-bottom: 55px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            min-height: 60px;
             @include for-phone-only {
               margin-bottom: 25px;
             }

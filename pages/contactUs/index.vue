@@ -1,9 +1,9 @@
 <template>
   <div id="contact-us">
     <div class="title">
-      <h1>Contact Us</h1>
+      <h1 data-aos="fade-left">Contact Us</h1>
     </div>
-    <div class="contact">
+    <div class="contact" data-aos="fade-up">
       <div class="group">
         <h4>MALATI GROUP</h4>
         <hr />
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="map-view">
+    <div class="map-view" data-aos="fade-up">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10807.0770330372!2d74.40559579347986!3d16.732901757559322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc11d2a08424e79%3A0x94ded63aaaaf8743!2sShri%20Laxmi%20Co-op.%20Industrial%20Estate%2C%20Maharashtra%20416118!5e0!3m2!1sen!2sin!4v1612175452345!5m2!1sen!2sin"
         width="100%"

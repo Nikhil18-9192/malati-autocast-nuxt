@@ -1,8 +1,8 @@
 <template>
   <div id="foundry">
-    <h1>Foundry</h1>
+    <h1 data-aos="fade-right">Foundry</h1>
     <div class="container">
-      <div class="menu">
+      <div class="menu" data-aos="fade-up">
         <div v-for="(item, i) in machinery" :key="i" class="items">
           <p
             class="button"
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="carousel-phone">
+      <div class="carousel-phone" data-aos="fade-up">
         <carousel-3d
           :count="machinery.length"
           :perspective="0"
@@ -183,6 +183,7 @@ export default {
     letter-spacing: 0.05em;
     color: #000000;
     margin-bottom: 64px;
+    text-transform: uppercase;
     @include for-phone-only {
       margin-bottom: 0;
       padding: 64px 16px 20px 16px;

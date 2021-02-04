@@ -1,13 +1,13 @@
 <template>
   <div id="products">
     <div class="title">
-      <h1>Products</h1>
+      <h1 data-aos="fade-left">Products</h1>
     </div>
     <div class="cast-products">
-      <h4>Cast Iron Products</h4>
+      <h4 data-aos="fade-right">Cast Iron Products</h4>
       <hr />
       <ul class="product-list">
-        <li v-for="(product, i) in castProducts" :key="i">
+        <li v-for="(product, i) in castProducts" :key="i" data-aos="fade-up">
           <img :src="product.src" alt="" />
           <p class="name">
             {{ product.name }}
@@ -16,10 +16,10 @@
       </ul>
     </div>
     <div class="cast-products">
-      <h4>SG Iron Products</h4>
+      <h4 data-aos="fade-right">SG Iron Products</h4>
       <hr />
       <ul class="product-list">
-        <li v-for="(product, i) in ironProducts" :key="i">
+        <li v-for="(product, i) in ironProducts" :key="i" data-aos="fade-up">
           <img :src="product.src" alt="" />
           <p class="name">
             {{ product.name }}

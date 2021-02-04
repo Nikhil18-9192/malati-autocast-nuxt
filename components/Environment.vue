@@ -1,14 +1,14 @@
 <template>
-  <div id="environment" data-aos="fade-up">
+  <div id="environment">
     <div class="container">
-      <h1>Environment</h1>
-      <p class="sub-title">
+      <h1 data-aos="fade-right">Environment</h1>
+      <p class="sub-title" data-aos="fade-up">
         Malati Autocast Pvt. Ltd. is committed to safety & minimizing waste.
         This thought was embedded during the installation of infrastructure.
       </p>
     </div>
     <ul class="card">
-      <li v-for="(item, i) in cardInfo" :key="i">
+      <li v-for="(item, i) in cardInfo" :key="i" data-aos="fade-up">
         <div class="info">
           <h4>{{ item.title }}</h4>
           <p>{{ item.desc }}</p>

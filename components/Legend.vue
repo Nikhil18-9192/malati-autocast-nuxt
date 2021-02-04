@@ -1,7 +1,9 @@
 <template>
   <div id="legend">
     <img :src="title.img" alt="" />
-    <h1>{{ title.name }}</h1>
+    <h1 data-aos="fade-left">
+      {{ title.name }}
+    </h1>
   </div>
 </template>
 

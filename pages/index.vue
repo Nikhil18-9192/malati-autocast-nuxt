@@ -1,6 +1,11 @@
 <template>
   <div id="home-page">
-    <div class="hero">
+    <div
+      class="hero"
+      data-aos="fade-up"
+      data-aos-duration="700"
+      data-aos-offset="200"
+    >
       <div class="heading" :class="hover ? 'slide' : ''">
         <h2 class="title">
           <span>Malati Autocast Pvt. Ltd.</span> is the newest addition to the
@@ -21,7 +26,13 @@
       </div>
     </div>
 
-    <div v-if="$device.isDesktopOrTablet" class="services">
+    <div
+      v-if="$device.isDesktopOrTablet"
+      class="services"
+      data-aos="fade-up"
+      data-aos-duration="900"
+      data-aos-offset="200"
+    >
       <div
         class="card"
         v-for="(item, i) in services"
