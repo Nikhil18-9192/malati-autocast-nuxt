@@ -43,6 +43,8 @@ export default {
         { src: '/spacer.jpg', name: 'Spacer' },
         { src: '/hydraulic-control-lift.jpg', name: 'Hydraulic Control Lift' },
         { src: '/strainer-housing.jpg', name: 'Strainer Housing' },
+        { src: '/front-wheel-hub.jpg', name: 'Front Wheel Hub' },
+        { src: '/Brake-Disc.jpg', name: 'Brake Disk' },
       ],
       ironProducts: [
         { src: '/iron1.jpg', name: 'Hydraulic Piston' },
