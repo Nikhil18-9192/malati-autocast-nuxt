@@ -85,6 +85,9 @@ export default {
     @include for-tablet-only {
       width: 100%;
     }
+    @include for-phone-only {
+      display: none;
+    }
     ul {
       list-style: none;
       padding: 0;

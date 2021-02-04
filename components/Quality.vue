@@ -102,7 +102,7 @@ export default {
       margin-bottom: 64px;
       @include for-phone-only {
         margin-bottom: 30px;
-        margin-top: 15px;
+        margin-top: 40px;
       }
       @include for-tablet-only {
         margin-bottom: 40px;

@@ -76,6 +76,7 @@ export default {
       @include for-phone-only {
         font-size: 34px;
         margin-bottom: 30px;
+        margin-top: 35px;
       }
     }
     .sub-title {
