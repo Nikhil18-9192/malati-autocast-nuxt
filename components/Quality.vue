@@ -135,7 +135,7 @@ export default {
           width: 325px;
         }
         @include for-phone-only {
-          width: 345px;
+          width: 340px;
           height: 545px;
         }
         .text {
