@@ -7,7 +7,12 @@
       <h4 data-aos="fade-right">Cast Iron Products</h4>
       <hr />
       <ul class="product-list">
-        <li v-for="(product, i) in castProducts" :key="i" data-aos="fade-up">
+        <li
+          v-for="(product, i) in castProducts"
+          :key="i"
+          data-aos="fade-up"
+          :data-aos-delay="i * 200"
+        >
           <img :src="product.src" alt="" />
           <p class="name">
             {{ product.name }}
@@ -19,7 +24,12 @@
       <h4 data-aos="fade-right">SG Iron Products</h4>
       <hr />
       <ul class="product-list">
-        <li v-for="(product, i) in ironProducts" :key="i" data-aos="fade-up">
+        <li
+          v-for="(product, i) in ironProducts"
+          :key="i"
+          data-aos="fade-up"
+          :data-aos-delay="i * 200"
+        >
           <img :src="product.src" alt="" />
           <p class="name">
             {{ product.name }}
