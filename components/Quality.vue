@@ -84,7 +84,7 @@ export default {
   background: #f4f4f4;
   padding: 64px 136px;
   @include for-phone-only {
-    padding: 64px 15px 15px 15px;
+    padding: 64px 16px 15px 16px;
   }
   @include for-tablet-only {
     padding: 60px;
@@ -133,7 +133,7 @@ export default {
           width: 325px;
         }
         @include for-phone-only {
-          width: 340px;
+          width: 100%;
           height: 545px;
         }
         .text {

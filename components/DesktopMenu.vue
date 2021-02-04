@@ -25,7 +25,7 @@ export default {
     return {
       menuItems: [
         { icon: '/group.png', title: 'Home', route: '/' },
-        { icon: '/group.png', title: 'Our Journey', route: '/ourJourney' },
+        { icon: '/group.png', title: 'Our Journey', route: '/journey' },
         {
           icon: '/group.png',
           title: `Infrastructure`,
@@ -49,7 +49,7 @@ export default {
         {
           icon: '/group.png',
           title: `Contact Us`,
-          route: '/contactUs',
+          route: '/contactus',
         },
         {
           icon: '/group.png',

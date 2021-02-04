@@ -50,12 +50,12 @@ export default {
     return {
       menu: [
         { name: 'Home', route: '/' },
-        { name: 'Our Journey', route: '/ourJourney' },
+        { name: 'Our Journey', route: '/journey' },
         { name: 'Infrastructure', route: '/infrastructure' },
         { name: 'Clients', route: '/clients' },
         // { name: 'Compliance', route: '/' },
         { name: 'Career & Team', route: '/' },
-        { name: 'Contact Us', route: '/contactUs' },
+        { name: 'Contact Us', route: '/contactus' },
         { name: 'Products', route: '/products' },
       ],
     }

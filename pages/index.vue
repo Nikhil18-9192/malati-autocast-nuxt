@@ -284,7 +284,7 @@ export default {
     }
   }
   .services-phone {
-    margin: 30px 15px;
+    margin: 30px 15px 0 15px;
     .card-phone {
       display: flex;
       margin-bottom: 23px;

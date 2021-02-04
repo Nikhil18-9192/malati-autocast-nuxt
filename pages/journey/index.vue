@@ -423,7 +423,7 @@ export default {
         padding: 0;
         margin: 0;
         .info-li {
-          margin-bottom: 64px;
+          margin-bottom: 80px;
           .marker {
             width: 32px;
             height: 32px;
