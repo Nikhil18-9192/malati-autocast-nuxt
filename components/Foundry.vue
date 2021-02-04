@@ -185,6 +185,7 @@ export default {
     margin-bottom: 64px;
     @include for-phone-only {
       margin-bottom: 15px;
+      margin-top: 15px;
       padding: 0 15px;
     }
     @include for-tablet-only {
@@ -317,7 +318,7 @@ export default {
       }
     }
     .current {
-      padding: 16px;
+      padding: 15px;
       box-sizing: border-box;
       .card-phone {
         opacity: 1;

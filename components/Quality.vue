@@ -102,6 +102,7 @@ export default {
       margin-bottom: 64px;
       @include for-phone-only {
         margin-bottom: 30px;
+        margin-top: 15px;
       }
       @include for-tablet-only {
         margin-bottom: 40px;
@@ -118,6 +119,7 @@ export default {
       grid-row-gap: 20px;
       @include for-tablet-only {
         grid-template-columns: auto auto;
+        grid-column-gap: 0px;
       }
       @include for-phone-only {
         grid-template-columns: auto;
@@ -133,7 +135,7 @@ export default {
           width: 325px;
         }
         @include for-phone-only {
-          width: 320px;
+          width: 345px;
           height: 545px;
         }
         .text {

@@ -48,7 +48,7 @@ export default {
   cursor: pointer;
   transition: 0.3s ease all;
   @include for-phone-only {
-    right: 15px;
+    right: 5px;
   }
   .bar1 {
     position: absolute;

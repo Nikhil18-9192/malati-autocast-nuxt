@@ -63,7 +63,7 @@ export default {}
   .title {
     padding: 0 $horizontalPadding;
     @include for-phone-only {
-      padding: 0 30px;
+      padding: 0 15px;
     }
     @include for-tablet-only {
       padding: 0 60px;
@@ -90,7 +90,7 @@ export default {}
     margin-bottom: 110px;
     padding: 0 $horizontalPadding;
     @include for-phone-only {
-      padding: 0 30px;
+      padding: 0 15px;
       flex-direction: column;
       margin-bottom: 50px;
     }

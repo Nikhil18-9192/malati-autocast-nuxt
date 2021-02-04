@@ -35,7 +35,7 @@ export default {
   height: 100%;
   padding: 0 $horizontalPadding;
   @include for-phone-only {
-    padding: 0 30px;
+    padding: 0 15px;
   }
   @include for-tablet-only {
     padding: 0 60px;
@@ -81,7 +81,7 @@ export default {
       justify-content: center;
       align-items: center;
       @include for-phone-only {
-        width: 300px;
+        width: 340px;
         height: 300px;
         margin-bottom: 36px;
       }

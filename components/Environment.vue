@@ -57,7 +57,7 @@ export default {
 #environment {
   padding: 64px 136px;
   @include for-phone-only {
-    padding: 30px;
+    padding: 30px 15px;
   }
   @include for-tablet-only {
     padding: 60px;

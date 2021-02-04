@@ -61,7 +61,7 @@ export default {
   height: 100%;
   padding: 0 $horizontalPadding;
   @include for-phone-only {
-    padding: 0 30px;
+    padding: 0 15px;
   }
   @include for-tablet-only {
     padding: 0 60px;

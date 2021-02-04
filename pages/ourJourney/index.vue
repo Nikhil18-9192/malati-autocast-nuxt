@@ -251,7 +251,7 @@ export default {
       padding: 0 60px;
     }
     @include for-phone-only {
-      padding: 0 30px;
+      padding: 0 15px;
     }
     h1 {
       font-family: 'Lora';
@@ -405,10 +405,11 @@ export default {
   }
   .journey {
     position: relative;
-    padding: 0 30px;
+    padding: 0 15px;
     display: flex;
     .road {
       margin-right: 30px;
+      margin-top: 6px;
       .bar {
         position: relative;
         z-index: 100;
@@ -422,12 +423,12 @@ export default {
         padding: 0;
         margin: 0;
         .info-li {
-          margin-bottom: 25px;
+          margin-bottom: 64px;
           .marker {
             width: 32px;
             height: 32px;
             position: absolute;
-            left: 26px;
+            left: 11px;
             z-index: 999;
           }
           .year {
@@ -468,6 +469,7 @@ export default {
               width: 100%;
               height: 265px;
               object-fit: cover;
+              border-radius: 4px;
             }
           }
           .control-btn {

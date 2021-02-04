@@ -133,7 +133,7 @@ export default {
     justify-content: center;
     @include for-phone-only {
       margin-top: 75px;
-      padding: 0 30px;
+      padding: 0 15px;
     }
     @include for-tablet-only {
       padding: 0 60px;
@@ -284,7 +284,7 @@ export default {
     }
   }
   .services-phone {
-    margin: 30px;
+    margin: 30px 15px;
     .card-phone {
       display: flex;
       margin-bottom: 23px;
