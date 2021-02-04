@@ -1,11 +1,6 @@
 <template>
   <div id="home-page">
-    <div
-      class="hero"
-      data-aos="fade-up"
-      data-aos-duration="700"
-      data-aos-offset="200"
-    >
+    <div class="hero">
       <div class="heading" :class="hover ? 'slide' : ''">
         <h2 class="title">
           <span>Malati Autocast Pvt. Ltd.</span> is the newest addition to the
@@ -37,8 +32,6 @@
         "
         @mouseleave="hover = false"
         @click="router(item.route)"
-        data-aos="fade-up"
-        :data-aos-delay="i * 200"
       >
         <div class="title">
           {{ item.title }}
@@ -57,8 +50,6 @@
         v-for="(item, i) in services"
         :key="i"
         @click="router(item.route)"
-        data-aos="fade-up"
-        :data-aos-delay="i * 200"
       >
         <img :src="item.icon" alt="" />
         <div class="container">
