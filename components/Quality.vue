@@ -84,7 +84,7 @@ export default {
   background: #f4f4f4;
   padding: 64px 136px;
   @include for-phone-only {
-    padding: 15px;
+    padding: 64px 15px 15px 15px;
   }
   @include for-tablet-only {
     padding: 60px;
@@ -102,7 +102,6 @@ export default {
       margin-bottom: 64px;
       @include for-phone-only {
         margin-bottom: 30px;
-        margin-top: 40px;
       }
       @include for-tablet-only {
         margin-bottom: 40px;
@@ -119,7 +118,6 @@ export default {
       grid-row-gap: 20px;
       @include for-tablet-only {
         grid-template-columns: auto auto;
-        grid-column-gap: 0px;
       }
       @include for-phone-only {
         grid-template-columns: auto;

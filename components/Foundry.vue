@@ -184,9 +184,8 @@ export default {
     color: #000000;
     margin-bottom: 64px;
     @include for-phone-only {
-      margin-bottom: 15px;
-      margin-top: 40px;
-      padding: 0 15px;
+      margin-bottom: 0;
+      padding: 64px 15px 20px 15px;
     }
     @include for-tablet-only {
       margin-bottom: 40px;

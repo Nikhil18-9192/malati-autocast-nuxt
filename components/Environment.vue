@@ -57,7 +57,7 @@ export default {
 #environment {
   padding: 64px 136px;
   @include for-phone-only {
-    padding: 30px 15px;
+    padding: 0 15px 30px 15px;
   }
   @include for-tablet-only {
     padding: 60px;
@@ -75,8 +75,8 @@ export default {
       margin-bottom: 50px;
       @include for-phone-only {
         font-size: 34px;
-        margin-bottom: 30px;
-        margin-top: 35px;
+        margin-bottom: 0px;
+        padding: 64px 0 30px 0;
       }
     }
     .sub-title {
