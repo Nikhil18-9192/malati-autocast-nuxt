@@ -124,48 +124,37 @@ const machinery = [
   {
     title: 'Induction Furnace',
     features: [
-      'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-      'The model of machine is FBO-II (L)',
-      'Capacity of molds/hour is 120',
-      'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-      'Maximum mismatch accuracy is 0.2 mm',
-      'PLC controlled automaticmolding line',
+      'Inductotherm tri-track induction furnaces are installed.',
+      'The capacity is 550  kw 500  kg/furnace.',
+      'Voltage consumption panel is installed to control the power.',
+      'Induction furnaces works on IGBT technology.',
+      'Transporting of raw material on melting platformis doneusing electro-magnetwith 2T overhead crane.',
     ],
     img: '/HPML.png',
   },
   {
     title: 'Shot Blasting',
     features: [
-      'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-      'The model of machine is FBO-II (L)',
-      'Capacity of molds/hour is 120',
-      'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-      'Maximum mismatch accuracy is 0.2 mm',
-      'PLC controlled automaticmolding line',
+      'In-house Technoblast shotblasting machine to ensure effective cleaningor polishing product surface.',
+      'Per cycle time to shot blast on products is 12 min using spindle hanger.',
+      'Capacity of shot blasting the product is 0.5 MT/Cycle.',
     ],
     img: '/HPML.png',
   },
   {
     title: 'Core Shop',
     features: [
-      'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-      'The model of machine is FBO-II (L)',
-      'Capacity of molds/hour is 120',
-      'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-      'Maximum mismatch accuracy is 0.2 mm',
-      'PLC controlled automaticmolding line',
+      'In-house core ovenfacility is presentmanufactured by Om Technologies.',
+      'After baking, the cores are assembled on the racks.',
+      'Core painting facility is also available.',
     ],
     img: '/HPML.png',
   },
   {
     title: 'Others',
     features: [
-      'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-      'The model of machine is FBO-II (L)',
-      'Capacity of molds/hour is 120',
-      'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-      'Maximum mismatch accuracy is 0.2 mm',
-      'PLC controlled automaticmolding line',
+      'Paint shop : Spray painting facility is available.',
+      'Fettling : 3 grinders are installed in-house for fettling.',
     ],
     img: '/HPML.png',
   },
@@ -173,7 +162,7 @@ const machinery = [
 
 const tests = [
   {
-    title: 'Spectromenter',
+    title: 'Spectrometer',
     features: [
       'Our plant is equipped with spectrometer from Spectro India',
       'Model is "SPECTRO LAB"',
@@ -185,40 +174,34 @@ const tests = [
   {
     title: 'Metallurgical Microscope',
     features: [
-      'Our plant is equipped with spectrometer from Spectro India',
-      'Model is "SPECTRO LAB"',
-      'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-      'It has higher accuracy with 750 mm wavelength',
+      'Inverted Metallurgical Microscope with Image Analysis Software: Pro Metal™ V8is installed.',
+      'Magnification range is 50x –1000x.',
     ],
     img: '/microscopy.png',
   },
   {
     title: 'Optical Pyrometer',
     features: [
-      'Our plant is equipped with spectrometer from Spectro India',
-      'Model is "SPECTRO LAB"',
-      'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-      'It has higher accuracy with 750 mm wavelength',
+      'Optical Pyrometers are used for measuring the temperature.',
+      'Model name is Cyclops. Backup system feature is available.',
+      'Contactless measurement.',
+      'Use of optical pyrometer reduces the metal waste.',
     ],
     img: '/infrared_thermometers.png',
   },
   {
     title: 'Hardness Tester',
     features: [
-      'Our plant is equipped with spectrometer from Spectro India',
-      'Model is "SPECTRO LAB"',
-      'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-      'It has higher accuracy with 750 mm wavelength',
+      'Brinnle Hardness Tester of model SBH is installed.',
+      'Maximum load capacity is 3000  Kg',
+      'Hardness is measured using 5mm ball with 750 kg load & 10 mm ball 3000  kg load ',
     ],
     img: '/spectrometer.png',
   },
   {
     title: 'Others',
     features: [
-      'Our plant is equipped with spectrometer from Spectro India',
-      'Model is "SPECTRO LAB"',
-      'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-      'It has higher accuracy with 750 mm wavelength',
+      'Muffle furnace,AFS calculator,Sieve shaker,Green compressive strengthmachine,Permeability meter,  Digital moisturetesterfacilities  are also available.',
     ],
     img: '/spectrometer.png',
   },
@@ -292,24 +275,24 @@ const menuItems = [
 const advisorTeam = [
   {
     src: '/leader.jpg',
-    name: 'Sanjay Patil',
-    designation: 'Advisor - Management',
+    name: 'Atul Patil',
+    designation: 'Advisor - Finance',
     desc:
-      'With over 4 decades of experience in casting, machining and foundry management is the Managing director of Malati Founders Pvt. Ltd. and is an active advisor of Malati Autocast Pvt. Ltd.',
+      'With passion for number and vast experience in foundry finance, he is our "Go To" when it comes to financial guidance.',
   },
   {
     src: '/leader.jpg',
-    name: 'Sanjay Patil',
-    designation: 'Advisor - Management',
+    name: 'Yuvraj Patil',
+    designation: 'Advisor - Operations',
     desc:
-      'With over 4 decades of experience in casting, machining and foundry management is the Managing director of Malati Founders Pvt. Ltd. and is an active advisor of Malati Autocast Pvt. Ltd.',
+      'With a keen sense of operations and connect to shop floor, He is the guide to management on foundry operations.',
   },
   {
     src: '/leader.jpg',
-    name: 'Sanjay Patil',
-    designation: 'Advisor - Management',
+    name: 'Yuvraj Patil',
+    designation: 'Advisor - Operations',
     desc:
-      'With over 4 decades of experience in casting, machining and foundry management is the Managing director of Malati Founders Pvt. Ltd. and is an active advisor of Malati Autocast Pvt. Ltd.',
+      'With a keen sense of operations and connect to shop floor, He is the guide to management on foundry operations.',
   },
 ]
 

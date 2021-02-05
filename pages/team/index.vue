@@ -288,6 +288,10 @@ export default {
         .card {
           .image {
             width: 100%;
+            border: 25px solid rgb(221, 221, 221);
+            @include for-phone-only {
+              width: 70%;
+            }
           }
           h5 {
             font-weight: 600;
