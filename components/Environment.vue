@@ -1,14 +1,19 @@
 <template>
   <div id="environment">
     <div class="container">
-      <h1>Environment</h1>
-      <p class="sub-title">
+      <h1 data-aos="fade-right">Environment</h1>
+      <p class="sub-title" data-aos="fade-up">
         Malati Autocast Pvt. Ltd. is committed to safety & minimizing waste.
         This thought was embedded during the installation of infrastructure.
       </p>
     </div>
     <ul class="card">
-      <li v-for="(item, i) in cardInfo" :key="i">
+      <li
+        v-for="(item, i) in cardInfo"
+        :key="i"
+        data-aos="fade-up"
+        :data-aos-delay="i * 200"
+      >
         <div class="info">
           <h4>{{ item.title }}</h4>
           <p>{{ item.desc }}</p>
@@ -22,33 +27,16 @@
 </template>
 
 <script>
+import { cardInfo } from '@/utils'
 export default {
   name: 'envitement',
   data() {
-    return {
-      cardInfo: [
-        {
-          title: 'Dust collector',
-          src: '/env1.png',
-          desc:
-            'Only waste generated is dust. To reduce the impact of waste dust in the surrounding dust collectors are installed in the premises.',
-          L1: 'a. Neo-Airtech:- Sand plant and cooler.',
-          L2: 'b. Technoblast :-shot-blasting machines.',
-        },
-        {
-          title: 'Water',
-          src: '/env2.png',
-          desc:
-            '100% water used for manufacturing process is recycled. The rain water harvesting system adds to reduction of fresh water required.',
-        },
-        {
-          title: 'Electricity',
-          src: '/env3.png',
-          desc:
-            'Initiatives to use natural light has reduced the electric consumption. Well ventilated space helps to free-flowing air.',
-        },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    cardInfo() {
+      return cardInfo
+    },
   },
 }
 </script>
@@ -57,7 +45,10 @@ export default {
 #environment {
   padding: 64px 136px;
   @include for-phone-only {
-    padding: 30px;
+    padding: 0 16px 16px 16px;
+  }
+  @include for-tablet-only {
+    padding: 60px;
   }
   .container {
     h1 {
@@ -71,8 +62,9 @@ export default {
       color: #000000;
       margin-bottom: 50px;
       @include for-phone-only {
-        font-size: 38px;
-        margin-bottom: 30px;
+        font-size: 34px;
+        margin-bottom: 0px;
+        padding: 64px 0 30px 0;
       }
     }
     .sub-title {
@@ -105,10 +97,15 @@ export default {
       max-height: 435px;
       position: relative;
       overflow: hidden;
+      @include for-phone-only {
+        min-height: 235px;
+      }
       img {
         object-fit: cover;
         width: 100%;
         height: 100%;
+        transform: scale(1.2);
+        transition: 0.5s ease all;
       }
       .info {
         background: rgba(244, 244, 244, 0.95);
@@ -117,8 +114,10 @@ export default {
         height: 100%;
         padding: 55px 30px;
         left: 0;
+        top: 0;
         color: #090909;
         transition: 0.5s ease all;
+        z-index: 10;
         @include for-phone-only {
           padding: 10px;
         }
@@ -144,6 +143,14 @@ export default {
             font-size: 16px;
             line-height: 30px;
           }
+        }
+      }
+      &:hover {
+        .info {
+          left: -100%;
+        }
+        img {
+          transform: scale(1);
         }
       }
     }

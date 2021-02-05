@@ -1,9 +1,14 @@
 <template>
   <div id="our-journey">
-    <div class="title">
+    <div
+      class="title"
+      data-aos="fade-left"
+      data-aos-duration="900"
+      data-aos-offset="200"
+    >
       <h1>Our Journey</h1>
     </div>
-    <div v-if="$device.isDesktopOrTablet" class="journey-list">
+    <div v-if="$device.isDesktop" class="journey-list">
       <div class="list">
         <div class="road-bar">
           <transition name="icon-slide">
@@ -18,7 +23,7 @@
 
           <img class="bar" src="road.png" alt="" />
         </div>
-        <ul>
+        <ul data-aos="fade-up" data-aos-duration="900" data-aos-offset="200">
           <li
             class="journey-li"
             v-for="(item, i) in journey"
@@ -71,7 +76,13 @@
         </div>
       </transition>
     </div>
-    <div v-if="$device.isMobile" class="journey">
+    <div
+      v-if="$device.isMobileOrTablet"
+      class="journey"
+      data-aos="fade-up"
+      data-aos-duration="900"
+      data-aos-offset="200"
+    >
       <div class="road">
         <img class="bar" src="road.png" alt="" />
       </div>
@@ -119,75 +130,14 @@
 </template>
 
 <script>
+import { journey } from '@/utils'
 export default {
   data() {
     return {
       currentIndex: 1,
       currentYear: -1,
       hover: false,
-      journey: [
-        {
-          year: '1970',
-          name: 'Patil Engineering Works, Kolhapur.',
-          title: 'Manufacturer of betel nut cutting machines.',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
-          images: ['/1.jfif', '/2.jfif', '/3.jfif', '/4.jfif'],
-        },
-        {
-          year: '1988',
-          name: 'S.K.P. Industries, MIDC Shiroli.',
-          title: 'Dedicated machining shop',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
 
-          images: [
-            '/ourjourney.png',
-            '/ourjourney.png',
-            '/ourjourney.png',
-            '/ourjourney.png',
-          ],
-        },
-        {
-          year: '1995',
-          name: 'Malati Founders Pvt. Ltd. , Hatkanangle.',
-          title: 'Manufacturer of C.I. graded castings',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
-          images: ['2.jfif', '1.jfif', '3.jfif', '4.jfif'],
-        },
-        {
-          year: '2000',
-          name: 'Malati Enterprises, Hatkanangle. ',
-          title: 'Dedicated machining shop',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
-          images: ['4.jfif', '2.jfif', '1.jfif', '3.jfif'],
-        },
-        {
-          year: '2002',
-          name: 'Malati Enterprises, Hatkanangle. ',
-          title: 'Dedicated machining shop',
-          desc: [
-            '- Dedicated machining shop',
-            '- Machines : CNC, Balancing Machines Machining',
-            '- Capacity : 1000 drums/day',
-          ],
-          images: ['3.jfif', '1.jfif', '4.jfif', '2.jfif'],
-        },
-      ],
       itemIndex: -1,
       slideDuration: 2000,
       autoSlider: false,
@@ -196,10 +146,15 @@ export default {
   },
 
   mounted() {
-    if (this.$device.isDesktopOrTablet) {
+    if (this.$device.isDesktop) {
       this.getItem(0)
       this.initAutoSlide()
     }
+  },
+  computed: {
+    journey() {
+      return journey
+    },
   },
   methods: {
     initAutoSlide: function () {
@@ -251,7 +206,7 @@ export default {
       padding: 0 60px;
     }
     @include for-phone-only {
-      padding: 0 30px;
+      padding: 0 15px;
     }
     h1 {
       font-family: 'Lora';
@@ -325,7 +280,14 @@ export default {
           }
           &:last-child {
             padding-bottom: 200px;
+            @include for-desktop-up {
+              padding-bottom: 285px;
+            }
+            @include for-big-desktop-up {
+              padding-bottom: 325px;
+            }
           }
+
           img {
             width: 30px;
             height: 42px;
@@ -398,10 +360,11 @@ export default {
   }
   .journey {
     position: relative;
-    padding: 0 30px;
+    padding: 0 15px;
     display: flex;
     .road {
       margin-right: 30px;
+      margin-top: 6px;
       .bar {
         position: relative;
         z-index: 100;
@@ -416,12 +379,12 @@ export default {
         padding: 0;
         margin: 0;
         .info-li {
-          margin-bottom: 25px;
+          margin-bottom: 80px;
           .marker {
             width: 32px;
             height: 32px;
             position: absolute;
-            left: 26px;
+            left: 11px;
             z-index: 999;
           }
           .year {
@@ -462,6 +425,7 @@ export default {
               width: 100%;
               height: 265px;
               object-fit: cover;
+              border-radius: 4px;
             }
           }
           .control-btn {

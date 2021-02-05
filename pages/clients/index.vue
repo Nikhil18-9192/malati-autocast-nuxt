@@ -1,10 +1,16 @@
 <template>
   <div id="clients">
     <div class="title">
-      <h1>Clients</h1>
+      <h1 data-aos="fade-left">Clients</h1>
     </div>
     <div class="card-container">
-      <div class="card" v-for="(item, i) in clients" :key="i">
+      <div
+        class="card"
+        v-for="(item, i) in clients"
+        :key="i"
+        data-aos="fade-up"
+        :data-aos-delay="i * 200"
+      >
         <img :src="item.logo" alt="" />
         <p>{{ item.title }}</p>
       </div>
@@ -13,17 +19,16 @@
 </template>
 
 <script>
+import { clients } from '@/utils'
 export default {
   name: 'ClientsPage',
   data() {
-    return {
-      clients: [
-        { logo: '/Mahindra.png', title: 'Automotive sector' },
-        { logo: '/escort.png', title: ' ' },
-        { logo: '/Mahindra.png', title: 'Tractor sector' },
-        { logo: '/tmtl.png', title: ' ' },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    clients() {
+      return clients
+    },
   },
 }
 </script>
@@ -35,7 +40,7 @@ export default {
   height: 100%;
   padding: 0 $horizontalPadding;
   @include for-phone-only {
-    padding: 0 30px;
+    padding: 0 15px;
   }
   @include for-tablet-only {
     padding: 0 60px;
@@ -49,7 +54,7 @@ export default {
       text-align: right;
       margin: 90px 0;
       @include for-phone-only {
-        font-size: 60px;
+        font-size: 50px;
         margin-bottom: 20px;
       }
       @include for-tablet-only {
@@ -62,7 +67,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
     margin-bottom: 150px;
     @include for-phone-only {
       margin-bottom: 50px;
@@ -73,6 +77,7 @@ export default {
     }
 
     .card {
+      position: relative;
       width: 260px;
       height: 275px;
       background: #f4f4f4;
@@ -81,8 +86,9 @@ export default {
       justify-content: center;
       align-items: center;
       @include for-phone-only {
-        width: 300px;
+        width: 100%;
         height: 300px;
+        margin-bottom: 36px;
       }
       @include for-tablet-only {
         width: 300px;
@@ -101,6 +107,8 @@ export default {
         font-weight: 500;
         font-size: 18px;
         line-height: 30px;
+        position: absolute;
+        bottom: 60px;
       }
     }
   }

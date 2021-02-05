@@ -16,7 +16,7 @@
 
       <div class="img" v-for="img in services" :key="img.src">
         <transition name="fade">
-          <img v-if="img.src == selectedImage && hover" :src="img.src" alt="" />
+          <img v-if="hover && img.src == selectedImage" :src="img.src" alt="" />
         </transition>
       </div>
     </div>
@@ -31,86 +31,50 @@
           hover = true
         "
         @mouseleave="hover = false"
-        @click="router(item.route)"
       >
-        <div class="title">
-          {{ item.title }}
-        </div>
-        <div class="t-container">
-          <img :src="item.icon" alt="" />
-          <p class="hover-txt">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port
-          </p>
-        </div>
+        <nuxt-link :to="item.route">
+          <div class="title">
+            {{ item.title }}
+          </div>
+          <div class="t-container">
+            <img :src="item.icon" alt="" />
+            <p class="hover-txt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port
+            </p>
+          </div>
+        </nuxt-link>
       </div>
     </div>
     <div v-if="$device.isMobile" class="services-phone">
-      <div
-        class="card-phone"
-        v-for="(item, i) in services"
-        :key="i"
-        @click="router(item.route)"
-      >
-        <img :src="item.icon" alt="" />
-        <div class="container">
-          <h4 class="title">{{ item.title }}</h4>
-          <hr />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port</p>
-        </div>
+      <div class="card-phone" v-for="(item, i) in services" :key="i">
+        <nuxt-link :to="item.route">
+          <img :src="item.icon" alt="" />
+          <div class="container">
+            <h4 class="title">{{ item.title }}</h4>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port</p>
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { services } from '@/utils'
 export default {
   data() {
     return {
       selectedImage: false,
       hover: false,
-      services: [
-        {
-          title: 'OUR JOURNEY',
-          icon: '/marker.svg',
-          src: '/slide-img.png',
-          route: '/ourjourney',
-        },
-        {
-          title: 'INFRASTRUCTURE',
-          icon: '/manufracture.svg',
-          src:
-            'https://images.unsplash.com/photo-1513295202663-54cd69dd2b43?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1490&q=80',
-          route: '/infrastructure',
-        },
-        {
-          title: 'PRODUCTS',
-          icon: '/products.svg',
-          src:
-            'https://images.unsplash.com/photo-1552783160-27bfdb2625d5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1560&q=80',
-          route: '/products',
-        },
-        {
-          title: 'COMPLAINCE',
-          icon: '/complaince.svg',
-          src:
-            'https://images.unsplash.com/photo-1566221857770-508d35ee6220?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-          route: '/complaince',
-        },
-        {
-          title: 'TEAM & CAREER',
-          icon: '/team.svg',
-          src:
-            'https://images.unsplash.com/photo-1571524522669-99d0c9e7264d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
-          route: '/team',
-        },
-      ],
     }
   },
-  methods: {
-    router(route) {
-      this.$router.push(route)
+  computed: {
+    services() {
+      return services
     },
   },
+  methods: {},
 }
 </script>
 
@@ -133,7 +97,7 @@ export default {
     justify-content: center;
     @include for-phone-only {
       margin-top: 75px;
-      padding: 0 30px;
+      padding: 0 15px;
     }
     @include for-tablet-only {
       padding: 0 60px;
@@ -173,6 +137,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: -1;
       img {
         width: 100%;
         height: 100%;
@@ -187,13 +152,11 @@ export default {
       opacity: 0;
     }
 
-    .fade-enter-active,
-    .fade-leave-active {
-      z-index: 999;
-    }
+    // .fade-enter-active,
+    // .fade-leave-active {
+    // }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
       transform: translateY(100%);
-      z-index: 999;
     }
   }
 
@@ -215,6 +178,10 @@ export default {
       text-align: center;
       min-width: 220px;
       cursor: pointer;
+      a {
+        text-decoration: none;
+        color: #000;
+      }
       .title {
         margin-bottom: 32px;
         font-size: 18px;
@@ -248,8 +215,10 @@ export default {
           top: 30%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 107px;
+          width: 100px;
           transition: 0.4s ease all;
+          height: 100px;
+          object-fit: contain;
         }
       }
       .hover-txt {
@@ -286,31 +255,36 @@ export default {
     }
   }
   .services-phone {
-    margin: 30px;
+    margin: 30px 15px 0 15px;
+
     .card-phone {
-      display: flex;
       margin-bottom: 23px;
       background: #f4f4f4;
       padding: 20px;
-      align-items: center;
-      img {
-        margin-right: 16px;
-        width: 80px;
-        height: 80px;
-      }
+      a {
+        display: flex;
+        text-decoration: none;
+        color: #000;
+        align-items: center;
+        img {
+          margin-right: 20px;
+          width: 72px;
+          height: 72px;
+        }
 
-      hr {
-        width: 75px;
-        height: 5px;
-        background: #d6a477;
-        border: none;
-        margin: 10px auto 10px 0;
-      }
-      p {
-        font-size: 16px;
-        line-height: 20px;
-        letter-spacing: 0.05em;
-        color: #939393;
+        hr {
+          width: 75px;
+          height: 5px;
+          background: #d6a477;
+          border: none;
+          margin: 10px auto 10px 0;
+        }
+        p {
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0.05em;
+          color: #939393;
+        }
       }
     }
   }

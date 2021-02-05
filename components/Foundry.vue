@@ -1,6 +1,8 @@
 <template>
   <div id="foundry">
-    <h1>Foundry</h1>
+    <h1 data-aos="fade-right" data-aos-duration="900" data-aos-offset="200">
+      Foundry
+    </h1>
     <div class="container">
       <div class="menu">
         <div v-for="(item, i) in machinery" :key="i" class="items">
@@ -14,13 +16,18 @@
         </div>
       </div>
 
-      <div class="carousel-phone">
+      <div
+        class="carousel-phone"
+        data-aos="fade-up"
+        data-aos-duration="900"
+        data-aos-offset="200"
+      >
         <carousel-3d
           :count="machinery.length"
           :perspective="0"
           :width="1100"
           :key="machinery.length"
-          :autoplay="false"
+          :autoplay="true"
           :height="sliderHeight + 16"
           :bias="'center'"
           :autoplay-timeout="10000"
@@ -60,81 +67,10 @@
 </template>
 
 <script>
+import { machinery } from '@/utils'
 export default {
   data() {
     return {
-      machinery: [
-        {
-          title: 'HPML',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Sand Plant',
-          features: [
-            'Fully automated Sinto sand plant with computerized control panel.',
-            'Sand hopper capacity 80 ton.',
-            'Eirich RV-15mixerwith capacity 675 kg per batch.',
-            'MIA unit installation for sand cooling.',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Induction Furnace',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Shot Blasting',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Core Shop',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-        {
-          title: 'Others',
-          features: [
-            'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-            'The model of machine is FBO-II (L)',
-            'Capacity of molds/hour is 120',
-            'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-            'Maximum mismatch accuracy is 0.2 mm',
-            'PLC controlled automaticmolding line',
-          ],
-          img: '/HPML.png',
-        },
-      ],
       selectedItem: 0,
       sliderHeight: 0,
     }
@@ -143,10 +79,15 @@ export default {
     if (this.$device.isTablet) {
       this.sliderHeight = 1400
     } else if (this.$device.isMobile) {
-      this.sliderHeight = 2600
+      this.sliderHeight = 2000
     } else {
       this.sliderHeight = 500
     }
+  },
+  computed: {
+    machinery() {
+      return machinery
+    },
   },
   methods: {
     getSelected(i) {
@@ -169,7 +110,7 @@ export default {
   height: 100%;
   width: 100%;
   @include for-phone-only {
-    padding: 30px;
+    padding: 0;
   }
   @include for-tablet-only {
     padding: 60px;
@@ -183,8 +124,10 @@ export default {
     letter-spacing: 0.05em;
     color: #000000;
     margin-bottom: 64px;
+    text-transform: uppercase;
     @include for-phone-only {
-      margin-bottom: 30px;
+      margin-bottom: 0;
+      padding: 64px 16px 20px 16px;
     }
     @include for-tablet-only {
       margin-bottom: 40px;
@@ -198,6 +141,10 @@ export default {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      @include for-phone-only {
+        padding: 0 15px;
+        justify-content: flex-start;
+      }
       .items {
         position: relative;
         .button {
@@ -208,7 +155,9 @@ export default {
           background: #f4f4f4;
           cursor: pointer;
           @include for-phone-only {
-            margin-bottom: 15px;
+            margin-bottom: 0;
+            margin-top: 8px;
+            margin-right: 8px;
             padding: 6px;
           }
           @include for-tablet-only {
@@ -245,6 +194,9 @@ export default {
       .left {
         width: 100%;
         padding: 20px;
+        @include for-phone-only {
+          padding: 10px;
+        }
         h3 {
           font-family: Quicksand;
           font-style: normal;
@@ -267,6 +219,9 @@ export default {
             letter-spacing: 0.05em;
             color: #090909;
             padding-bottom: 25px;
+            @include for-phone-only {
+              padding-bottom: 10px;
+            }
           }
           .points {
             margin-left: 15px;
@@ -284,7 +239,7 @@ export default {
           border-bottom-right-radius: 4px;
 
           @include for-tablet-only {
-            height: 400px;
+            height: 300px;
           }
           object-fit: cover;
         }
@@ -292,9 +247,13 @@ export default {
     }
   }
   .carousel-3d-container {
+    @include for-phone-only {
+      margin-top: 0px;
+    }
     .carousel-3d-slide {
       background: #ffffff;
       border: none;
+      border-radius: 5px;
       .card-phone {
         opacity: 0.2;
       }

@@ -19,47 +19,17 @@
 </template>
 
 <script>
+import { menuItems } from '@/utils'
 export default {
   name: 'DesktopMenu',
   data() {
-    return {
-      menuItems: [
-        { icon: '/group.png', title: 'Home', route: '/' },
-        { icon: '/group.png', title: 'Our Journey', route: '/ourJourney' },
-        {
-          icon: '/group.png',
-          title: `Infrastructure`,
-          route: '/infrastructure',
-        },
-        {
-          icon: '/group.png',
-          title: `Clients`,
-          route: '/clients',
-        },
-        // {
-        //   icon: '/group.png',
-        //   title: `Compliance`,
-        //   route: '/compliance',
-        // },
-        {
-          icon: '/group.png',
-          title: `Career & Team`,
-          route: '/career',
-        },
-        {
-          icon: '/group.png',
-          title: `Contact Us`,
-          route: '/contactUs',
-        },
-        {
-          icon: '/group.png',
-          title: `Products`,
-          route: '/products',
-        },
-      ],
-    }
+    return {}
   },
-  computed: {},
+  computed: {
+    menuItems() {
+      return menuItems
+    },
+  },
 }
 </script>
 
@@ -93,7 +63,7 @@ export default {
         margin-left: 16px;
         margin-bottom: 8px;
         .circle {
-          background: #d6a577;
+          background: $primary;
           height: 30px;
           width: 30px;
           border-radius: 50%;
@@ -124,7 +94,7 @@ export default {
           transform: translateX(0);
         }
         a p {
-          color: #d6a577;
+          color: $primary;
         }
       }
     }

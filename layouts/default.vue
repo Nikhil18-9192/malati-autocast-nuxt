@@ -1,9 +1,15 @@
 <template>
   <div>
     <MenuBtn />
+    <div
+      v-if="menuState"
+      class="menuModal"
+      @click="$store.commit('toggleMenuState')"
+    ></div>
     <transition name="slide">
       <DesktopMenu v-if="menuState" />
     </transition>
+
     <Nuxt />
     <AppFooter />
   </div>
@@ -35,6 +41,7 @@ export default {
 <style lang="scss" scopped>
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -71,5 +78,14 @@ div {
 .my-page-leave-active {
   opacity: 0;
   transform: translateX(-10px);
+}
+.menuModal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: transparent;
+  top: 0;
+  left: 0;
 }
 </style>

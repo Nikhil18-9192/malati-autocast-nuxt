@@ -3,7 +3,7 @@
     <div class="menu">
       <ul>
         <li v-for="(item, i) in menu" :key="i">
-          <nuxt-link :to="item.route">{{ item.name }}</nuxt-link>
+          <nuxt-link :to="item.route">{{ item.title }}</nuxt-link>
         </li>
       </ul>
     </div>
@@ -45,20 +45,15 @@
 </template>
 
 <script>
+import { menuItems } from '@/utils'
 export default {
   data() {
-    return {
-      menu: [
-        { name: 'Home', route: '/' },
-        { name: 'Our Journey', route: '/ourJourney' },
-        { name: 'Infrastructure', route: '/infrastructure' },
-        { name: 'Clients & Partners', route: '/' },
-        { name: 'Compliance', route: '/' },
-        { name: 'Career & Team', route: '/' },
-        { name: 'Contact Us', route: '/' },
-        { name: 'Products', route: '/' },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    menu() {
+      return menuItems
+    },
   },
 }
 </script>
@@ -73,7 +68,7 @@ export default {
   display: flex;
   justify-content: space-between;
   @include for-phone-only {
-    padding: 15px 30px;
+    padding: 30px 15px 15px 15px;
     flex-direction: column;
     height: 100%;
   }
@@ -84,6 +79,9 @@ export default {
     max-width: 161px;
     @include for-tablet-only {
       width: 100%;
+    }
+    @include for-phone-only {
+      display: none;
     }
     ul {
       list-style: none;
@@ -134,6 +132,9 @@ export default {
     max-width: 488px;
     @include for-tablet-only {
       padding: 0 0 0 10px;
+    }
+    @include for-phone-only {
+      padding: 0;
     }
   }
 }

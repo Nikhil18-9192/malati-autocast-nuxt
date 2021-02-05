@@ -1,9 +1,15 @@
 <template>
   <div id="quality">
     <div class="container">
-      <h1>Quality</h1>
-      <div class="card-container">
-        <div v-for="(item, i) in tests" :key="i" class="card">
+      <h1 data-aos="fade-right">Quality</h1>
+      <ul class="card-container">
+        <li
+          v-for="(item, i) in tests"
+          :key="i"
+          class="card"
+          data-aos="fade-up"
+          :data-aos-delay="i * 200"
+        >
           <div class="text">
             <h3>{{ item.title }}</h3>
             <p v-for="(point, j) in item.features" :key="j">
@@ -11,80 +17,32 @@
             </p>
           </div>
           <img :src="item.img" alt="" />
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
+import { tests } from '@/utils'
 export default {
   data() {
-    return {
-      tests: [
-        {
-          title: 'Spectromenter',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/spectrometer.png',
-        },
-        {
-          title: 'Metallurgical Microscope',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/microscopy.png',
-        },
-        {
-          title: 'Optical Pyrometer',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/infrared_thermometers.png',
-        },
-        {
-          title: 'Hardness Tester',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/spectrometer.png',
-        },
-        {
-          title: 'Others',
-          features: [
-            'Our plant is equipped with spectrometer from Spectro India',
-            'Model is "SPECTRO LAB"',
-            'Analysis of 30 elements along with Nitrogen and Oxygen is Possible',
-            'It has higher accuracy with 750 mm wavelength',
-          ],
-          img: '/spectrometer.png',
-        },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    tests() {
+      return tests
+    },
   },
 }
 </script>
-
 <style lang="scss" scoped>
 #quality {
   position: relative;
   background: #f4f4f4;
   padding: 64px 136px;
   @include for-phone-only {
-    padding: 15px;
+    padding: 64px 16px 15px 16px;
   }
   @include for-tablet-only {
     padding: 60px;
@@ -100,6 +58,7 @@ export default {
       letter-spacing: 0.05em;
       color: #000000;
       margin-bottom: 64px;
+      text-transform: uppercase;
       @include for-phone-only {
         margin-bottom: 30px;
       }
@@ -107,29 +66,34 @@ export default {
         margin-bottom: 40px;
       }
     }
+
     .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      position: relative;
-      justify-content: center;
-      @include for-desktop-up {
-        justify-content: unset;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-column-gap: 10px;
+      grid-row-gap: 20px;
+      @include for-tablet-only {
+        grid-template-columns: auto auto;
       }
+      @include for-phone-only {
+        grid-template-columns: auto;
+        justify-content: center;
+      }
+
       .card {
         position: relative;
-        width: 335px;
+        width: 400px;
         height: 565px;
         background: white;
-        margin: 24px;
-        @include for-phone-only {
-          height: 555px;
-          margin: 15px;
-        }
         @include for-tablet-only {
-          width: 450px;
+          width: 325px;
         }
-        @include for-big-desktop-up {
-          width: 465px;
+        @include for-phone-only {
+          width: 100%;
+          height: 545px;
         }
         .text {
           padding: 24px;
@@ -140,8 +104,10 @@ export default {
             font-size: 24px;
             line-height: 30px;
             letter-spacing: 0.16em;
-            color: #d6a577;
-            margin-bottom: 55px;
+            color: $primary;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            min-height: 60px;
             @include for-phone-only {
               margin-bottom: 25px;
             }

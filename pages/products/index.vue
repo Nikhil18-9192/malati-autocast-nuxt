@@ -1,13 +1,18 @@
 <template>
   <div id="products">
     <div class="title">
-      <h1>Products</h1>
+      <h1 data-aos="fade-left">Products</h1>
     </div>
     <div class="cast-products">
-      <h4>Cast Iron Products</h4>
+      <h4 data-aos="fade-right">Cast Iron Products</h4>
       <hr />
       <ul class="product-list">
-        <li v-for="(product, i) in castProducts" :key="i">
+        <li
+          v-for="(product, i) in castProducts"
+          :key="i"
+          data-aos="fade-up"
+          :data-aos-delay="i * 200"
+        >
           <img :src="product.src" alt="" />
           <p class="name">
             {{ product.name }}
@@ -16,10 +21,15 @@
       </ul>
     </div>
     <div class="cast-products">
-      <h4>SG Iron Products</h4>
+      <h4 data-aos="fade-right">SG Iron Products</h4>
       <hr />
       <ul class="product-list">
-        <li v-for="(product, i) in ironProducts" :key="i">
+        <li
+          v-for="(product, i) in ironProducts"
+          :key="i"
+          data-aos="fade-up"
+          :data-aos-delay="i * 50"
+        >
           <img :src="product.src" alt="" />
           <p class="name">
             {{ product.name }}
@@ -36,18 +46,20 @@ export default {
   data() {
     return {
       castProducts: [
-        { src: '/brake-drum.png', name: 'Brake Drum' },
-        { src: '/hydraulic-lift-piston.png', name: 'Hydraulic Lift Piston' },
-        { src: '/flywheel.png', name: 'Flywheel' },
-        { src: '/hydraulic-lift.png', name: 'Hydraulic Lift Piston' },
-        { src: '/spacer.png', name: 'Spacer' },
-        { src: '/hydraulic-control-lift.png', name: 'Hydraulic Control Lift' },
-        { src: '/strainer-housing.png', name: 'Strainer Housing' },
+        { src: '/brake-drum.jpg', name: 'Brake Drum' },
+        { src: '/hydraulic-lift-piston.jpg', name: 'Hydraulic Lift Piston' },
+        { src: '/flywheel.jpg', name: 'Flywheel' },
+        { src: '/hydraulic-lift.jpg', name: 'Hydraulic Lift Piston' },
+        { src: '/spacer.jpg', name: 'Spacer' },
+        { src: '/hydraulic-control-lift.jpg', name: 'Hydraulic Control Lift' },
+        { src: '/strainer-housing.jpg', name: 'Strainer Housing' },
+        { src: '/front-wheel-hub.jpg', name: 'Front Wheel Hub' },
+        { src: '/Brake-Disc.jpg', name: 'Brake Disk' },
       ],
       ironProducts: [
-        { src: '/iron1.png', name: 'Hydraulic Piston' },
-        { src: '/bearing-housing-cargo.png', name: 'Bearing Housing Cargo' },
-        { src: '/iron2.png', name: 'Hydraulic Piston' },
+        { src: '/iron1.jpg', name: 'Hydraulic Piston' },
+        { src: '/bearing-housing-cargo.jpg', name: 'Bearing Housing Cargo' },
+        { src: '/iron2.jpg', name: 'Hydraulic Piston' },
       ],
     }
   },
@@ -61,7 +73,7 @@ export default {
   height: 100%;
   padding: 0 $horizontalPadding;
   @include for-phone-only {
-    padding: 0 30px;
+    padding: 0 15px;
   }
   @include for-tablet-only {
     padding: 0 60px;
@@ -75,7 +87,7 @@ export default {
       text-align: right;
       margin: 90px 0;
       @include for-phone-only {
-        font-size: 60px;
+        font-size: 50px;
         margin-bottom: 20px;
       }
       @include for-tablet-only {
