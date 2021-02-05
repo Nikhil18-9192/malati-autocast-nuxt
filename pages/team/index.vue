@@ -92,7 +92,7 @@ export default {
       margin: 90px 0 0 0;
       padding-bottom: 130px;
       @include for-phone-only {
-        font-size: 48px;
+        font-size: 46px;
         padding-bottom: 15px;
       }
       @include for-tablet-only {
@@ -160,7 +160,7 @@ export default {
         text-transform: uppercase;
         margin-bottom: 40px;
         @include for-phone-only {
-          font-size: 30px;
+          font-size: 28px;
         }
       }
       .profile {
@@ -272,7 +272,7 @@ export default {
         text-transform: uppercase;
         margin-bottom: 40px;
         @include for-phone-only {
-          font-size: 30px;
+          font-size: 28px;
         }
       }
       .advisor-cards {
@@ -377,7 +377,7 @@ export default {
       margin-bottom: 40px;
       padding-top: 60px;
       @include for-phone-only {
-        font-size: 30px;
+        font-size: 28px;
         padding-top: 30px;
       }
     }

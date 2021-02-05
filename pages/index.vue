@@ -31,32 +31,30 @@
           hover = true
         "
         @mouseleave="hover = false"
-        @click="router(item.route)"
       >
-        <div class="title">
-          {{ item.title }}
-        </div>
-        <div class="t-container">
-          <img :src="item.icon" alt="" />
-          <p class="hover-txt">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port
-          </p>
-        </div>
+        <nuxt-link :to="item.route">
+          <div class="title">
+            {{ item.title }}
+          </div>
+          <div class="t-container">
+            <img :src="item.icon" alt="" />
+            <p class="hover-txt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port
+            </p>
+          </div>
+        </nuxt-link>
       </div>
     </div>
     <div v-if="$device.isMobile" class="services-phone">
-      <div
-        class="card-phone"
-        v-for="(item, i) in services"
-        :key="i"
-        @click="router(item.route)"
-      >
-        <img :src="item.icon" alt="" />
-        <div class="container">
-          <h4 class="title">{{ item.title }}</h4>
-          <hr />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port</p>
-        </div>
+      <div class="card-phone" v-for="(item, i) in services" :key="i">
+        <nuxt-link :to="item.route">
+          <img :src="item.icon" alt="" />
+          <div class="container">
+            <h4 class="title">{{ item.title }}</h4>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port</p>
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -76,11 +74,7 @@ export default {
       return services
     },
   },
-  methods: {
-    router(route) {
-      this.$router.push(route)
-    },
-  },
+  methods: {},
 }
 </script>
 
@@ -184,6 +178,10 @@ export default {
       text-align: center;
       min-width: 220px;
       cursor: pointer;
+      a {
+        text-decoration: none;
+        color: #000;
+      }
       .title {
         margin-bottom: 32px;
         font-size: 18px;
@@ -256,28 +254,33 @@ export default {
   }
   .services-phone {
     margin: 30px 15px 0 15px;
+
     .card-phone {
-      display: flex;
       margin-bottom: 23px;
       background: #f4f4f4;
       padding: 20px;
-      img {
-        margin-right: 15px;
-        width: 100%;
-      }
+      a {
+        display: flex;
+        text-decoration: none;
+        color: #000;
+        img {
+          margin-right: 15px;
+          width: 100%;
+        }
 
-      hr {
-        width: 75px;
-        height: 5px;
-        background: #d6a477;
-        border: none;
-        margin: 10px auto 10px 0;
-      }
-      p {
-        font-size: 16px;
-        line-height: 20px;
-        letter-spacing: 0.05em;
-        color: #939393;
+        hr {
+          width: 75px;
+          height: 5px;
+          background: #d6a477;
+          border: none;
+          margin: 10px auto 10px 0;
+        }
+        p {
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0.05em;
+          color: #939393;
+        }
       }
     }
   }

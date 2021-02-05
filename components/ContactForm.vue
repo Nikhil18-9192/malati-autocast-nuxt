@@ -1,10 +1,10 @@
 <template>
   <div id="contact-form">
-    <input type="text" placeholder="Name" />
-    <input type="text" placeholder="Company" />
-    <input type="number" placeholder="Mobile" />
-    <input type="email" placeholder="Email" />
-    <button>Submit</button>
+    <input type="text" v-model="name" placeholder="Name" />
+    <input type="text" v-model="company" placeholder="Company" />
+    <input type="number" v-model="mobile" placeholder="Mobile" />
+    <input type="email" v-model="email" placeholder="Email" />
+    <button @click="submit">Submit</button>
     <div class="social-icon">
       <nuxt-link to=""
         ><svg
@@ -93,7 +93,44 @@
 </template>
 
 <script>
-export default {}
+import { formValidation } from '@/utils/validation'
+export default {
+  name: 'contactForm',
+  data() {
+    return {
+      name: '',
+      company: '',
+      mobile: '',
+      email: '',
+    }
+  },
+  methods: {
+    submit() {
+      const phoneExp = /^[789]\d{9}$/
+      const emailExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      const { name, company, mobile, email } = this
+      const validation = formValidation({
+        name,
+        company,
+        mobile,
+        email,
+      })
+
+      if (validation.error) {
+        this.$toast.error(validation.error.message)
+        return
+      }
+      if (!mobile.match(phoneExp)) {
+        this.$toast.error('wrong mobile number you enter')
+        return
+      }
+      if (!email.match(emailExp)) {
+        this.$toast.error('wrong email you enter')
+        return
+      }
+    },
+  },
+}
 </script>
 
 <style lang="scss" scopped>
@@ -125,6 +162,7 @@ export default {}
     font-size: 16px;
     cursor: pointer;
     transition: 0.2s ease all;
+    outline: none;
     @include for-phone-only {
       width: 100%;
     }

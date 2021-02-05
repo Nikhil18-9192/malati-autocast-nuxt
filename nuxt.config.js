@@ -40,6 +40,7 @@ export default {
       src: '~/plugins/aos.js',
       ssr: false,
     },
+    { src: '~/plugins/toast.js', ssr: false },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -28,7 +28,7 @@
           v-for="(product, i) in ironProducts"
           :key="i"
           data-aos="fade-up"
-          :data-aos-delay="i * 200"
+          :data-aos-delay="i * 50"
         >
           <img :src="product.src" alt="" />
           <p class="name">
