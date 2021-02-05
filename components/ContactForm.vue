@@ -106,8 +106,6 @@ export default {
   },
   methods: {
     submit() {
-      const phoneExp = /^[789]\d{9}$/
-      const emailExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       const { name, company, mobile, email } = this
       const validation = formValidation({
         name,
@@ -118,14 +116,6 @@ export default {
 
       if (validation.error) {
         this.$toast.error(validation.error.message)
-        return
-      }
-      if (!mobile.match(phoneExp)) {
-        this.$toast.error('wrong mobile number you enter')
-        return
-      }
-      if (!email.match(emailExp)) {
-        this.$toast.error('wrong email you enter')
         return
       }
     },
