@@ -123,6 +123,7 @@ export default {
       width: 100%;
       max-width: 900px;
       object-fit: contain;
+      border-radius: 4px;
     }
     p {
       font-weight: 500;
@@ -180,6 +181,7 @@ export default {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            border-radius: 4px;
           }
         }
         .right {
@@ -212,6 +214,9 @@ export default {
             float: left;
             border: none;
             margin: 24px auto 24px 0;
+            @include for-phone-only {
+              margin: 8px 0;
+            }
             @include for-tablet-only {
               margin: 10px auto 10px 0;
             }
@@ -241,6 +246,9 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+            @include for-phone-only {
+              margin-top: 24px;
+            }
             @include for-tablet-only {
               margin-top: 30px;
             }
@@ -289,6 +297,7 @@ export default {
           .image {
             width: 100%;
             border: 25px solid rgb(221, 221, 221);
+            border-radius: 4px;
             @include for-phone-only {
               width: 70%;
             }
@@ -315,8 +324,11 @@ export default {
             height: 5px;
             border: none;
             margin: 24px 0 24px 0;
+            @include for-phone-only {
+              margin: 8px 0;
+            }
             @include for-tablet-only {
-              margin: 10px auto 10px 0;
+              margin: 10px 0;
             }
           }
           .desc {
@@ -344,6 +356,9 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+            @include for-phone-only {
+              margin-top: 24px;
+            }
             @include for-tablet-only {
               margin-top: 30px;
             }

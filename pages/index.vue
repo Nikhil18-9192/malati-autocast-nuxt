@@ -215,8 +215,10 @@ export default {
           top: 30%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 107px;
+          width: 100px;
           transition: 0.4s ease all;
+          height: 100px;
+          object-fit: contain;
         }
       }
       .hover-txt {
@@ -263,9 +265,11 @@ export default {
         display: flex;
         text-decoration: none;
         color: #000;
+        align-items: center;
         img {
-          margin-right: 15px;
-          width: 100%;
+          margin-right: 20px;
+          width: 80px;
+          height: 80px;
         }
 
         hr {
