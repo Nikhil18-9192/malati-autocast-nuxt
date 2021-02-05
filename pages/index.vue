@@ -292,9 +292,11 @@ export default {
       margin-bottom: 23px;
       background: #f4f4f4;
       padding: 20px;
+      align-items: center;
       img {
-        margin-right: 15px;
-        width: 100%;
+        margin-right: 16px;
+        width: 80px;
+        height: 80px;
       }
 
       hr {

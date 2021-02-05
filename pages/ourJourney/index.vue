@@ -407,6 +407,7 @@ export default {
         z-index: 100;
         width: 24px;
         min-height: 100%;
+        padding-top: 8px;
       }
     }
     .info {
@@ -427,7 +428,7 @@ export default {
             display: flex;
             margin-bottom: 15px;
             img {
-              width: 30px;
+              width: 32px;
               margin-right: 20px;
             }
             h4 {
