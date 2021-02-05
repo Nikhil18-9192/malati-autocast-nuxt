@@ -54,6 +54,12 @@
     </div>
     <div class="employee-services">
       <h4 data-aos="fade-right">Employees Service</h4>
+      <EmployeeServices data-aos="fade-up" />
+      <ul class="pdf-section">
+        <li v-for="item in btnTitle" :key="item.text" data-aos="fade-up">
+          <PdfButton class="pdf-btn" :text="item.text" :url="item.url" />
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -62,6 +68,19 @@
 import { advisorTeam } from '@/utils'
 export default {
   name: 'TeamPage',
+  data() {
+    return {
+      btnTitle: [
+        { text: 'Malati Autocast - Sustainability 2020-2021', url: '#' },
+        { text: 'Policy on Safety from Communicable Disease', url: '#' },
+        { text: 'Policy on Environment Health & Safety', url: '#' },
+        {
+          text: 'Policy on Child Protection and Prevention of Child Labour',
+          url: '#',
+        },
+      ],
+    }
+  },
   computed: {
     advisors() {
       return advisorTeam
@@ -294,6 +313,9 @@ export default {
           grid-template-columns: auto;
         }
         .card {
+          @include for-phone-only {
+            margin-bottom: 24px;
+          }
           .image {
             width: 100%;
             border: 25px solid rgb(221, 221, 221);
@@ -377,7 +399,7 @@ export default {
   .employee-services {
     position: relative;
     width: 100%;
-    height: 500px;
+
     padding: 0 $horizontalPadding;
     @include for-phone-only {
       padding: 0 15px;
@@ -398,6 +420,21 @@ export default {
       @include for-phone-only {
         font-size: 28px;
         padding-top: 30px;
+      }
+    }
+    .pdf-section {
+      margin: 30px 0 50px 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 30px;
+      border-radius: 4px;
+      @include for-phone-only {
+        grid-template-columns: auto;
+      }
+      .pdf-btn {
+        background: #f4f4f4;
       }
     }
   }
