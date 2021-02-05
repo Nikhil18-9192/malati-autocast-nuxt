@@ -275,7 +275,7 @@ const menuItems = [
   {
     icon: '/group.png',
     title: `Career & Team`,
-    route: '/career',
+    route: '/team',
   },
   {
     icon: '/group.png',
@@ -289,4 +289,37 @@ const menuItems = [
   },
 ]
 
-export { services, journey, machinery, tests, cardInfo, clients, menuItems }
+const advisorTeam = [
+  {
+    src: '/leader.jpg',
+    name: 'Sanjay Patil',
+    designation: 'Advisor - Management',
+    desc:
+      'With over 4 decades of experience in casting, machining and foundry management is the Managing director of Malati Founders Pvt. Ltd. and is an active advisor of Malati Autocast Pvt. Ltd.',
+  },
+  {
+    src: '/leader.jpg',
+    name: 'Sanjay Patil',
+    designation: 'Advisor - Management',
+    desc:
+      'With over 4 decades of experience in casting, machining and foundry management is the Managing director of Malati Founders Pvt. Ltd. and is an active advisor of Malati Autocast Pvt. Ltd.',
+  },
+  {
+    src: '/leader.jpg',
+    name: 'Sanjay Patil',
+    designation: 'Advisor - Management',
+    desc:
+      'With over 4 decades of experience in casting, machining and foundry management is the Managing director of Malati Founders Pvt. Ltd. and is an active advisor of Malati Autocast Pvt. Ltd.',
+  },
+]
+
+export {
+  services,
+  journey,
+  machinery,
+  tests,
+  cardInfo,
+  clients,
+  menuItems,
+  advisorTeam,
+}
