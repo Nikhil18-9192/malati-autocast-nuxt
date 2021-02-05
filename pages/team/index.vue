@@ -25,7 +25,10 @@
               Engineer turned entrepreneur who is determined to create a culture
               of comradery, responsibility and professionalism.
             </p>
-            <button><img src="linkedin1.svg" alt="" /> View Profile</button>
+            <button>
+              <img src="linkedin1.svg" alt="" />
+              <p>View Profile</p>
+            </button>
           </div>
         </div>
       </div>
@@ -235,12 +238,17 @@ export default {
             text-transform: uppercase;
             margin-top: 43px;
             margin-bottom: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             @include for-tablet-only {
               margin-top: 30px;
             }
             cursor: pointer;
             img {
               margin-right: 7px;
+              object-fit: contain;
+              padding-bottom: 5px;
             }
           }
         }
@@ -329,12 +337,18 @@ export default {
             text-transform: uppercase;
             margin-top: 43px;
             margin-bottom: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             @include for-tablet-only {
               margin-top: 30px;
             }
             cursor: pointer;
             img {
               margin-right: 7px;
+
+              object-fit: contain;
+              padding-bottom: 5px;
             }
           }
         }
