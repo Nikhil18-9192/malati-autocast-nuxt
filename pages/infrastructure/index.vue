@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       title: {
-        img: '/infra1.png',
+        img: '/infra1.jpg',
         name: 'Infrastructure',
       },
     }
@@ -22,5 +22,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

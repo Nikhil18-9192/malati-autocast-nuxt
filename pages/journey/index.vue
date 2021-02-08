@@ -21,7 +21,13 @@
             />
           </transition>
 
-          <img class="bar" src="road.png" alt="" />
+          <nuxt-img
+            src="road.png"
+            :format="$device.isIos ? 'png' : 'webp'"
+            class="bar"
+          />
+
+          <!-- <img class="bar" src="road.png" alt="" /> -->
         </div>
         <ul data-aos="fade-up" data-aos-duration="900" data-aos-offset="200">
           <li
@@ -200,6 +206,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
   .title {
     padding: 0 $horizontalPadding;
     @include for-tablet-only {
@@ -353,8 +360,9 @@ export default {
         position: absolute;
         top: 0;
         width: 100%;
-        height: 520px;
-        object-fit: cover;
+        max-height: 520px;
+        object-fit: contain;
+        object-position: top;
       }
     }
   }
@@ -424,7 +432,7 @@ export default {
             img {
               width: 100%;
               height: 265px;
-              object-fit: cover;
+              object-fit: contain;
               border-radius: 4px;
             }
           }

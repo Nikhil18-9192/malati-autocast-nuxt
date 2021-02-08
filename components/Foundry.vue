@@ -192,10 +192,11 @@ export default {
         flex-direction: row-reverse;
       }
       .left {
-        width: 100%;
+        width: 50%;
         padding: 20px;
         @include for-phone-only {
           padding: 10px;
+          width: 100%;
         }
         h3 {
           font-family: Quicksand;
@@ -229,19 +230,20 @@ export default {
         }
       }
       .right {
-        padding: 4px;
-
+        position: relative;
+        width: 50%;
+        @include for-phone-only {
+          width: 100%;
+        }
         img {
           height: 100%;
           width: 100%;
           object-fit: cover;
-          border-top-right-radius: 4px;
-          border-bottom-right-radius: 4px;
+          object-position: center;
 
           @include for-tablet-only {
             height: 300px;
           }
-          object-fit: cover;
         }
       }
     }

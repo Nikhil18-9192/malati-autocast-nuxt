@@ -144,28 +144,61 @@ export default {
     }
   }
   button {
+    position: relative;
     width: 152px;
     height: 50px;
-    background: $primary;
+    background: transparent;
     border: 1px solid #000;
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
+    z-index: 10;
     transition: 0.2s ease all;
     outline: none;
+    letter-spacing: 0.1em;
+    overflow: hidden;
     @include for-phone-only {
       width: 100%;
     }
+
+    &::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      background: rgb(65, 65, 65);
+      left: -100%;
+      top: 0;
+      transition: 0.3s ease all;
+      color: white;
+      z-index: -1;
+    }
+
     &:hover {
-      transform: scale(1.05);
+      border-color: transparent;
+      color: rgba(255, 255, 255, 0.719);
+      &::after {
+        left: 0;
+      }
     }
   }
   .social-icon {
     margin-top: 50px;
     text-align: right;
+
+    @include for-phone-only {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
     a {
       text-decoration: none;
       margin-left: 30px;
+
+      @include for-phone-only {
+        margin: 0 12px;
+      }
       img {
         transition: 0.3s ease all;
       }

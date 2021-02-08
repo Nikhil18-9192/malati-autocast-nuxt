@@ -41,61 +41,61 @@ const journey = [
     name: 'Patil Engineering Works, Kolhapur.',
     title: 'Manufacturer of betel nut cutting machines.',
     desc: [
-      '- Dedicated machining shop',
-      '- Machines : CNC, Balancing Machines Machining',
-      '- Capacity : 1000 drums/day',
+      '- Started in 1970',
+      '- Located in Kolhapur city',
+      '- We are into exports as well',
     ],
-    images: ['/1.jfif', '/2.jfif', '/3.jfif', '/4.jfif'],
+    images: ['patil-engg.jpg', 'patil-eng1.jpg', 'patil-eng2.jpg'],
   },
   {
     year: '1988',
     name: 'S.K.P. Industries, MIDC Shiroli.',
     title: 'Dedicated machining shop',
     desc: [
+      '- Located in M.I.D.C Shiroli',
       '- Dedicated machining shop',
       '- Machines : CNC, Balancing Machines Machining',
       '- Capacity : 1000 drums/day',
     ],
 
-    images: [
-      '/ourjourney.png',
-      '/ourjourney.png',
-      '/ourjourney.png',
-      '/ourjourney.png',
-    ],
+    images: ['/skpind.jpg', '/skpind1.jpg', '/skp01.jpg'],
   },
   {
     year: '1995',
     name: 'Malati Founders Pvt. Ltd. , Hatkanangle.',
     title: 'Manufacturer of C.I. graded castings',
     desc: [
-      '- Dedicated machining shop',
-      '- Machines : CNC, Balancing Machines Machining',
-      '- Capacity : 1000 drums/day',
+      '- Manufacturer of C.I graded castings',
+      '- Infrastructure:- Cupola furnace and induction furnace',
+      '- Production capacity 1000 MT/month',
+      `- Products manufactured brake drums, hydraulic pistons, flywheel`,
+      `- Partners in growth:- Mahindra and Mahindra (Automotive and Tractors, Escorts, Godrej, Kirloskar`,
     ],
-    images: ['2.jfif', '1.jfif', '3.jfif', '4.jfif'],
+    images: ['me01.jpg'],
   },
   {
     year: '2000',
-    name: 'Malati Enterprises, Hatkanangle. ',
-    title: 'Dedicated machining shop',
+    name: 'Malati Founders Pvt. Ltd. Unit 2, Nagpur',
+    title: 'Dedicated assembly unit',
     desc: [
-      '- Dedicated machining shop',
-      '- Machines : CNC, Balancing Machines Machining',
-      '- Capacity : 1000 drums/day',
+      '- Located in Nagpur',
+      '- Dedicated assembly unit',
+      '- Assembly of control lever brackets and hydraulic pistons',
     ],
-    images: ['4.jfif', '2.jfif', '1.jfif', '3.jfif'],
+    images: ['me02.jpg'],
   },
   {
     year: '2002',
     name: 'Malati Enterprises, Hatkanangle. ',
-    title: 'Dedicated machining shop',
+    title:
+      'Dedicated machining shop with VMC and DTC for drums, brackets and hydraulic pistons',
     desc: [
-      '- Dedicated machining shop',
+      '- Located in Hatkanangle besides MFPL',
+      '- Dedicated machining shop with VMC and DTC for drums, brackets and hydraulic pistons',
+
       '- Machines : CNC, Balancing Machines Machining',
-      '- Capacity : 1000 drums/day',
     ],
-    images: ['3.jfif', '1.jfif', '4.jfif', '2.jfif'],
+    images: ['me03.jpg'],
   },
 ]
 const machinery = [
@@ -109,7 +109,7 @@ const machinery = [
       'Maximum mismatch accuracy is 0.2 mm',
       'PLC controlled automaticmolding line',
     ],
-    img: '/HPML.png',
+    img: '/hpml.jpg',
   },
   {
     title: 'Sand Plant',
@@ -119,7 +119,7 @@ const machinery = [
       'Eirich RV-15mixerwith capacity 675 kg per batch.',
       'MIA unit installation for sand cooling.',
     ],
-    img: '/HPML.png',
+    img: '/sandp1.jpg',
   },
   {
     title: 'Induction Furnace',
@@ -130,7 +130,7 @@ const machinery = [
       'Induction furnaces works on IGBT technology.',
       'Transporting of raw material on melting platformis doneusing electro-magnetwith 2T overhead crane.',
     ],
-    img: '/HPML.png',
+    img: '/ind-furnace1.jpg',
   },
   {
     title: 'Shot Blasting',
@@ -139,7 +139,7 @@ const machinery = [
       'Per cycle time to shot blast on products is 12 min using spindle hanger.',
       'Capacity of shot blasting the product is 0.5 MT/Cycle.',
     ],
-    img: '/HPML.png',
+    img: '/shotblasting.jpg',
   },
   {
     title: 'Core Shop',
@@ -148,7 +148,7 @@ const machinery = [
       'After baking, the cores are assembled on the racks.',
       'Core painting facility is also available.',
     ],
-    img: '/HPML.png',
+    img: '/core-oven.jpg',
   },
   {
     title: 'Others',
@@ -156,7 +156,7 @@ const machinery = [
       'Paint shop : Spray painting facility is available.',
       'Fettling : 3 grinders are installed in-house for fettling.',
     ],
-    img: '/HPML.png',
+    img: '/others.jpg',
   },
 ]
 
@@ -177,7 +177,7 @@ const tests = [
       'Inverted Metallurgical Microscope with Image Analysis Software: Pro Metal™ V8is installed.',
       'Magnification range is 50x –1000x.',
     ],
-    img: '/microscopy.png',
+    img: '/microscope.png',
   },
   {
     title: 'Optical Pyrometer',
@@ -187,7 +187,7 @@ const tests = [
       'Contactless measurement.',
       'Use of optical pyrometer reduces the metal waste.',
     ],
-    img: '/infrared_thermometers.png',
+    img: '/pyrometer.png',
   },
   {
     title: 'Hardness Tester',
@@ -196,21 +196,21 @@ const tests = [
       'Maximum load capacity is 3000  Kg',
       'Hardness is measured using 5mm ball with 750 kg load & 10 mm ball 3000  kg load ',
     ],
-    img: '/spectrometer.png',
+    img: '/hardness-t.png',
   },
   {
     title: 'Others',
     features: [
       'Muffle furnace,AFS calculator,Sieve shaker,Green compressive strengthmachine,Permeability meter,  Digital moisturetesterfacilities  are also available.',
     ],
-    img: '/spectrometer.png',
+    img: '/other-instru.png',
   },
 ]
 
 const cardInfo = [
   {
     title: 'Dust collector',
-    src: '/env1.png',
+    src: '/dust-collector.jpg',
     desc:
       'Only waste generated is dust. To reduce the impact of waste dust in the surrounding dust collectors are installed in the premises.',
     L1: 'a. Neo-Airtech:- Sand plant and cooler.',
@@ -218,13 +218,13 @@ const cardInfo = [
   },
   {
     title: 'Water',
-    src: '/env2.png',
+    src: '/water.jpg',
     desc:
       '100% water used for manufacturing process is recycled. The rain water harvesting system adds to reduction of fresh water required.',
   },
   {
     title: 'Electricity',
-    src: '/env3.png',
+    src: '/env3.jpg',
     desc:
       'Initiatives to use natural light has reduced the electric consumption. Well ventilated space helps to free-flowing air.',
   },

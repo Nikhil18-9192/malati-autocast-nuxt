@@ -16,7 +16,16 @@
               {{ point }}
             </p>
           </div>
-          <img :src="item.img" alt="" />
+          <!-- 
+          <nuxt-picture
+            :src="item.img"
+            placeholder
+            fit="contain"
+            :responsive="false"
+          /> -->
+
+          <nuxt-img :format="$device.isIos ? `png` : 'webp'" :src="item.img" />
+          <!-- <img :src="item.img" alt="" /> -->
         </li>
       </ul>
     </div>
@@ -26,6 +35,7 @@
 <script>
 import { tests } from '@/utils'
 export default {
+  name: 'QualityComp',
   data() {
     return {}
   },
@@ -137,14 +147,11 @@ export default {
         }
         img {
           position: absolute;
-          width: 290px;
+          width: 100%;
           height: 254px;
           bottom: 0;
           right: 0;
-          object-fit: cover;
-          @include for-phone-only {
-            width: 265px;
-          }
+          object-fit: contain;
         }
       }
     }
