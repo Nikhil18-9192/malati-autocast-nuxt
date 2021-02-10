@@ -88,13 +88,15 @@ export default {
           margin: auto 15px;
         }
       }
-      &:hover {
-        .circle {
-          opacity: 1;
-          transform: translateX(0);
-        }
-        a p {
-          color: $primary;
+      @include for-desktop-up {
+        &:hover {
+          .circle {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          a p {
+            color: $primary;
+          }
         }
       }
     }

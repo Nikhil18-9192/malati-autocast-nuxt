@@ -98,7 +98,7 @@ export default {
       position: relative;
       overflow: hidden;
       @include for-phone-only {
-        min-height: 235px;
+        max-height: 235px;
       }
       img {
         object-fit: cover;

@@ -24,7 +24,7 @@
             :responsive="false"
           /> -->
 
-          <nuxt-img :format="$device.isIos ? `png` : 'webp'" :src="item.img" />
+          <nuxt-img :src="item.img" />
           <!-- <img :src="item.img" alt="" /> -->
         </li>
       </ul>

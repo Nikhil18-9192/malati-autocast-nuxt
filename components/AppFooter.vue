@@ -41,6 +41,7 @@
       </div>
       <div class="contact-form">
         <ContactForm />
+        <SocialIcon />
       </div>
     </div>
     <div class="branding">
@@ -98,6 +99,9 @@ export default {
       width: 100%;
     }
     @include for-phone-only {
+      display: none;
+    }
+    @include for-tablet-only {
       display: none;
     }
     ul {

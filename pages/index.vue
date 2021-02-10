@@ -270,6 +270,7 @@ export default {
           margin-right: 20px;
           width: 72px;
           height: 72px;
+          object-fit: contain;
         }
 
         hr {

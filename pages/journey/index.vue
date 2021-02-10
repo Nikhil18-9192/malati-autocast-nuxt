@@ -21,13 +21,7 @@
             />
           </transition>
 
-          <nuxt-img
-            src="road.png"
-            :format="$device.isIos ? 'png' : 'webp'"
-            class="bar"
-          />
-
-          <!-- <img class="bar" src="road.png" alt="" /> -->
+          <nuxt-img src="road.png" class="bar" />
         </div>
         <ul data-aos="fade-up" data-aos-duration="900" data-aos-offset="200">
           <li
@@ -83,7 +77,7 @@
       </transition>
     </div>
     <div
-      v-if="$device.isMobileOrTablet"
+      v-else
       class="journey"
       data-aos="fade-up"
       data-aos-duration="900"
@@ -398,6 +392,7 @@ export default {
           .year {
             display: flex;
             margin-bottom: 15px;
+            align-items: center;
             img {
               width: 32px;
               margin-right: 20px;
@@ -445,6 +440,10 @@ export default {
               background: $primary;
               border: none;
               margin-left: 8px;
+              border-radius: 4px;
+              @include for-tablet-only {
+                padding: 6px 12px;
+              }
             }
           }
         }

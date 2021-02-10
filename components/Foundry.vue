@@ -198,6 +198,9 @@ export default {
           padding: 10px;
           width: 100%;
         }
+        @include for-tablet-only {
+          width: 100%;
+        }
         h3 {
           font-family: Quicksand;
           font-style: normal;
@@ -235,6 +238,9 @@ export default {
         @include for-phone-only {
           width: 100%;
         }
+        @include for-tablet-only {
+          width: 100%;
+        }
         img {
           height: 100%;
           width: 100%;
@@ -243,6 +249,9 @@ export default {
 
           @include for-tablet-only {
             height: 300px;
+          }
+          @include for-phone-only {
+            max-height: 300px;
           }
         }
       }
