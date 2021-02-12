@@ -45,7 +45,7 @@
     </div>
     <div class="branding">
       <h4>
-        Build with ❤ by
+        Built with ❤ by
         <a target="_blank" href="https://www.formecmedia.com">Formec Media</a>
       </h4>
     </div>
