@@ -246,6 +246,11 @@ const menuItems = [
     route: '/infrastructure',
   },
   {
+    icon: '/products-black.svg',
+    title: `Products`,
+    route: '/products',
+  },
+  {
     icon: '/group.png',
     title: `Clients`,
     route: '/clients',
@@ -264,11 +269,6 @@ const menuItems = [
     icon: '/contact-black.svg',
     title: `Contact Us`,
     route: '/contactus',
-  },
-  {
-    icon: '/products-black.svg',
-    title: `Products`,
-    route: '/products',
   },
 ]
 
