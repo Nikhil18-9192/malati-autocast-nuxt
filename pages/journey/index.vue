@@ -430,6 +430,7 @@ export default {
               height: 265px;
               object-fit: contain;
               border-radius: 4px;
+              border: 12px solid #dddddd;
             }
           }
           .control-btn {
