@@ -357,6 +357,7 @@ export default {
         max-height: 520px;
         object-fit: contain;
         object-position: top;
+        border: 12px solid #dddddd;
       }
     }
   }
