@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 #environment {
-  padding: 64px 136px;
+  padding: 64px 72px 64px 136px;
   @include for-phone-only {
     padding: 0 16px 16px 16px;
   }
@@ -81,24 +81,24 @@ export default {
   }
   .card {
     list-style: none;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 15px;
     margin: 0;
     padding: 0;
-    @include for-phone-only {
-      grid-template-columns: auto;
-    }
-    @include for-tablet-only {
-      grid-template-columns: auto;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
     li {
       height: 100%;
       max-height: 435px;
+      max-width: 608px;
+      width: 100%;
       position: relative;
       overflow: hidden;
       @include for-phone-only {
-        min-height: 235px;
+        max-height: 235px;
+      }
+      @include for-big-desktop-up {
+        max-width: 750px;
       }
       img {
         object-fit: cover;

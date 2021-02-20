@@ -93,6 +93,7 @@ export default {
       @include for-tablet-only {
         width: 300px;
         height: 300px;
+        margin-bottom: 36px;
       }
       @include for-big-desktop-up {
         width: 300px;

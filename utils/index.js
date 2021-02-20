@@ -238,12 +238,17 @@ const clients = [
 ]
 
 const menuItems = [
-  { icon: '/group.png', title: 'Home', route: '/' },
-  { icon: '/group.png', title: 'Our Journey', route: '/journey' },
+  { icon: '/home-black.svg', title: 'Home', route: '/' },
+  { icon: '/marker-black.svg', title: 'Our Journey', route: '/journey' },
   {
-    icon: '/group.png',
+    icon: '/infrastructure-black.svg',
     title: `Infrastructure`,
     route: '/infrastructure',
+  },
+  {
+    icon: '/products-black.svg',
+    title: `Products`,
+    route: '/products',
   },
   {
     icon: '/group.png',
@@ -261,14 +266,9 @@ const menuItems = [
     route: '/team',
   },
   {
-    icon: '/group.png',
+    icon: '/contact-black.svg',
     title: `Contact Us`,
     route: '/contactus',
-  },
-  {
-    icon: '/group.png',
-    title: `Products`,
-    route: '/products',
   },
 ]
 

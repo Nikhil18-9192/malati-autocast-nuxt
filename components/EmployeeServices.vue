@@ -14,7 +14,9 @@
     <div v-else class="qrcode">
       <div class="card-wrap">
         <div class="card" v-for="(item, i) in qrCard" :key="i">
-          <img :src="item.src" alt="" />
+          <a :href="item.link">
+            <img :src="item.src" alt="" />
+          </a>
           <h4>{{ item.title }}</h4>
           <p>Scan Or Click the QR code</p>
         </div>
@@ -37,14 +39,20 @@ export default {
         {
           src: '/qr1.jpg',
           title: 'Employment Database',
+          link:
+            'https://docs.google.com/forms/d/e/1FAIpQLSdNqWBG0Ntood_6xGAZOYHgt3YXKWXZRF1lYfPvQ2nId8TW2w/viewform',
         },
         {
           src: '/qr2.jpg',
           title: 'Incident Report',
+          link:
+            'https://docs.google.com/forms/d/e/1FAIpQLScl0ynYu3fITDyVL92m1HjgELxXZVwdexRckqlxcquSZ2cwyw/viewform',
         },
         {
           src: '/qr3.jpg',
           title: 'Leave Form',
+          link:
+            'https://docs.google.com/forms/d/e/1FAIpQLSdreVp0ixYk1m912u4_qMPx7LQ7mORDTa0wK_AZQIj6v2RYSw/viewform',
         },
       ],
     }
@@ -72,6 +80,9 @@ export default {
   @include for-phone-only {
     height: 100%;
     padding: 8px;
+  }
+  @include for-tablet-only {
+    height: 450px;
   }
   .lock {
     border: 1px solid #d6d6d6;
@@ -155,6 +166,9 @@ export default {
         @include for-phone-only {
           margin-bottom: 30px;
         }
+        @include for-tablet-only {
+          padding: 10px;
+        }
         img {
           width: 100%;
           object-fit: contain;
@@ -164,12 +178,19 @@ export default {
           font-size: 18px;
           line-height: 29px;
           margin-top: 35px;
+          @include for-tablet-only {
+            font-size: 14px;
+            margin-top: 0;
+          }
         }
         p {
           font-weight: 500;
           font-size: 13px;
           line-height: 29px;
           color: #828282;
+          @include for-tablet-only {
+            font-size: 12px;
+          }
         }
       }
     }
