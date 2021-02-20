@@ -62,6 +62,10 @@
           </slide>
         </carousel-3d>
       </div>
+      <div class="controls">
+        <button class="prev" @click="prev">Prev</button>
+        <button class="next" @click="next">Next</button>
+      </div>
     </div>
   </div>
 </template>
@@ -98,6 +102,17 @@ export default {
     },
     goToSlide(index) {
       this.$refs.mycarousel.goSlide(index)
+    },
+    next() {
+      this.selectedItem++
+      this.$refs.mycarousel.goSlide(this.selectedItem)
+    },
+    prev() {
+      if (this.selectedItem == 0) {
+        this.selectedItem = machinery.length
+      }
+      this.selectedItem--
+      this.$refs.mycarousel.goSlide(this.selectedItem)
     },
   },
 }
@@ -278,6 +293,25 @@ export default {
         width: 100%;
         box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.137);
       }
+    }
+  }
+  .controls {
+    display: flex;
+    justify-content: center;
+    .prev {
+      margin-right: 15px;
+      border: none;
+      background: #f4f4f4;
+      padding: 10px 15px;
+      outline: none;
+      border-radius: 4px;
+    }
+    .next {
+      border: none;
+      background: #f4f4f4;
+      padding: 10px 15px;
+      outline: none;
+      border-radius: 4px;
     }
   }
 }

@@ -85,6 +85,7 @@ export default {
       grid-template-columns: auto auto auto;
       grid-column-gap: 10px;
       grid-row-gap: 20px;
+      justify-content: start;
       @include for-tablet-only {
         grid-template-columns: auto auto;
       }
