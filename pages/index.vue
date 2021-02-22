@@ -8,7 +8,7 @@
           <span>Quality</span> and <span>Trust</span>.
         </h2>
         <p class="sub">
-          Malati Autocast Pvt. Ltd. offers its partners High quality CI and SGI
+          Malati Autocast Pvt. Ltd. offers its partners high quality CI and SGI
           casting products through high pressure molding and a team of committed
           and skilled staff.
         </p>
