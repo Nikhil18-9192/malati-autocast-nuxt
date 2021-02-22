@@ -1,8 +1,6 @@
 <template>
   <div id="team">
-    <div class="title">
-      <h1 data-aos="fade-left">Career & Team</h1>
-    </div>
+    <Legend class="legend" :title="title" />
     <div class="hero" data-aos="fade-up">
       <img src="/team.jpg" alt="" />
       <p>
@@ -15,7 +13,7 @@
         <h4 data-aos="fade-right">LEADERSHIP</h4>
         <div class="profile" data-aos="fade-up">
           <div class="left">
-            <img src="leader.jpg" alt="" />
+            <img src="ceo_profile.jpg" alt="" />
           </div>
           <div class="right">
             <h5>Shruti Patil</h5>
@@ -65,6 +63,10 @@ export default {
   name: 'TeamPage',
   data() {
     return {
+      title: {
+        img: '/infra1.jpg',
+        name: 'Team & Career',
+      },
       btnTitle: [
         {
           text: 'Malati Autocast - Sustainability 2020-2021',
@@ -102,36 +104,20 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  .title {
-    padding: 0 $horizontalPadding;
+  .legend {
+    margin-bottom: 190px;
     @include for-phone-only {
-      padding: 0 15px;
+      margin-bottom: 95px;
     }
     @include for-tablet-only {
-      padding: 0 60px;
-    }
-    h1 {
-      font-family: 'Lora';
-      font-weight: normal;
-      font-size: 144px;
-      color: #e0e0e0;
-      text-align: right;
-      margin: 90px 0 0 0;
-      padding-bottom: 130px;
-      @include for-phone-only {
-        font-size: 46px;
-        padding-bottom: 15px;
-      }
-      @include for-tablet-only {
-        font-size: 80px;
-        padding-bottom: 70px;
-      }
+      margin-bottom: 130px;
     }
   }
+
   .hero {
     z-index: 100;
     position: absolute;
-    top: 250px;
+    top: 505px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -140,11 +126,11 @@ export default {
     padding: 0 $horizontalPadding;
     @include for-phone-only {
       padding: 0 15px;
-      top: 110px;
+      top: 305px;
     }
     @include for-tablet-only {
       padding: 0 60px;
-      top: 135px;
+      top: 445px;
     }
     img {
       width: 100%;
@@ -289,6 +275,9 @@ export default {
         grid-gap: 30px;
         @include for-phone-only {
           grid-template-columns: auto;
+        }
+        @include for-tablet-only {
+          grid-template-columns: auto auto;
         }
         .card {
           @include for-phone-only {

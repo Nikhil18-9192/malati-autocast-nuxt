@@ -6,7 +6,7 @@
       data-aos-duration="900"
       data-aos-offset="200"
     >
-      <h1>Our Journey</h1>
+      <Legend class="legend" :title="title" />
     </div>
     <div v-if="$device.isDesktop" class="journey-list">
       <div class="list">
@@ -137,7 +137,10 @@ export default {
       currentIndex: 1,
       currentYear: -1,
       hover: false,
-
+      title: {
+        img: '/infra1.jpg',
+        name: 'Our Journey',
+      },
       itemIndex: -1,
       slideDuration: 2000,
       autoSlider: false,
@@ -201,28 +204,8 @@ export default {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  .title {
-    padding: 0 $horizontalPadding;
-    @include for-tablet-only {
-      padding: 0 60px;
-    }
-    @include for-phone-only {
-      padding: 0 15px;
-    }
-    h1 {
-      font-family: 'Lora';
-      font-weight: normal;
-      font-size: 144px;
-      color: #e0e0e0;
-      text-align: right;
-      margin: 90px 0;
-      @include for-tablet-only {
-        font-size: 80px;
-      }
-      @include for-phone-only {
-        font-size: 50px;
-      }
-    }
+  .legend {
+    margin-bottom: 65px;
   }
   .journey-list {
     position: relative;

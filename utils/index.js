@@ -315,21 +315,24 @@ const menuItems = [
 
 const advisorTeam = [
   {
-    src: '/leader.jpg',
+    src:
+      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
     name: 'Sanjay Patil',
     designation: 'Advisor - Finance',
     desc:
       'With passion for number and vast experience in foundry finance, he is our "Go To" when it comes to financial guidance.',
   },
   {
-    src: '/leader.jpg',
+    src:
+      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
     name: 'Yuvraj Patil',
     designation: 'Advisor - Operations',
     desc:
       'With a keen sense of operations and connect to shop floor, He is the guide to management on foundry operations.',
   },
   {
-    src: '/leader.jpg',
+    src:
+      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
     name: 'Atul Patil',
     designation: 'Advisor - Operations',
     desc:
