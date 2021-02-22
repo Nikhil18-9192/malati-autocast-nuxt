@@ -1,8 +1,6 @@
 <template>
   <div id="contact-us">
-    <div class="title">
-      <h1 data-aos="fade-left">Contact Us</h1>
-    </div>
+    <Legend class="legend" :title="title" />
     <div class="contact" data-aos="fade-up">
       <div class="group">
         <h4>MALATI GROUP</h4>
@@ -44,7 +42,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      title: {
+        img: '/infra1.jpg',
+        name: 'Contact Us',
+      },
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -53,30 +60,8 @@ export default {}
   width: 100%;
   height: 100%;
 
-  .title {
-    padding: 0 $horizontalPadding;
-    @include for-phone-only {
-      padding: 0 15px;
-    }
-    @include for-tablet-only {
-      padding: 0 60px;
-    }
-    h1 {
-      font-family: 'Lora';
-      font-weight: normal;
-      font-size: 144px;
-      color: #e0e0e0;
-      text-align: right;
-      margin: 90px 0;
-      @include for-phone-only {
-        font-size: 50px;
-        margin-bottom: 20px;
-      }
-      @include for-tablet-only {
-        font-size: 100px;
-        margin-bottom: 30px;
-      }
-    }
+  .legend {
+    margin-bottom: 65px;
   }
   .contact {
     display: flex;

@@ -1,8 +1,6 @@
 <template>
   <div id="clients">
-    <div class="title">
-      <h1 data-aos="fade-left">Clients</h1>
-    </div>
+    <Legend class="legend" :title="title" />
     <div class="card-container">
       <div
         class="card"
@@ -23,7 +21,12 @@ import { clients } from '@/utils'
 export default {
   name: 'ClientsPage',
   data() {
-    return {}
+    return {
+      title: {
+        img: '/infra1.jpg',
+        name: 'Clients',
+      },
+    }
   },
   computed: {
     clients() {
@@ -38,42 +41,24 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 0 $horizontalPadding;
-  @include for-phone-only {
-    padding: 0 15px;
-  }
-  @include for-tablet-only {
-    padding: 0 60px;
-  }
-  .title {
-    h1 {
-      font-family: 'Lora';
-      font-weight: normal;
-      font-size: 144px;
-      color: #e0e0e0;
-      text-align: right;
-      margin: 90px 0;
-      @include for-phone-only {
-        font-size: 50px;
-        margin-bottom: 20px;
-      }
-      @include for-tablet-only {
-        font-size: 100px;
-        margin-bottom: 30px;
-      }
-    }
+
+  .legend {
+    margin-bottom: 65px;
   }
   .card-container {
+    padding: 0 $horizontalPadding;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 150px;
     @include for-phone-only {
+      padding: 0 15px;
       margin-bottom: 50px;
       justify-content: center;
     }
     @include for-tablet-only {
       margin-bottom: 80px;
+      padding: 0 60px;
     }
 
     .card {

@@ -1,8 +1,6 @@
 <template>
   <div id="products">
-    <div class="title">
-      <h1 data-aos="fade-left">Products</h1>
-    </div>
+    <Legend class="legend" :title="title" />
     <div class="cast-products">
       <h4 data-aos="fade-right">Cast Iron Products</h4>
       <hr />
@@ -45,6 +43,10 @@ export default {
   name: 'ProductsPage',
   data() {
     return {
+      title: {
+        img: '/infra1.jpg',
+        name: 'Products',
+      },
       castProducts: [
         { src: '/brake-drum.jpg', name: 'Brake Drum' },
         { src: '/hydraulic-lift-piston.jpg', name: 'Hydraulic Lift Piston' },
@@ -71,32 +73,18 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 0 $horizontalPadding;
-  @include for-phone-only {
-    padding: 0 15px;
-  }
-  @include for-tablet-only {
-    padding: 0 60px;
-  }
-  .title {
-    h1 {
-      font-family: 'Lora';
-      font-weight: normal;
-      font-size: 144px;
-      color: #e0e0e0;
-      text-align: right;
-      margin: 90px 0;
-      @include for-phone-only {
-        font-size: 50px;
-        margin-bottom: 20px;
-      }
-      @include for-tablet-only {
-        font-size: 100px;
-        margin-bottom: 30px;
-      }
-    }
+
+  .legend {
+    margin-bottom: 65px;
   }
   .cast-products {
+    padding: 0 $horizontalPadding;
+    @include for-phone-only {
+      padding: 0 15px;
+    }
+    @include for-tablet-only {
+      padding: 0 60px;
+    }
     h4 {
       font-family: 'Lora';
       font-weight: normal;

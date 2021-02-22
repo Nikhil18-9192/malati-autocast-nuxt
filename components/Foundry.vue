@@ -27,7 +27,7 @@
           :perspective="0"
           :width="1100"
           :key="machinery.length"
-          :autoplay="false"
+          :autoplay="true"
           :height="sliderHeight + 16"
           :bias="'center'"
           :autoplay-timeout="10000"
@@ -242,8 +242,15 @@ export default {
           }
           ul {
             list-style-type: lower-alpha;
-            margin: 10px;
+            margin: 5px;
             li {
+              font-family: Quicksand;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 18px;
+              letter-spacing: 0.05em;
+              color: #090909;
               margin-bottom: 7px;
             }
           }

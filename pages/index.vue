@@ -208,7 +208,7 @@ export default {
         overflow: hidden;
         min-height: 200px;
         @include for-phone-only {
-          min-height: 135px;
+          min-height: 140px;
         }
         img {
           position: absolute;

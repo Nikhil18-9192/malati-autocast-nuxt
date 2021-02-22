@@ -1,8 +1,6 @@
 <template>
   <div id="team">
-    <div class="title">
-      <h1 data-aos="fade-left">Career & Team</h1>
-    </div>
+    <Legend class="legend" :title="title" />
     <div class="hero" data-aos="fade-up">
       <img src="/team.jpg" alt="" />
       <p>
@@ -15,7 +13,7 @@
         <h4 data-aos="fade-right">LEADERSHIP</h4>
         <div class="profile" data-aos="fade-up">
           <div class="left">
-            <img src="leader.jpg" alt="" />
+            <img src="ceo_profile.jpg" alt="" />
           </div>
           <div class="right">
             <h5>Shruti Patil</h5>
@@ -50,6 +48,7 @@
     <div class="employee-services">
       <h4 data-aos="fade-right">Employees Service</h4>
       <EmployeeServices data-aos="fade-up" />
+      <h4 data-aos="fade-right">Policies</h4>
       <ul class="pdf-section">
         <li v-for="item in btnTitle" :key="item.text" data-aos="fade-up">
           <PdfButton class="pdf-btn" :text="item.text" :pdfUrl="item.url" />
@@ -65,6 +64,10 @@ export default {
   name: 'TeamPage',
   data() {
     return {
+      title: {
+        img: '/infra1.jpg',
+        name: 'Team & Career',
+      },
       btnTitle: [
         {
           text: 'Malati Autocast - Sustainability 2020-2021',
@@ -86,6 +89,11 @@ export default {
           url:
             'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Policy%20on%20Child%20Protection%20and%20Prevention%20of%20Child%20Labour.pdf?alt=media&token=19937ae9-d105-49c0-b6df-e3d33c81ecfa',
         },
+        {
+          text: 'Malati Autocast Pvt. Ltd. Policy on Leaves',
+          url:
+            'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Malati%20Autocast%20Pvt.%20Ltd.%20Policy%20on%20Leaves.pdf?alt=media&token=c4229935-0f5f-4f7a-baa1-f3d9cbcf7082',
+        },
       ],
     }
   },
@@ -102,36 +110,20 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  .title {
-    padding: 0 $horizontalPadding;
+  .legend {
+    margin-bottom: 190px;
     @include for-phone-only {
-      padding: 0 15px;
+      margin-bottom: 95px;
     }
     @include for-tablet-only {
-      padding: 0 60px;
-    }
-    h1 {
-      font-family: 'Lora';
-      font-weight: normal;
-      font-size: 144px;
-      color: #e0e0e0;
-      text-align: right;
-      margin: 90px 0 0 0;
-      padding-bottom: 130px;
-      @include for-phone-only {
-        font-size: 46px;
-        padding-bottom: 15px;
-      }
-      @include for-tablet-only {
-        font-size: 80px;
-        padding-bottom: 70px;
-      }
+      margin-bottom: 130px;
     }
   }
+
   .hero {
     z-index: 100;
     position: absolute;
-    top: 250px;
+    top: 505px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -140,11 +132,11 @@ export default {
     padding: 0 $horizontalPadding;
     @include for-phone-only {
       padding: 0 15px;
-      top: 110px;
+      top: 305px;
     }
     @include for-tablet-only {
       padding: 0 60px;
-      top: 135px;
+      top: 445px;
     }
     img {
       width: 100%;
@@ -290,6 +282,9 @@ export default {
         @include for-phone-only {
           grid-template-columns: auto;
         }
+        @include for-tablet-only {
+          grid-template-columns: auto auto;
+        }
         .card {
           @include for-phone-only {
             margin-bottom: 24px;
@@ -299,6 +294,8 @@ export default {
             border: 25px solid rgb(221, 221, 221);
             border-radius: 4px;
             height: 417px;
+            object-fit: cover;
+            object-position: center;
             @include for-phone-only {
               width: 70%;
               height: 70%;
