@@ -1,6 +1,9 @@
 <template>
   <div>
     <MenuBtn />
+    <div v-if="!is_home" class="home-btn" @click="$router.push('/')">
+      <img src="home-accent.svg" alt="" />
+    </div>
     <div
       v-if="menuState"
       class="menuModal"
@@ -29,6 +32,11 @@ export default {
   computed: {
     storeMenuState: function () {
       return this.$store.getters.getMenuState
+    },
+    is_home: function () {
+      if (this.$route.path == '/') {
+        return true
+      }
     },
   },
   watch: {
@@ -87,5 +95,24 @@ div {
   background: transparent;
   top: 0;
   left: 0;
+}
+.home-btn {
+  position: fixed;
+  z-index: 999;
+  right: 100px;
+  top: 22px;
+  background: #fff;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  img {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+  }
 }
 </style>
