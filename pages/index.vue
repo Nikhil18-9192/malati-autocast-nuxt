@@ -176,7 +176,7 @@ export default {
     }
     .card {
       text-align: center;
-      min-width: 220px;
+      min-width: 194px;
       cursor: pointer;
       a {
         text-decoration: none;

@@ -20,6 +20,13 @@ const services = [
     route: '/products',
   },
   {
+    title: 'CLIENTS',
+    icon: '/client-handshake.svg',
+    src:
+      'https://images.unsplash.com/photo-1552783160-27bfdb2625d5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1560&q=80',
+    route: '/clients',
+  },
+  {
     title: 'TEAM & CAREER',
     icon: '/team.svg',
     src:
