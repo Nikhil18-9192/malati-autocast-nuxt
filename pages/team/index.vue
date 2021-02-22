@@ -25,10 +25,6 @@
               Engineer turned entrepreneur who is determined to create a culture
               of comradery, responsibility and professionalism.
             </p>
-            <button>
-              <img src="linkedin1.svg" alt="" />
-              <p>View Profile</p>
-            </button>
           </div>
         </div>
       </div>
@@ -47,7 +43,6 @@
             <p class="designation">{{ item.designation }}</p>
             <hr />
             <p class="desc">{{ item.desc }}</p>
-            <button><img src="linkedin1.svg" alt="" /> View Profile</button>
           </li>
         </ul>
       </div>
@@ -57,7 +52,7 @@
       <EmployeeServices data-aos="fade-up" />
       <ul class="pdf-section">
         <li v-for="item in btnTitle" :key="item.text" data-aos="fade-up">
-          <PdfButton class="pdf-btn" :text="item.text" :url="item.url" />
+          <PdfButton class="pdf-btn" :text="item.text" :pdfUrl="item.url" />
         </li>
       </ul>
     </div>
@@ -71,12 +66,25 @@ export default {
   data() {
     return {
       btnTitle: [
-        { text: 'Malati Autocast - Sustainability 2020-2021', url: '#' },
-        { text: 'Policy on Safety from Communicable Disease', url: '#' },
-        { text: 'Policy on Environment Health & Safety', url: '#' },
+        {
+          text: 'Malati Autocast - Sustainability 2020-2021',
+          url:
+            'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Malati%20Autocast%20-%20Sustainability%202020-2021.pdf?alt=media&token=a4a9f0ec-e906-405b-b040-ae6253fdc92f',
+        },
+        {
+          text: 'Policy on Safety from Communicable Disease',
+          url:
+            'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Policy%20on%20Safety%20from%20Communicable%20Disease.pdf?alt=media&token=2fe53c5c-18da-45c9-8199-317559a5773c',
+        },
+        {
+          text: 'Policy on Environment Health & Safety',
+          url:
+            'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Policy%20on%20Environment%20Health%20%26%20Safety.pdf?alt=media&token=7e2bd277-6cdb-4d93-a856-454b6d7012f1',
+        },
         {
           text: 'Policy on Child Protection and Prevention of Child Labour',
-          url: '#',
+          url:
+            'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Policy%20on%20Child%20Protection%20and%20Prevention%20of%20Child%20Labour.pdf?alt=media&token=19937ae9-d105-49c0-b6df-e3d33c81ecfa',
         },
       ],
     }
@@ -248,36 +256,6 @@ export default {
             letter-spacing: 0.05em;
             color: #090909;
           }
-          button {
-            width: 197px;
-            height: 45px;
-            background: #0077b7;
-            border-radius: 2px;
-            border: none;
-            color: #fff;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 18px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-top: 43px;
-            margin-bottom: 4px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            @include for-phone-only {
-              margin-top: 24px;
-            }
-            @include for-tablet-only {
-              margin-top: 30px;
-            }
-            cursor: pointer;
-            img {
-              margin-right: 7px;
-              object-fit: contain;
-              padding-bottom: 5px;
-            }
-          }
         }
       }
     }
@@ -320,8 +298,10 @@ export default {
             width: 100%;
             border: 25px solid rgb(221, 221, 221);
             border-radius: 4px;
+            height: 417px;
             @include for-phone-only {
               width: 70%;
+              height: 70%;
             }
           }
           h5 {
@@ -360,37 +340,6 @@ export default {
             line-height: 18px;
             letter-spacing: 0.05em;
             color: #090909;
-          }
-          button {
-            width: 197px;
-            height: 45px;
-            background: #0077b7;
-            border-radius: 2px;
-            border: none;
-            color: #fff;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 18px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-top: 43px;
-            margin-bottom: 4px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            @include for-phone-only {
-              margin-top: 24px;
-            }
-            @include for-tablet-only {
-              margin-top: 30px;
-            }
-            cursor: pointer;
-            img {
-              margin-right: 7px;
-
-              object-fit: contain;
-              padding-bottom: 5px;
-            }
           }
         }
       }

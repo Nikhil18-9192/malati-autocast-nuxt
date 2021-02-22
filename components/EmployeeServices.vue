@@ -33,7 +33,8 @@ export default {
     return {
       pass: '',
       unlock: false,
-      pdfLink: 'https://www.google.com/',
+      pdfLink:
+        'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Malati%20Autocast%20Pvt.%20Ltd.%20Policy%20on%20Leaves.pdf?alt=media&token=c4229935-0f5f-4f7a-baa1-f3d9cbcf7082',
       pdfText: 'Malati Autocast Pvt. Ltd. Policy on Leaves',
       qrCard: [
         {

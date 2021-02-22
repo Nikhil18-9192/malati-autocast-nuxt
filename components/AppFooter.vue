@@ -16,7 +16,6 @@
           <div class="text">
             <p>0230 – 2366148</p>
             <p>0230 – 2366149</p>
-            <p>9552917160</p>
           </div>
         </div>
         <div class="phone">
@@ -24,7 +23,7 @@
             <img src="/mail.png" alt="" />
           </div>
           <div class="text">
-            <p>sanjay@malatifounders.com</p>
+            <p>contact@malatiautocast.com</p>
           </div>
         </div>
         <div class="phone">
@@ -41,7 +40,6 @@
       </div>
       <div class="contact-form">
         <ContactForm />
-        <SocialIcon />
       </div>
     </div>
     <div class="branding">

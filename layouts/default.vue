@@ -56,6 +56,15 @@ body {
   font-family: 'Quicksand', sans-serif;
   margin: 0;
   padding: 0;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f9f9f9;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
 }
 h1,
 h2,
@@ -99,19 +108,21 @@ div {
 .home-btn {
   position: fixed;
   z-index: 999;
-  right: 100px;
-  top: 22px;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   background: #fff;
   border-radius: 50%;
   height: 30px;
   width: 30px;
+  padding: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   img {
-    height: 20px;
-    width: 20px;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
   }
 }

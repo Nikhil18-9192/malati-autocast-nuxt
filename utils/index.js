@@ -97,9 +97,19 @@ const journey = [
     title: 'Dedicated Machine Shop',
     desc: [
       '- CNC, VMC & DTC',
-      '- Balancing Machine & CMM with scanner',
-      '- Trimos',
+      '- Balancing Machine & CMM with scanner, Trimos',
       '- Capacity of 700 brackets, 500 drums and 900 pistons per day',
+      '- Located in Hatkanangale',
+    ],
+    images: ['me03.jpg'],
+  },
+  {
+    year: '2019',
+    name: 'Malati Autocast Pvt. Ltd',
+    title: 'Dedicated Machine Shop',
+    desc: [
+      '- Induction furnace with HPML',
+      '- Capacity 1500 MT / month',
       '- Located in Hatkanangale',
     ],
     images: ['me03.jpg'],
@@ -109,59 +119,87 @@ const machinery = [
   {
     title: 'HPML',
     features: [
-      'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
-      'The model of machine is FBO-II (L)',
-      'Capacity of molds/hour is 120',
-      'The mold dimension in (mm) are as follows:- a. L * W:- 550*450 b. H:- 130 to 200',
-      'Maximum mismatch accuracy is 0.2 mm',
-      'PLC controlled automaticmolding line',
+      {
+        title:
+          'Our foundry is well equipped with Sinto Horizontal Type Flaskless Molding Machine.',
+        subtitle: [],
+      },
+      { title: 'The model of machine is FBO-II (L)' },
+      { title: 'Capacity of molds/hour is 120' },
+      {
+        title: 'The mold dimension in (mm) are as follows:-',
+        subtitle: ['L * W:- 550*450', 'H:- 130 to 200'],
+      },
+      { title: 'Maximum mismatch accuracy is 0.2 mm' },
+      { title: 'PLC controlled automaticmolding line' },
     ],
     img: '/hpml.jpg',
   },
   {
     title: 'Sand Plant',
     features: [
-      'Fully automated Sinto sand plant with computerized control panel.',
-      'Sand hopper capacity 80 ton.',
-      'Eirich RV-15mixerwith capacity 675 kg per batch.',
-      'MIA unit installation for sand cooling.',
+      {
+        title:
+          'Fully automated Sinto sand plant with computerized control panel.',
+      },
+      { title: 'Sand hopper capacity 80 ton.' },
+      { title: 'Eirich RV-15mixerwith capacity 675 kg per batch.' },
+      { title: 'MIA unit installation for sand cooling.' },
     ],
     img: '/sandp1.jpg',
   },
   {
     title: 'Induction Furnace',
     features: [
-      'Inductotherm tri-track induction furnaces are installed.',
-      'The capacity is 550  kw 500  kg/furnace.',
-      'Voltage consumption panel is installed to control the power.',
-      'Induction furnaces works on IGBT technology.',
-      'Transporting of raw material on melting platformis doneusing electro-magnetwith 2T overhead crane.',
+      { title: 'Inductotherm tri-track induction furnaces are installed.' },
+      { title: 'The capacity is 550  kw 500  kg/furnace.' },
+      { title: 'Voltage consumption panel is installed to control the power.' },
+      { title: 'Induction furnaces works on IGBT technology.' },
+      {
+        title:
+          'Transporting of raw material on melting platformis doneusing electro-magnetwith 2T overhead crane.',
+      },
     ],
     img: '/ind-furnace1.jpg',
   },
   {
     title: 'Shot Blasting',
     features: [
-      'In-house Technoblast shotblasting machine to ensure effective cleaningor polishing product surface.',
-      'Per cycle time to shot blast on products is 12 min using spindle hanger.',
-      'Capacity of shot blasting the product is 0.5 MT/Cycle.',
+      {
+        title:
+          'In-house Technoblast shot blasting machine to ensure effective cleaning or polishing product surface.',
+      },
+      {
+        title:
+          'Per cycle time to shot blast on products is 12 min using spindle hanger.',
+      },
+      {
+        title: 'Capacity of shot blasting the product is 0.5 MT/Cycle.',
+      },
     ],
     img: '/shotblasting.jpg',
   },
   {
     title: 'Core Shop',
     features: [
-      'In-house core ovenfacility is presentmanufactured by Om Technologies.',
-      'After baking, the cores are assembled on the racks.',
-      'Core painting facility is also available.',
+      {
+        title:
+          'In-house core ovenfacility is present manufactured by Om Technologies.',
+      },
+      {
+        title: 'After baking, the cores are assembled on the racks.',
+      },
+      {
+        title: 'Core painting facility is also available.',
+      },
     ],
     img: '/core-oven.jpg',
   },
   {
     title: 'Others',
     features: [
-      'Paint shop : Spray painting facility is available.',
-      'Fettling : 3 grinders are installed in-house for fettling.',
+      { title: 'Paint shop : Spray painting facility is available.' },
+      { title: 'Fettling : 3 grinders are installed in-house for fettling.' },
     ],
     img: '/others.jpg',
   },
@@ -181,25 +219,25 @@ const tests = [
   {
     title: 'Metallurgical Microscope',
     features: [
-      'Inverted Metallurgical Microscope with Image Analysis Software: Pro Metal™ V8is installed.',
-      'Magnification range is 50x –1000x.',
+      'Inverted Metallurgical Microscope with Image Analysis Software: Pro Metal™ V8is installed',
+      'Magnification range is 50x –1000x',
     ],
     img: '/microscope.png',
   },
   {
     title: 'Optical Pyrometer',
     features: [
-      'Optical Pyrometers are used for measuring the temperature.',
-      'Model name is Cyclops. Backup system feature is available.',
-      'Contactless measurement.',
-      'Use of optical pyrometer reduces the metal waste.',
+      'Optical Pyrometers are used for measuring the temperature',
+      'Model name is Cyclops. Backup system feature is available',
+      'Contactless measurement',
+      'Use of optical pyrometer reduces the metal waste',
     ],
     img: '/pyrometer.png',
   },
   {
     title: 'Hardness Tester',
     features: [
-      'Brinnle Hardness Tester of model SBH is installed.',
+      'Brinnle Hardness Tester of model SBH is installed',
       'Maximum load capacity is 3000  Kg',
       'Hardness is measured using 5mm ball with 750 kg load & 10 mm ball 3000  kg load ',
     ],
@@ -208,7 +246,7 @@ const tests = [
   {
     title: 'Others',
     features: [
-      'Muffle furnace,AFS calculator,Sieve shaker,Green compressive strengthmachine,Permeability meter,  Digital moisturetesterfacilities  are also available.',
+      'Muffle furnace,AFS calculator,Sieve shaker,Green compressive strength machine,Permeability meter,  Digital moisturetester facilities  are also available',
     ],
     img: '/other-instru.png',
   },
@@ -278,7 +316,7 @@ const menuItems = [
 const advisorTeam = [
   {
     src: '/leader.jpg',
-    name: 'Atul Patil',
+    name: 'Sanjay Patil',
     designation: 'Advisor - Finance',
     desc:
       'With passion for number and vast experience in foundry finance, he is our "Go To" when it comes to financial guidance.',
@@ -292,7 +330,7 @@ const advisorTeam = [
   },
   {
     src: '/leader.jpg',
-    name: 'Yuvraj Patil',
+    name: 'Atul Patil',
     designation: 'Advisor - Operations',
     desc:
       'With a keen sense of operations and connect to shop floor, He is the guide to management on foundry operations.',

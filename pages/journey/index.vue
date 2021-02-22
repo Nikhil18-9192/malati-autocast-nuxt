@@ -282,7 +282,7 @@ export default {
           &:last-child {
             padding-bottom: 200px;
             @include for-desktop-up {
-              padding-bottom: 285px;
+              padding-bottom: 315px;
             }
             @include for-big-desktop-up {
               padding-bottom: 325px;

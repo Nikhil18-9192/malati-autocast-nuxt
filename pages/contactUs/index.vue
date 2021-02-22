@@ -10,10 +10,7 @@
         <p class="name">Sanjay S. Patil</p>
         <p class="position">Managing Director</p>
         <p class="position">Malati Group of Industries</p>
-        <div class="phone">
-          <img src="/phone.svg" alt="" />
-          <p class="position">+91-9823077343</p>
-        </div>
+
         <div class="phone">
           <img src="/envelop.svg" alt="" />
           <p class="position">sanjay@malatifounders.com</p>
@@ -25,10 +22,6 @@
         <p class="name">Shruti S. Patil</p>
         <p class="position">Chief Executive Officer</p>
         <p class="position">Malati Autocast Pvt. Ltd.</p>
-        <div class="phone">
-          <img src="/phone.svg" alt="" />
-          <p class="position">+91-9823077343</p>
-        </div>
         <div class="phone">
           <img src="/envelop.svg" alt="" />
           <p class="position">shruti@malatiautocast.com</p>

@@ -27,7 +27,7 @@
           :perspective="0"
           :width="1100"
           :key="machinery.length"
-          :autoplay="true"
+          :autoplay="false"
           :height="sliderHeight + 16"
           :bias="'center'"
           :autoplay-timeout="10000"
@@ -54,7 +54,14 @@
                     :key="i"
                   >
                     <p>{{ i + 1 }}.</p>
-                    <p class="points">{{ point }}</p>
+                    <div class="point">
+                      <p class="points">{{ point.title }}</p>
+                      <ul>
+                        <li v-for="(item, i) in point.subtitle" :key="i">
+                          {{ item }}
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -83,7 +90,7 @@ export default {
     if (this.$device.isTablet) {
       this.sliderHeight = 1400
     } else if (this.$device.isMobile) {
-      this.sliderHeight = 2000
+      this.sliderHeight = 2300
     } else {
       this.sliderHeight = 500
     }
@@ -182,18 +189,6 @@ export default {
         .active {
           background: $primary;
         }
-        // .active::after {
-        //   position: absolute;
-        //   bottom: -9px;
-        //   height: 0;
-        //   width: 0;
-        //   right: 45%;
-        //   border: 10px solid transparent;
-        //   border-bottom-color: $primary;
-        //   border-right-color: $primary;
-        //   transform: rotate(45deg);
-        //   content: '';
-        // }
       }
       .active-phone {
         background: $primary;
@@ -237,13 +232,20 @@ export default {
             line-height: 18px;
             letter-spacing: 0.05em;
             color: #090909;
-            padding-bottom: 25px;
+
             @include for-phone-only {
               padding-bottom: 10px;
             }
           }
           .points {
             margin-left: 15px;
+          }
+          ul {
+            list-style-type: lower-alpha;
+            margin: 10px;
+            li {
+              margin-bottom: 7px;
+            }
           }
         }
       }
@@ -298,6 +300,9 @@ export default {
   .controls {
     display: flex;
     justify-content: center;
+    @include for-phone-only {
+      padding-bottom: 15px;
+    }
     .prev {
       margin-right: 15px;
       border: none;
@@ -305,6 +310,7 @@ export default {
       padding: 10px 15px;
       outline: none;
       border-radius: 4px;
+      cursor: pointer;
     }
     .next {
       border: none;
@@ -312,6 +318,7 @@ export default {
       padding: 10px 15px;
       outline: none;
       border-radius: 4px;
+      cursor: pointer;
     }
   }
 }
