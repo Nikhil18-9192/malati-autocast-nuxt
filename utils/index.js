@@ -69,7 +69,7 @@ const journey = [
   },
   {
     year: '1995',
-    name: 'Malati Founders Pvt ',
+    name: 'Malati Founders Pvt. Ltd. ',
     title: 'Manufacturer of C.I. graded castings',
     desc: [
       '- Cupola & Induction Furnace',
@@ -82,7 +82,7 @@ const journey = [
   {
     year: '2000',
     name: 'Malati Founders Pvt. Ltd',
-    title: 'Dedicated assembly shop',
+    title: 'Dedicated Assembly Shop',
     desc: [
       '- Ultrasonic cleaning',
       '- Millipore testing',
@@ -105,8 +105,8 @@ const journey = [
   },
   {
     year: '2019',
-    name: 'Malati Autocast Pvt. Ltd',
-    title: 'Dedicated Machine Shop',
+    name: 'Malati Autocast Pvt. Ltd.',
+    title: 'CI and SGI Casting Shop',
     desc: [
       '- Induction furnace with HPML',
       '- Capacity 1500 MT / month',
@@ -146,7 +146,8 @@ const machinery = [
       { title: 'Eirich RV-15mixerwith capacity 675 kg per batch.' },
       { title: 'MIA unit installation for sand cooling.' },
     ],
-    img: '/sandp1.jpg',
+    img: '',
+    link: '/',
   },
   {
     title: 'Induction Furnace',
