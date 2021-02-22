@@ -19,6 +19,8 @@ export default {
   img {
     width: 100%;
     max-height: 500px;
+    object-fit: cover;
+    object-position: right;
     z-index: 10;
     @include for-phone-only {
       min-height: 250px;

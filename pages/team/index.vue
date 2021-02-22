@@ -48,6 +48,7 @@
     <div class="employee-services">
       <h4 data-aos="fade-right">Employees Service</h4>
       <EmployeeServices data-aos="fade-up" />
+      <h4 data-aos="fade-right">Policies</h4>
       <ul class="pdf-section">
         <li v-for="item in btnTitle" :key="item.text" data-aos="fade-up">
           <PdfButton class="pdf-btn" :text="item.text" :pdfUrl="item.url" />
@@ -87,6 +88,11 @@ export default {
           text: 'Policy on Child Protection and Prevention of Child Labour',
           url:
             'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Policy%20on%20Child%20Protection%20and%20Prevention%20of%20Child%20Labour.pdf?alt=media&token=19937ae9-d105-49c0-b6df-e3d33c81ecfa',
+        },
+        {
+          text: 'Malati Autocast Pvt. Ltd. Policy on Leaves',
+          url:
+            'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Malati%20Autocast%20Pvt.%20Ltd.%20Policy%20on%20Leaves.pdf?alt=media&token=c4229935-0f5f-4f7a-baa1-f3d9cbcf7082',
         },
       ],
     }
@@ -288,6 +294,8 @@ export default {
             border: 25px solid rgb(221, 221, 221);
             border-radius: 4px;
             height: 417px;
+            object-fit: cover;
+            object-position: center;
             @include for-phone-only {
               width: 70%;
               height: 70%;

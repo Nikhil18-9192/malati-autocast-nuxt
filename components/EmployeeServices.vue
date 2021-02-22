@@ -14,14 +14,13 @@
     <div v-else class="qrcode">
       <div class="card-wrap">
         <div class="card" v-for="(item, i) in qrCard" :key="i">
-          <a :href="item.link">
+          <a :href="item.link" target="_blank">
             <img :src="item.src" alt="" />
           </a>
           <h4>{{ item.title }}</h4>
           <p>Scan Or Click the QR code</p>
         </div>
       </div>
-      <PdfButton class="btn" :text="pdfText" :pdfUrl="pdfLink" />
     </div>
   </div>
 </template>
@@ -33,9 +32,7 @@ export default {
     return {
       pass: '',
       unlock: false,
-      pdfLink:
-        'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Malati%20Autocast%20Pvt.%20Ltd.%20Policy%20on%20Leaves.pdf?alt=media&token=c4229935-0f5f-4f7a-baa1-f3d9cbcf7082',
-      pdfText: 'Malati Autocast Pvt. Ltd. Policy on Leaves',
+
       qrCard: [
         {
           src: '/qr1.jpg',
@@ -74,7 +71,7 @@ export default {
 #services {
   position: relative;
   width: 100%;
-  height: 550px;
+  height: 400px;
   background: #f4f4f4;
   padding: 20px;
   border-radius: 4px;
