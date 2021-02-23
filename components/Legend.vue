@@ -43,7 +43,7 @@ export default {
     line-height: 141px;
     color: #e0e0e0;
     @include for-phone-only {
-      font-size: 50px;
+      font-size: 45px;
       top: 25%;
       right: 4%;
     }

@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       title: {
-        img: '/infra1.jpg',
+        img: '/clients_bg.jpg',
         name: 'Clients',
       },
     }

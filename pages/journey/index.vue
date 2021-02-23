@@ -32,6 +32,7 @@
             @mouseenter="getItem(i)"
             :class="hover && itemIndex !== i ? 'hover' : ''"
             @mouseleave="removItem"
+            @click="routeToWeb(item.url)"
           >
             <img src="/location.svg" alt="" />
             <h4>{{ item.year }}</h4>
@@ -88,7 +89,12 @@
       </div>
       <div class="info">
         <ul class="info-ul">
-          <li class="info-li" v-for="(item, i) in journey" :key="i">
+          <li
+            class="info-li"
+            v-for="(item, i) in journey"
+            :key="i"
+            @click="routeToWeb(item.url)"
+          >
             <img class="marker" src="/marker.png" alt="" />
             <div class="year">
               <img src="/location.svg" alt="" />
@@ -160,6 +166,13 @@ export default {
     },
   },
   methods: {
+    routeToWeb(url) {
+      if (url !== '#') {
+        this.$router.push(url)
+      } else {
+        this.$router.push(this.$route.path)
+      }
+    },
     initAutoSlide: function () {
       this.autoSlider = setInterval(() => {
         if (this.itemIndex == -1) return
@@ -257,7 +270,7 @@ export default {
         .journey-li {
           display: flex;
           min-height: 150px;
-          cursor: default;
+          cursor: pointer;
           margin-bottom: 100px;
           @include for-tablet-only {
             flex-direction: column;

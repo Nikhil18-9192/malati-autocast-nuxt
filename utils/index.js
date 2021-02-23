@@ -8,8 +8,7 @@ const services = [
   {
     title: 'INFRASTRUCTURE',
     icon: '/infrastructure.svg',
-    src:
-      'https://images.unsplash.com/photo-1513295202663-54cd69dd2b43?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1490&q=80',
+    src: '/SandPlant1.jpg',
     route: '/infrastructure',
   },
   {
@@ -53,6 +52,7 @@ const journey = [
       '- Indigenous Export oriented plant',
     ],
     images: ['patil-engg.jpg', 'patil-eng1.jpg', 'patil-eng2.jpg'],
+    url: '#',
   },
   {
     year: '1988',
@@ -66,6 +66,7 @@ const journey = [
     ],
 
     images: ['/skpind.jpg', '/skpind1.jpg', '/skp01.jpg'],
+    url: '#',
   },
   {
     year: '1995',
@@ -78,6 +79,7 @@ const journey = [
       `- Located in Hatkanangale`,
     ],
     images: ['me01.jpg'],
+    url: '#',
   },
   {
     year: '2000',
@@ -90,6 +92,7 @@ const journey = [
       '- Located in Nagpur',
     ],
     images: ['me02.jpg'],
+    url: '#',
   },
   {
     year: '2002',
@@ -102,6 +105,7 @@ const journey = [
       '- Located in Hatkanangale',
     ],
     images: ['me03.jpg'],
+    url: '#',
   },
   {
     year: '2019',
@@ -113,6 +117,7 @@ const journey = [
       '- Located in Hatkanangale',
     ],
     images: ['me03.jpg'],
+    url: '/',
   },
 ]
 const machinery = [
@@ -146,7 +151,7 @@ const machinery = [
       { title: 'Eirich RV-15mixerwith capacity 675 kg per batch.' },
       { title: 'MIA unit installation for sand cooling.' },
     ],
-    img: '',
+    img: 'sandp1.jpg',
     link: '/',
   },
   {

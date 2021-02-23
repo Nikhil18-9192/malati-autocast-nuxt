@@ -1,7 +1,7 @@
 <template>
   <div id="menu-btn" @click="$store.commit('toggleMenuState')">
-    <div class="bar1" :class="[{ animate: menuState }]"></div>
-    <div class="bar2" :class="[{ animate: menuState }]"></div>
+    <span class="bar1" :class="[{ animate: menuState }]"></span>
+    <span class="bar2" :class="[{ animate: menuState }]"></span>
   </div>
 </template>
 
@@ -44,22 +44,23 @@ export default {
   overflow: hidden;
   box-sizing: border-box;
   padding: 4px;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
   transition: 0.3s ease all;
+  border-radius: 4px;
   @include for-phone-only {
-    right: 5px;
+    right: 15px;
   }
   .bar1 {
     position: absolute;
     width: 24px;
     height: 2px;
     background: #2c2c2c;
-    top: 15px;
+    top: 20px;
     transition: 0.3s ease all;
 
     &.animate {
-      background: #939393;
+      background: #fff;
       transform: rotate(40deg);
       width: 20px;
       top: 18px;
@@ -69,12 +70,12 @@ export default {
     position: absolute;
     width: 24px;
     height: 2px;
-    top: 25px;
+    top: 30px;
     background: #2c2c2c;
     transition: 0.3s ease all;
 
     &.animate {
-      background: #939393;
+      background: #fff;
       transform: rotate(-40deg);
       top: 30px;
       width: 20px;

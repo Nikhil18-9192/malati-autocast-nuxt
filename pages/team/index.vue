@@ -51,7 +51,12 @@
       <h4 data-aos="fade-right">Policies</h4>
       <ul class="pdf-section">
         <li v-for="item in btnTitle" :key="item.text" data-aos="fade-up">
-          <PdfButton class="pdf-btn" :text="item.text" :pdfUrl="item.url" />
+          <PdfButton
+            class="pdf-btn"
+            :icon="item.icon"
+            :text="item.text"
+            :pdfUrl="item.url"
+          />
         </li>
       </ul>
     </div>
@@ -73,26 +78,31 @@ export default {
           text: 'Malati Autocast - Sustainability 2020-2021',
           url:
             'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Malati%20Autocast%20-%20Sustainability%202020-2021.pdf?alt=media&token=a4a9f0ec-e906-405b-b040-ae6253fdc92f',
+          icon: '/sustainability.svg',
         },
         {
           text: 'Policy on Safety from Communicable Disease',
           url:
             'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Policy%20on%20Safety%20from%20Communicable%20Disease.pdf?alt=media&token=2fe53c5c-18da-45c9-8199-317559a5773c',
+          icon: '/communicable.svg',
         },
         {
           text: 'Policy on Environment Health & Safety',
           url:
             'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Policy%20on%20Environment%20Health%20%26%20Safety.pdf?alt=media&token=7e2bd277-6cdb-4d93-a856-454b6d7012f1',
+          icon: '/health_safety.svg',
         },
         {
           text: 'Policy on Child Protection and Prevention of Child Labour',
           url:
             'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Policy%20on%20Child%20Protection%20and%20Prevention%20of%20Child%20Labour.pdf?alt=media&token=19937ae9-d105-49c0-b6df-e3d33c81ecfa',
+          icon: '/child.svg',
         },
         {
           text: 'Malati Autocast Pvt. Ltd. Policy on Leaves',
           url:
             'https://firebasestorage.googleapis.com/v0/b/formec-tests.appspot.com/o/Malati%20Autocast%20Pvt.%20Ltd.%20Policy%20on%20Leaves.pdf?alt=media&token=c4229935-0f5f-4f7a-baa1-f3d9cbcf7082',
+          icon: '/leaves.svg',
         },
       ],
     }
@@ -199,7 +209,7 @@ export default {
           img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            border: 25px solid rgb(221, 221, 221);
             border-radius: 4px;
           }
         }
@@ -295,10 +305,12 @@ export default {
             border-radius: 4px;
             height: 417px;
             object-fit: cover;
-            object-position: center;
             @include for-phone-only {
               width: 70%;
               height: 70%;
+            }
+            @include for-big-desktop-up {
+              height: 500px;
             }
           }
           h5 {
@@ -381,6 +393,7 @@ export default {
       }
       .pdf-btn {
         background: #f4f4f4;
+        border-radius: 8px;
       }
     }
   }

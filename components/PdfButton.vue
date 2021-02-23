@@ -1,7 +1,7 @@
 <template>
   <div id="pdf-btn">
     <a :href="pdfUrl" target="_blank">
-      <img src="/pdf.svg" alt="" />
+      <img :src="icon" alt="" />
       <p>{{ text }}</p>
     </a>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  props: ['text', 'pdfUrl'],
+  props: ['text', 'pdfUrl', 'icon'],
 }
 </script>
 

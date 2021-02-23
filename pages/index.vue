@@ -14,7 +14,7 @@
         </p>
       </div>
 
-      <div class="img" v-for="img in services" :key="img.src">
+      <div class="img" v-for="(img, i) in services" :key="i">
         <transition name="fade">
           <img v-if="hover && img.src == selectedImage" :src="img.src" alt="" />
         </transition>
@@ -24,8 +24,8 @@
     <div v-if="$device.isDesktopOrTablet" class="services">
       <div
         class="card"
-        v-for="(item, i) in services"
-        :key="i"
+        v-for="item in services"
+        :key="item.title"
         @mouseenter="
           selectedImage = item.src
           hover = true
@@ -143,7 +143,7 @@ export default {
         height: 100%;
         transition: transform 0.4s cubic-bezier(0, 0.85, 0.19, 0.91);
         object-fit: cover;
-        object-position: top;
+        object-position: 50% 50%;
       }
     }
 

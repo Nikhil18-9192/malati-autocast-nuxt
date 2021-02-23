@@ -44,7 +44,8 @@ export default {
   data() {
     return {
       title: {
-        img: '/infra1.jpg',
+        img:
+          'https://images.pexels.com/photos/2760289/pexels-photo-2760289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         name: 'Products',
       },
       castProducts: [
