@@ -2,22 +2,21 @@ const services = [
   {
     title: 'OUR JOURNEY',
     icon: '/marker.svg',
-    src: '/home1.jpg',
+    src: '/home-img/home1.jpg',
     route: '/journey',
     text: 'How we got here',
   },
   {
     title: 'INFRASTRUCTURE',
     icon: '/infrastructure.svg',
-    src: '/SandPlant1.jpg',
+    src: '/home-img/home2.jpg',
     route: '/infrastructure',
     text: 'Modern technology to ensure quality, safety and efficiency',
   },
   {
     title: 'PRODUCTS',
     icon: '/products.svg',
-    src:
-      'https://images.unsplash.com/photo-1552783160-27bfdb2625d5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1560&q=80',
+    src: '/home-img/home3.jpg',
     route: '/products',
     text: 'Capability to produce CGI and SGI grade products',
   },

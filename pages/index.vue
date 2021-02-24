@@ -143,7 +143,7 @@ export default {
         height: 100%;
         transition: transform 0.4s cubic-bezier(0, 0.85, 0.19, 0.91);
         object-fit: cover;
-        object-position: bottom;
+        object-position: center;
       }
     }
 
