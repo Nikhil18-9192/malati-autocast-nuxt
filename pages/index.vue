@@ -39,7 +39,7 @@
           <div class="t-container">
             <img :src="item.icon" alt="" />
             <p class="hover-txt">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port
+              {{ item.text }}
             </p>
           </div>
         </nuxt-link>
@@ -52,7 +52,7 @@
           <div class="container">
             <h4 class="title">{{ item.title }}</h4>
             <hr />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Port</p>
+            <p>{{ item.text }}</p>
           </div>
         </nuxt-link>
       </div>
@@ -143,7 +143,7 @@ export default {
         height: 100%;
         transition: transform 0.4s cubic-bezier(0, 0.85, 0.19, 0.91);
         object-fit: cover;
-        object-position: 50% 50%;
+        object-position: bottom;
       }
     }
 
@@ -261,6 +261,7 @@ export default {
       margin-bottom: 23px;
       background: #f4f4f4;
       padding: 20px;
+      min-height: 145px;
       a {
         display: flex;
         text-decoration: none;

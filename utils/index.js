@@ -2,14 +2,16 @@ const services = [
   {
     title: 'OUR JOURNEY',
     icon: '/marker.svg',
-    src: '/slide-img.png',
+    src: '/home1.jpg',
     route: '/journey',
+    text: 'How we got here',
   },
   {
     title: 'INFRASTRUCTURE',
     icon: '/infrastructure.svg',
     src: '/SandPlant1.jpg',
     route: '/infrastructure',
+    text: 'Modern technology to ensure quality, safety and efficiency',
   },
   {
     title: 'PRODUCTS',
@@ -17,6 +19,7 @@ const services = [
     src:
       'https://images.unsplash.com/photo-1552783160-27bfdb2625d5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1560&q=80',
     route: '/products',
+    text: 'Capability to produce CGI and SGI grade products',
   },
   {
     title: 'CLIENTS',
@@ -24,6 +27,7 @@ const services = [
     src:
       'https://images.unsplash.com/photo-1552783160-27bfdb2625d5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1560&q=80',
     route: '/clients',
+    text: 'Our partners in success',
   },
   {
     title: 'TEAM & CAREER',
@@ -31,6 +35,7 @@ const services = [
     src:
       'https://images.unsplash.com/photo-1571524522669-99d0c9e7264d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
     route: '/team',
+    text: 'Talent backed by commitment ',
   },
   {
     title: 'CONTACT US',
@@ -38,6 +43,7 @@ const services = [
     src:
       'https://images.unsplash.com/photo-1566221857770-508d35ee6220?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
     route: '/contactus',
+    text: 'Connect with us to know more',
   },
 ]
 
@@ -78,7 +84,7 @@ const journey = [
       '- Capacity of 1000MT/month',
       `- Located in Hatkanangale`,
     ],
-    images: ['me01.jpg'],
+    images: ['/cupola-malati.jpg', 'furnace.jpg', 'arfa-malati.jpg'],
     url: '#',
   },
   {
@@ -91,7 +97,7 @@ const journey = [
       '- Capacity of 500 brackets and 700 pistons /day',
       '- Located in Nagpur',
     ],
-    images: ['me02.jpg'],
+    images: ['me02.jpg', 'nagpur2.jpg', 'nagpur3.jpg'],
     url: '#',
   },
   {
@@ -199,7 +205,7 @@ const machinery = [
         title: 'Core painting facility is also available.',
       },
     ],
-    img: '/core-oven.jpg',
+    img: '/core-shop.jpg',
   },
   {
     title: 'Others',
@@ -321,12 +327,11 @@ const menuItems = [
 
 const advisorTeam = [
   {
-    src:
-      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+    src: '/sanjay.jpg',
     name: 'Sanjay Patil',
     designation: 'Advisor - Finance',
     desc:
-      'With passion for number and vast experience in foundry finance, he is our "Go To" when it comes to financial guidance.',
+      'With over 4 decades of experience in casting, machining and foundry management is the Managing director of Malati Founders Pvt. Ltd. and is an active advisor of Malati Autocast Pvt. Ltd.',
   },
   {
     src:
@@ -337,12 +342,11 @@ const advisorTeam = [
       'With a keen sense of operations and connect to shop floor, He is the guide to management on foundry operations.',
   },
   {
-    src:
-      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+    src: '/atul.jpg',
     name: 'Atul Patil',
     designation: 'Advisor - Operations',
     desc:
-      'With a keen sense of operations and connect to shop floor, He is the guide to management on foundry operations.',
+      ' With passion for number and vast experience in foundry finance, he is our "Go To" when it comes to financial guidance.',
   },
 ]
 
