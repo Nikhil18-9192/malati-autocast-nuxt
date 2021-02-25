@@ -18,7 +18,7 @@ const services = [
     icon: '/products.svg',
     src: '/home-img/home3.jpg',
     route: '/products',
-    text: 'Capability to produce CGI and SGI grade products',
+    text: 'Capability to produce CI and SGI grade products',
   },
   {
     title: 'CLIENTS',
