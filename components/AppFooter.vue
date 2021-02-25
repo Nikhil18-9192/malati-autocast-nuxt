@@ -14,8 +14,8 @@
             <img src="/phone.png" alt="" />
           </div>
           <div class="text">
-            <p>0230 – 2366148</p>
-            <p>0230 – 2366149</p>
+            <a href="tel:0230–2366148"><p>0230 – 2366148</p></a>
+            <a href="tel:0230–2366149"><p>0230 – 2366149</p></a>
           </div>
         </div>
         <div class="phone">
@@ -23,7 +23,9 @@
             <img src="/mail.png" alt="" />
           </div>
           <div class="text">
-            <p>contact@malatiautocast.com</p>
+            <a href="mailto:contact@malatiautocast.com">
+              <p>contact@malatiautocast.com</p></a
+            >
           </div>
         </div>
         <div class="phone">
@@ -31,10 +33,12 @@
             <img src="/location.png" alt="" />
           </div>
           <div class="text">
-            <p>
-              Plot No.10, 2nd Phase ,Sector ‘B', Shri Laxmi Industrial Estate,
-              Hatkanangale, Kolhapur 416109.
-            </p>
+            <a href="https://goo.gl/maps/zPaUACmL5DCHrwt38">
+              <p>
+                Plot No.10, 2nd Phase ,Sector ‘B', Shri Laxmi Industrial Estate,
+                Hatkanangale, Kolhapur 416109.
+              </p></a
+            >
           </div>
         </div>
       </div>
@@ -136,9 +140,12 @@ export default {
         }
       }
       .text {
+        a {
+          color: #2f2f2f;
+          text-decoration: none;
+        }
         p {
           font-weight: 600;
-          color: #2f2f2f;
           font-size: 16px;
           letter-spacing: 0.045em;
           line-height: 29px;

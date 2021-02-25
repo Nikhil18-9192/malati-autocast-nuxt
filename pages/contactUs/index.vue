@@ -11,7 +11,9 @@
 
         <div class="phone">
           <img src="/envelop.svg" alt="" />
-          <p class="position">sanjay@malatifounders.com</p>
+          <a href="mailto:sanjay@malatifounders.com">
+            <p class="position">sanjay@malatifounders.com</p></a
+          >
         </div>
       </div>
       <div class="autocast">
@@ -22,7 +24,9 @@
         <p class="position">Malati Autocast Pvt. Ltd.</p>
         <div class="phone">
           <img src="/envelop.svg" alt="" />
-          <p class="position">shruti@malatiautocast.com</p>
+          <a href="mailto:shruti@malatiautocast.com"
+            ><p class="position">shruti@malatiautocast.com</p></a
+          >
         </div>
       </div>
     </div>
@@ -145,8 +149,12 @@ export default {
         width: 14px;
       }
     }
-    p {
-      margin-bottom: 7px;
+    a {
+      color: #000;
+      text-decoration: none;
+      p {
+        margin-bottom: 7px;
+      }
     }
   }
   .map-view {
