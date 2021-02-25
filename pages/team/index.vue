@@ -5,7 +5,7 @@
       <img src="/team.jpg" alt="" />
       <p>
         Our team of passionate individuals coming together to create quality
-        casting products for a wide range of industries."
+        casting products for a wide range of industries.
       </p>
     </div>
     <div class="container">
@@ -305,6 +305,7 @@ export default {
             border-radius: 4px;
             height: 417px;
             object-fit: cover;
+            object-position: top;
             @include for-phone-only {
               width: 70%;
               height: 70%;

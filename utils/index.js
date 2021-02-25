@@ -88,7 +88,7 @@ const journey = [
   },
   {
     year: '2000',
-    name: 'Malati Founders Pvt. Ltd',
+    name: 'Malati Founders Pvt. Ltd (Unit II)',
     title: 'Dedicated Assembly Shop',
     desc: [
       '- Ultrasonic cleaning',
@@ -269,8 +269,8 @@ const cardInfo = [
     src: '/dust-collector.jpg',
     desc:
       'Only waste generated is dust. To reduce the impact of waste dust in the surrounding dust collectors are installed in the premises.',
-    L1: 'a. Neo-Airtech:- Sand plant and cooler.',
-    L2: 'b. Technoblast :-shot-blasting machines.',
+    L1: 'a. Neo-Airtech - Sand plant and cooler.',
+    L2: 'b. Technoblast - Shot-blasting machines.',
   },
   {
     title: 'Water',
@@ -328,13 +328,12 @@ const advisorTeam = [
   {
     src: '/sanjay.jpg',
     name: 'Sanjay Patil',
-    designation: 'Advisor - Finance',
+    designation: 'Advisor - Management',
     desc:
       'With over 4 decades of experience in casting, machining and foundry management is the Managing director of Malati Founders Pvt. Ltd. and is an active advisor of Malati Autocast Pvt. Ltd.',
   },
   {
-    src:
-      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+    src: '/yuvraj.jpg',
     name: 'Yuvraj Patil',
     designation: 'Advisor - Operations',
     desc:
@@ -343,7 +342,7 @@ const advisorTeam = [
   {
     src: '/atul.jpg',
     name: 'Atul Patil',
-    designation: 'Advisor - Operations',
+    designation: 'Advisor - Finance',
     desc:
       ' With passion for number and vast experience in foundry finance, he is our "Go To" when it comes to financial guidance.',
   },

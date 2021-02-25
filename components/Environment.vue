@@ -20,7 +20,10 @@
           <p>{{ item.L1 }}</p>
           <p>{{ item.L2 }}</p>
         </div>
-        <img :src="item.src" alt="" />
+        <div
+          class="bg-img"
+          :style="{ backgroundImage: 'url(' + item.src + ')' }"
+        ></div>
       </li>
     </ul>
   </div>
@@ -88,10 +91,8 @@ export default {
     gap: 15px;
 
     li {
-      height: 100%;
-      max-height: 435px;
-      max-width: 608px;
-      width: 100%;
+      height: 435px;
+      width: 608px;
       position: relative;
       overflow: hidden;
       @include for-phone-only {
@@ -100,10 +101,11 @@ export default {
       @include for-big-desktop-up {
         max-width: 750px;
       }
-      img {
-        object-fit: cover;
-        width: 100%;
+      .bg-img {
         height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
         transform: scale(1.2);
         transition: 0.5s ease all;
       }
@@ -149,7 +151,7 @@ export default {
         .info {
           left: -100%;
         }
-        img {
+        .bg-img {
           transform: scale(1);
         }
       }
