@@ -16,15 +16,15 @@ const services = [
   {
     title: 'PRODUCTS',
     icon: '/products.svg',
-    src: '/home-img/home3.jpg',
+    src:
+      'https://images.pexels.com/photos/2760289/pexels-photo-2760289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     route: '/products',
     text: 'Capability to produce CI and SGI grade products',
   },
   {
     title: 'CLIENTS',
     icon: '/client-handshake.svg',
-    src:
-      'https://images.unsplash.com/photo-1552783160-27bfdb2625d5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1560&q=80',
+    src: 'client-bg.jpg',
     route: '/clients',
     text: 'Our partners in success',
   },

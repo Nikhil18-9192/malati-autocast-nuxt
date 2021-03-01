@@ -70,7 +70,8 @@ export default {
   data() {
     return {
       title: {
-        img: '/infra1.jpg',
+        img:
+          'https://images.unsplash.com/photo-1571524522669-99d0c9e7264d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
         name: 'Team & Career',
       },
       btnTitle: [
@@ -133,7 +134,7 @@ export default {
   .hero {
     z-index: 100;
     position: absolute;
-    top: 505px;
+    top: 460px;
     left: 0;
     right: 0;
     margin-left: auto;

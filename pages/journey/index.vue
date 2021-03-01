@@ -144,7 +144,7 @@ export default {
       currentYear: -1,
       hover: false,
       title: {
-        img: '/infra1.jpg',
+        img: '/our-journey-bg1.jpg',
         name: 'Our Journey',
       },
       itemIndex: -1,

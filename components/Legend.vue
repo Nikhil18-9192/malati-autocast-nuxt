@@ -18,7 +18,7 @@ export default {
   position: relative;
   img {
     width: 100%;
-    max-height: 500px;
+    max-height: 390px;
     object-fit: cover;
     object-position: right;
     z-index: 10;
@@ -43,6 +43,7 @@ export default {
     font-size: 144px;
     line-height: 141px;
     color: #e0e0e0;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.561);
     @include for-phone-only {
       font-size: 45px;
       top: 25%;
