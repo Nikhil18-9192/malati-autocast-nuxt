@@ -121,7 +121,7 @@ const journey = [
       '- Capacity 1500 MT / month',
       '- Located in Hatkanangale',
     ],
-    images: ['me03.jpg'],
+    images: ['/home1.jpg'],
     url: '/',
   },
 ]

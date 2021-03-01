@@ -22,6 +22,7 @@ export default {
     object-fit: cover;
     object-position: right;
     z-index: 10;
+    filter: grayscale(1);
     @include for-phone-only {
       min-height: 250px;
       object-fit: cover;
