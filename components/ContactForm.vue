@@ -29,11 +29,34 @@ export default {
         mobile,
         email,
       })
-
       if (validation.error) {
         this.$toast.error(validation.error.message)
         return
       }
+      this.submitToServer()
+        .then(() => {
+          this.$toast.success(
+            'Thank you for contacting us, we will respond to you shortly!'
+          )
+        })
+        .catch(() => {
+          this.$toast.error('Fields Cannot Be Empty')
+        })
+    },
+    submitToServer() {
+      const data = {
+        payload: {
+          client: 'Malati Autocast',
+          name: this.name,
+          company: this.company,
+          mobile: this.mobile,
+          email: this.email,
+        },
+      }
+      return this.$axios.$post(
+        `https://formec-mail-api.vercel.app/notify`,
+        data
+      )
     },
   },
 }
