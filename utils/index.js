@@ -307,13 +307,13 @@ const menuItems = [
     route: '/products',
   },
   {
-    icon: '/group.png',
+    icon: '/group.svg',
     title: `Clients`,
     route: '/clients',
   },
 
   {
-    icon: '/group.png',
+    icon: '/group.svg',
     title: `Team & Career`,
     route: '/team',
   },
