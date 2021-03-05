@@ -307,7 +307,7 @@ const menuItems = [
     route: '/products',
   },
   {
-    icon: '/group.svg',
+    icon: '/handshake.svg',
     title: `Clients`,
     route: '/clients',
   },

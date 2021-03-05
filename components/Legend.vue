@@ -18,7 +18,7 @@ export default {
   position: relative;
   img {
     width: 100%;
-    max-height: 390px;
+    height: 390px;
     object-fit: cover;
     object-position: right;
     z-index: 10;
