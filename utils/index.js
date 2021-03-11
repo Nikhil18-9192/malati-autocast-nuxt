@@ -109,13 +109,13 @@ const journey = [
       '- Capacity of 700 brackets, 500 drums and 900 pistons per day',
       '- Located in Hatkanangale',
     ],
-    images: ['me03.jpg'],
+    images: ['me03.jpg', 'enterprise.jpg'],
     url: '#',
   },
   {
     year: '2019',
     name: 'Malati Autocast Pvt. Ltd.',
-    title: 'CI and SGI Casting Shop',
+    title: 'Manufacturer of CI and SGI castings',
     desc: [
       '- Induction furnace with HPML',
       '- Capacity 1500 MT / month',
