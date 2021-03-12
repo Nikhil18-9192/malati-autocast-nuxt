@@ -96,7 +96,7 @@ const journey = [
       '- Capacity of 500 brackets and 700 pistons /day',
       '- Located in Nagpur',
     ],
-    images: ['me02.jpg', 'nagpur2.jpg', 'nagpur3.jpg'],
+    images: ['nagpur2.jpg', 'nagpur3.jpg'],
     url: '#',
   },
   {
@@ -109,7 +109,7 @@ const journey = [
       '- Capacity of 700 brackets, 500 drums and 900 pistons per day',
       '- Located in Hatkanangale',
     ],
-    images: ['me03.jpg', 'enterprise.jpg'],
+    images: ['me02.jpg', 'me03.jpg', 'enterprise.jpg'],
     url: '#',
   },
   {
