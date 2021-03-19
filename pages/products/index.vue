@@ -6,12 +6,12 @@
       <hr />
       <ul class="product-list">
         <li
-          v-for="(product, i) in castProducts"
-          :key="i"
+          v-for="(product, i) in CI_PRODUCTS"
+          :key="product.id"
           data-aos="fade-up"
           :data-aos-delay="i * 200"
         >
-          <img :src="product.src" alt="" />
+          <img :src="product.image.url" alt="" />
           <p class="name">
             {{ product.name }}
           </p>
@@ -23,12 +23,12 @@
       <hr />
       <ul class="product-list">
         <li
-          v-for="(product, i) in ironProducts"
-          :key="i"
+          v-for="(product, i) in SGI_PRODUCTS"
+          :key="product.id"
           data-aos="fade-up"
           :data-aos-delay="i * 50"
         >
-          <img :src="product.src" alt="" />
+          <img :src="product.image.url" alt="" />
           <p class="name">
             {{ product.name }}
           </p>
@@ -39,8 +39,15 @@
 </template>
 
 <script>
+import constants from '@/utils/constants'
 export default {
   name: 'ProductsPage',
+  async asyncData({ $axios }) {
+    const products = await $axios.$get(constants.PRODUCTS_API)
+    return {
+      products,
+    }
+  },
   data() {
     return {
       title: {
@@ -48,23 +55,15 @@ export default {
           'https://images.pexels.com/photos/2760289/pexels-photo-2760289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         name: 'Products',
       },
-      castProducts: [
-        { src: '/brake-drum.jpg', name: 'Brake Drum' },
-        { src: '/hydraulic-lift-piston.jpg', name: 'Hydraulic Lift Piston' },
-        { src: '/flywheel.jpg', name: 'Flywheel' },
-        { src: '/hydraulic-lift.jpg', name: 'Hydraulic Lift Piston' },
-        { src: '/spacer.jpg', name: 'Spacer' },
-        { src: '/hydraulic-control-lift.jpg', name: 'Hydraulic Control Lift' },
-        { src: '/strainer-housing.jpg', name: 'Strainer Housing' },
-        { src: '/front-wheel-hub.jpg', name: 'Front Wheel Hub' },
-        { src: '/brake-disc.jpg', name: 'Brake Disk' },
-      ],
-      ironProducts: [
-        { src: '/iron1.jpg', name: 'Hydraulic Piston' },
-        { src: '/bearing-housing-cargo.jpg', name: 'Bearing Housing Cargo' },
-        { src: '/iron2.jpg', name: 'Hydraulic Piston' },
-      ],
     }
+  },
+  computed: {
+    CI_PRODUCTS: function () {
+      return this.products.filter((p) => p.type == constants.CI_PRODUCTS)
+    },
+    SGI_PRODUCTS: function () {
+      return this.products.filter((p) => p.type == constants.SGI_PRODUCTS)
+    },
   },
 }
 </script>

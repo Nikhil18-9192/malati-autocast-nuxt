@@ -27,7 +27,7 @@
           <li
             class="journey-li"
             v-for="(item, i) in journey"
-            :key="i"
+            :key="item.id"
             :id="`j${i}`"
             @mouseenter="getItem(i)"
             :class="hover && itemIndex !== i ? 'hover' : ''"
@@ -49,13 +49,13 @@
                 </p>
                 <ul class="desc-ul">
                   <li
-                    v-for="(list, j) in item.desc"
+                    v-for="(description, j) in item.desc"
                     :key="`l${j}`"
                     :style="{ transitionDelay: `${0.1 * j}s` }"
                     :class="hover && i == itemIndex ? 'enter-list' : ' '"
                     class="desc-li"
                   >
-                    {{ list }}
+                    - {{ description.value }}
                   </li>
                 </ul>
               </div>
@@ -71,7 +71,7 @@
             class="image"
             :style="{ top: `${offset}px` }"
             v-show="i == currentIndex"
-            :src="image"
+            :src="image.url"
             alt=""
           />
         </div>
@@ -107,10 +107,10 @@
               <ul class="desc-ul-phone">
                 <li
                   class="desc-li-phone"
-                  v-for="(list, j) in item.desc"
-                  :key="`l${j}`"
+                  v-for="description in item.desc"
+                  :key="description.id"
                 >
-                  {{ list }}
+                  {{ description.value }}
                 </li>
               </ul>
             </div>
@@ -136,8 +136,14 @@
 </template>
 
 <script>
-import { journey } from '@/utils'
+import constants from '@/utils/constants'
 export default {
+  async asyncData({ $axios }) {
+    const journey = await $axios.$get(constants.JOURNEY_API)
+    return {
+      journey: journey.milestones,
+    }
+  },
   data() {
     return {
       currentIndex: 1,
@@ -159,11 +165,6 @@ export default {
       this.getItem(0)
       this.initAutoSlide()
     }
-  },
-  computed: {
-    journey() {
-      return journey
-    },
   },
   methods: {
     routeToWeb(url) {

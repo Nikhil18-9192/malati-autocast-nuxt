@@ -6,20 +6,27 @@
         class="card"
         v-for="(item, i) in clients"
         :key="i"
+        @click="onClientClick(item)"
         data-aos="fade-up"
         :data-aos-delay="i * 200"
       >
-        <img :src="item.logo" alt="" />
-        <p>{{ item.title }}</p>
+        <img :src="item.logo.url" alt="" />
+        <p>{{ item.sector }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { clients } from '@/utils'
+import constants from '@/utils/constants'
 export default {
   name: 'ClientsPage',
+  async asyncData({ $axios }) {
+    const clients = await $axios.$get(constants.CLIENTS_API)
+    return {
+      clients,
+    }
+  },
   data() {
     return {
       title: {
@@ -28,11 +35,14 @@ export default {
       },
     }
   },
-  computed: {
-    clients() {
-      return clients
+  methods: {
+    onClientClick: function (item) {
+      if (item.url) {
+        window.open(item.url, '_blank')
+      }
     },
   },
+  computed: {},
 }
 </script>
 
