@@ -120,7 +120,7 @@
                 :key="k"
                 class="image"
                 v-show="item.year == currentYear ? k == currentIndex : k == 0"
-                :src="image"
+                :src="image.url"
                 alt=""
               />
             </div>
@@ -168,7 +168,7 @@ export default {
   },
   methods: {
     routeToWeb(url) {
-      if (url !== '#') {
+      if (url && url.length) {
         this.$router.push(url)
       } else {
         this.$router.push(this.$route.path)

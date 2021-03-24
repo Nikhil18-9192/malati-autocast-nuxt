@@ -1,11 +1,13 @@
 <template>
-  <div id="contact-form">
+  <form id="contact-form" @submit.stop="submit">
     <input type="text" v-model="name" placeholder="Name" />
     <input type="text" v-model="company" placeholder="Company" />
     <input type="number" v-model="mobile" placeholder="Mobile" />
     <input type="email" v-model="email" placeholder="Email" />
-    <button @click="submit">Submit</button>
-  </div>
+    <button :class="[{ loading }]" :disabled="loading" @click="submit">
+      {{ loading ? `sending...` : 'Submit' }}
+    </button>
+  </form>
 </template>
 
 <script>
@@ -18,10 +20,11 @@ export default {
       company: '',
       mobile: '',
       email: '',
+      loading: false,
     }
   },
   methods: {
-    submit() {
+    async submit() {
       const { name, company, mobile, email } = this
       const validation = formValidation({
         name,
@@ -33,17 +36,41 @@ export default {
         this.$toast.error(validation.error.message)
         return
       }
-      this.submitToServer()
-        .then(() => {
-          this.$toast.success(
-            'Thank you for contacting us, we will respond to you shortly!'
-          )
-        })
-        .catch(() => {
-          this.$toast.error('Fields Cannot Be Empty')
-        })
+      this.loading = true
+
+      try {
+        await this.postEnquiry()
+        this.$toast.success(
+          'Thank you for contacting us, we will respond to you shortly!'
+        )
+      } catch (error) {
+        this.$toast.error(error.message)
+      }
+
+      this.loading = false
+
+      try {
+        await this.sendEmail()
+      } catch (error) {}
+
+      this.clearForm()
     },
-    submitToServer() {
+    clearForm() {
+      this.name = ''
+      this.mobile = ''
+      this.company = ''
+      this.email = ''
+    },
+    postEnquiry() {
+      const data = {
+        name: this.name,
+        company: this.company,
+        mobile: this.mobile,
+        email: this.email,
+      }
+      return this.$axios.$post('/enquiry-forms', data)
+    },
+    sendEmail() {
       const data = {
         payload: {
           client: 'Malati Autocast',
@@ -119,6 +146,16 @@ export default {
       &::after {
         left: 0;
       }
+    }
+  }
+
+  .loading {
+    border-color: transparent;
+    cursor: wait;
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.719);
+    &::after {
+      left: 0;
     }
   }
 }
