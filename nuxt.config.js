@@ -67,7 +67,10 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: 'http://localhost:1337',
+    baseURL:
+      process.env.NODE_ENV == 'production'
+        ? 'https://api.malatiautocast.com'
+        : 'http://localhost:1337',
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
