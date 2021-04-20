@@ -148,7 +148,6 @@ export default {
           font-weight: 600;
           font-size: 16px;
           letter-spacing: 0.045em;
-          line-height: 29px;
         }
       }
     }
