@@ -143,11 +143,13 @@ export default {
         a {
           color: #2f2f2f;
           text-decoration: none;
+          display: block;
         }
         p {
           font-weight: 600;
           font-size: 16px;
           letter-spacing: 0.045em;
+          line-height: 29px;
         }
       }
     }
@@ -174,6 +176,10 @@ export default {
       opacity: 1;
       color: rgb(17, 17, 17);
     }
+  }
+
+  a {
+    min-height: 48px;
   }
 }
 </style>
