@@ -14,8 +14,12 @@
             <img src="/phone.png" alt="" />
           </div>
           <div class="text">
-            <a href="tel:0230–2366148"><p>0230 – 2366148</p></a>
-            <a href="tel:0230–2366149"><p>0230 – 2366149</p></a>
+            <a href="tel:0230–2366148" rel="noreferrer"
+              ><p>0230 – 2366148</p></a
+            >
+            <a href="tel:0230–2366149" rel="noreferrer"
+              ><p>0230 – 2366149</p></a
+            >
           </div>
         </div>
         <div class="phone">
@@ -33,7 +37,7 @@
             <img src="/location.png" alt="" />
           </div>
           <div class="text">
-            <a href="https://goo.gl/maps/zPaUACmL5DCHrwt38">
+            <a rel="noreferrer" href="https://goo.gl/maps/zPaUACmL5DCHrwt38">
               <p>
                 Plot No.10, 2nd Phase ,Sector ‘B', Shri Laxmi Industrial Estate,
                 Hatkanangale, Kolhapur 416109.
@@ -49,7 +53,9 @@
     <div class="branding">
       <h4>
         Built with ❤ by
-        <a target="_blank" href="https://www.formecmedia.com">Formec Media</a>
+        <a rel="noreferrer" target="_blank" href="https://www.formecmedia.com"
+          >Formec Media</a
+        >
       </h4>
     </div>
   </div>
