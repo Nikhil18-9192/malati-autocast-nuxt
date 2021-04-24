@@ -4,7 +4,9 @@
     <input type="text" v-model="company" placeholder="Company" />
     <input type="number" v-model="mobile" placeholder="Mobile" />
     <input type="email" v-model="email" placeholder="Email" />
-    <button @click="submit">Submit</button>
+    <button :disabled="loading" :class="[{ loading }]" @click="submit">
+      Submit
+    </button>
   </div>
 </template>
 
@@ -18,10 +20,11 @@ export default {
       company: '',
       mobile: '',
       email: '',
+      loading: false,
     }
   },
   methods: {
-    submit() {
+    async submit() {
       const { name, company, mobile, email } = this
       const validation = formValidation({
         name,
@@ -33,15 +36,21 @@ export default {
         this.$toast.error(validation.error.message)
         return
       }
-      this.submitToServer()
-        .then(() => {
-          this.$toast.success(
-            'Thank you for contacting us, we will respond to you shortly!'
-          )
-        })
-        .catch(() => {
-          this.$toast.error('Fields Cannot Be Empty')
-        })
+
+      try {
+        this.loading = true
+        await this.submitToServer()
+        this.clearForm()
+        this.$toast.success(
+          'Thank you for contacting us, we will respond to you shortly!'
+        )
+        this.loading = false
+      } catch (error) {
+        this.loading = false
+        this.$toast.error(
+          'Sorry! Something went wrong. Please try again later.'
+        )
+      }
     },
     submitToServer() {
       const data = {
@@ -51,12 +60,16 @@ export default {
           company: this.company,
           mobile: this.mobile,
           email: this.email,
+          to: 'contact@malatiautocast.com',
         },
       }
       return this.$axios.$post(
         `https://formec-mail-api.vercel.app/notify`,
         data
       )
+    },
+    clearForm: function () {
+      this.name, this.company, this.mobile, (this.email = '')
     },
   },
 }
@@ -120,6 +133,10 @@ export default {
         left: 0;
       }
     }
+  }
+  .loading {
+    opacity: 0.5;
+    cursor: progress;
   }
 }
 </style>
