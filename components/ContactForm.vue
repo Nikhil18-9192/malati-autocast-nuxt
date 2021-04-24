@@ -4,7 +4,7 @@
     <input type="text" v-model="company" placeholder="Company" />
     <input type="number" v-model="mobile" placeholder="Mobile" />
     <input type="email" v-model="email" placeholder="Email" />
-    <button :disabled="loading" :class="[{ loading }]" @click="submit">
+    <button :disabled="loading" :class="[{ loading }]" @click="submitQuery">
       Submit
     </button>
   </div>
@@ -24,7 +24,7 @@ export default {
     }
   },
   methods: {
-    async submit() {
+    async submitQuery() {
       const { name, company, mobile, email } = this
       const validation = formValidation({
         name,
