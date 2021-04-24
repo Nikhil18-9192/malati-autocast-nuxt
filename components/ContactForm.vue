@@ -69,7 +69,10 @@ export default {
       )
     },
     clearForm: function () {
-      this.name, this.company, this.mobile, (this.email = '')
+      this.name = ''
+      this.company = ''
+      this.mobile = ''
+      this.email = ''
     },
   },
 }
