@@ -60,7 +60,7 @@ export default {
           company: this.company,
           mobile: this.mobile,
           email: this.email,
-          to: 'contact@malatiautocast.com',
+          to: 'lambrohan@gmail.com',
         },
       }
       return this.$axios.$post(
