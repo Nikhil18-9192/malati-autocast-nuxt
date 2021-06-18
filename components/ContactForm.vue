@@ -1,5 +1,5 @@
 <template>
-  <form id="contact-form" @submit.stop="submit">
+  <form id="contact-form" @submit.prevent="submit">
     <input type="text" v-model="name" placeholder="Name" />
     <input type="text" v-model="company" placeholder="Company" />
     <input type="number" v-model="mobile" placeholder="Mobile" />
@@ -49,9 +49,11 @@ export default {
 
       this.loading = false
 
-      // try {
-      //   await this.sendEmail()
-      // } catch (error) {}
+      if (process.env.NODE_ENV === 'production') {
+        try {
+          await this.sendEmail()
+        } catch (error) {}
+      }
 
       this.clearForm()
     },
@@ -79,6 +81,7 @@ export default {
           mobile: this.mobile,
           email: this.email,
           to: 'contact@malatiautocast.com',
+          // to: 'lambrohan@gmail.com',
         },
       }
       return this.$axios.$post(

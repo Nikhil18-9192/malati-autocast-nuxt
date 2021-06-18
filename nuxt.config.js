@@ -20,11 +20,13 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap',
+        href:
+          'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap',
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap',
+        href:
+          'https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap',
       },
     ],
   },
@@ -67,7 +69,7 @@ export default {
   axios: {
     baseURL:
       process.env.NODE_ENV == 'production'
-        ? 'https://api.malatiautocast.com'
+        ? 'http://203.192.228.76:1337'
         : 'http://localhost:1337',
   },
 
