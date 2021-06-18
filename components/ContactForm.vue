@@ -49,9 +49,9 @@ export default {
 
       this.loading = false
 
-      try {
-        await this.sendEmail()
-      } catch (error) {}
+      // try {
+      //   await this.sendEmail()
+      // } catch (error) {}
 
       this.clearForm()
     },
@@ -78,12 +78,19 @@ export default {
           company: this.company,
           mobile: this.mobile,
           email: this.email,
+          to: 'contact@malatiautocast.com',
         },
       }
       return this.$axios.$post(
         `https://formec-mail-api.vercel.app/notify`,
         data
       )
+    },
+    clearForm: function () {
+      this.name = ''
+      this.company = ''
+      this.mobile = ''
+      this.email = ''
     },
   },
 }
