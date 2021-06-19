@@ -69,7 +69,7 @@ export default {
   axios: {
     baseURL:
       process.env.NODE_ENV == 'production'
-        ? 'http://203.192.228.76:1337'
+        ? 'https://malatiautocast.formecmedia.com'
         : 'http://localhost:1337',
   },
 
