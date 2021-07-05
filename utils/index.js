@@ -1,50 +1,4 @@
-const services = [
-  {
-    title: 'OUR JOURNEY',
-    icon: '/marker.svg',
-    src: '/home-img/home1.jpg',
-    route: '/journey',
-    text: 'How we got here',
-  },
-  {
-    title: 'INFRASTRUCTURE',
-    icon: '/infrastructure.svg',
-    src: '/home-img/home2.jpg',
-    route: '/infrastructure',
-    text: 'Modern technology to ensure quality, safety and efficiency',
-  },
-  {
-    title: 'PRODUCTS',
-    icon: '/products.svg',
-    src:
-      'https://images.pexels.com/photos/2760289/pexels-photo-2760289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    route: '/products',
-    text: 'Capability to produce CI and SGI grade products',
-  },
-  {
-    title: 'CLIENTS',
-    icon: '/client-handshake.svg',
-    src: 'client-bg.jpg',
-    route: '/clients',
-    text: 'Our partners in success',
-  },
-  {
-    title: 'TEAM & CAREER',
-    icon: '/team.svg',
-    src:
-      'https://images.unsplash.com/photo-1571524522669-99d0c9e7264d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
-    route: '/team',
-    text: 'Talent backed by commitment ',
-  },
-  {
-    title: 'CONTACT US',
-    icon: '/contact.svg',
-    src:
-      'https://images.unsplash.com/photo-1566221857770-508d35ee6220?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-    route: '/contactus',
-    text: 'Connect with us to know more',
-  },
-]
+
 
 const journey = [
   {
@@ -349,7 +303,7 @@ const advisorTeam = [
 ]
 
 export {
-  services,
+
   journey,
   machinery,
   tests,

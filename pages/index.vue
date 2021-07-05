@@ -16,7 +16,11 @@
 
       <div class="img" v-for="(img, i) in services" :key="i">
         <transition name="fade">
-          <img v-if="hover && img.src == selectedImage" :src="img.src" alt="" />
+          <img
+            v-if="hover && img.src == selectedImage"
+            :src="img.src.url"
+            alt=""
+          />
         </transition>
       </div>
     </div>
@@ -37,7 +41,7 @@
             {{ item.title }}
           </div>
           <div class="t-container">
-            <img :src="item.icon" alt="" />
+            <img :src="item.icon.url" alt="" />
             <p class="hover-txt">
               {{ item.text }}
             </p>
@@ -61,19 +65,20 @@
 </template>
 
 <script>
-import { services } from '@/utils'
+import constants from '@/utils/constants'
 export default {
+  async asyncData({ $axios }) {
+    const data = await $axios.$get(constants.SERVICES_API)
+    const services = data.services
+    return { services }
+  },
   data() {
     return {
       selectedImage: false,
       hover: false,
     }
   },
-  computed: {
-    services() {
-      return services
-    },
-  },
+
   methods: {},
 }
 </script>

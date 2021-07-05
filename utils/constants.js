@@ -4,4 +4,5 @@ export default {
   CI_PRODUCTS: 'cast_iron_products',
   SGI_PRODUCTS: 'sg_iron_products',
   CLIENTS_API: '/clients',
+  SERVICES_API: '/services'
 }
