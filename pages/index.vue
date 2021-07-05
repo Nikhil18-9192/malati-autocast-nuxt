@@ -36,7 +36,7 @@
         "
         @mouseleave="hover = false"
       >
-        <nuxt-link :to="item.route">
+        <nuxt-link :to="'/' + item.router">
           <div class="title">
             {{ item.title }}
           </div>
@@ -51,7 +51,7 @@
     </div>
     <div v-if="$device.isMobile" class="services-phone">
       <div class="card-phone" v-for="(item, i) in services" :key="i">
-        <nuxt-link :to="item.route">
+        <nuxt-link :to="'/' + item.router">
           <img :src="item.icon" alt="" />
           <div class="container">
             <h4 class="title">{{ item.title }}</h4>

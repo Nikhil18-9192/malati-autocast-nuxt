@@ -144,6 +144,7 @@ export default {
       journey: journey.milestones,
     }
   },
+
   data() {
     return {
       currentIndex: 1,
